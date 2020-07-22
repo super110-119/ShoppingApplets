@@ -69,7 +69,9 @@ Page({
           let newArr = deteleCommodity(data)
           // 重新赋值
           that.setData({
-            shopList: newArr
+            shopList: newArr,
+            prices: 0.00,
+            isNum: 0
           }) 
           // 提示删除成功信息
           wx.showToast({title: "删除成功"})

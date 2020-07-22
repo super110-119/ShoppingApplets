@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "nav": "/commonents/nav/nav",
+    "i-drawer": "../../../commonents/dist/drawer/index"
+  }
+}

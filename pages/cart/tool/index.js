@@ -22,7 +22,6 @@ export let activeLength = list => {
 export let setMes = (obj, arr) => {
   obj.shopList = arr
   setMessage(obj)
-  console.log("修改信息成功")
 }
 // 导出全选/全不选
 export let checkedAll = (isRight, list) => {

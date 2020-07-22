@@ -1,0 +1,19 @@
+<!--pages/classify/clcpn/cl-nav-bar/cl-nav-bar.wxml-->
+<view class="cl-nav">
+  <nav bgColor="#fff">
+    <view slot="left" class="left" bindtap="clickMore">更多</view>
+    <view slot="center" class="center">{{mesList[isActive].title}}</view>
+  </nav>
+  <i-drawer mode="right" mask visible="{{isShow}}" bind:close="clickMore">
+    <view class="demo-container">
+      <block wx:for="{{mesList}}" wx:key="idnex">
+        <view 
+          class="{{isActive === index ? 'active' : ''}}"
+          bindtap="itemClick"
+          data-index="{{index}}">
+          {{item.title}}
+        </view>
+      </block>
+    </view>
+</i-drawer>
+</view>

@@ -1,2 +1,20 @@
 <!--pages/classify/classify.wxml-->
-<view>{{lists}}</view>
+<!-- 导航栏 -->
+<view class="cl-nav">
+  <cl-nav 
+    mesList="{{mesList}}" 
+    isActive="{{isActive}}"
+    bind:itemClick="itemClick"/>
+</view>
+<!-- 选择栏 -->
+<view class="cl-tab">
+  <cl-tab-con
+    bind:consrolChenge="consrolChenge"
+    lists="{{lists}}"/>
+</view>
+<view class="nothing"></view>
+<!-- 商品数据 -->
+<view class="goods">
+  <cl-goods-item message="{{classifyGoods}}"/>
+</view>
+

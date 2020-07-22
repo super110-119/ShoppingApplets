@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "nav": "/commonents/nav/nav"
-  }
+    "cl-nav": "./clcpn/cl-nav-bar/cl-nav-bar",
+    "cl-goods-item": "./clcpn/cl-goods-item/cl-goods-item",
+    "cl-tab-con": "/commonents/tab-consrol/tab-consrol"
+  },
+  "navigationBarTitleText": "分类"
 }

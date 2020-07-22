@@ -1,1 +1,16 @@
 /* pages/classify/classify.wxss */
+.cl-tab{
+  height: 200rpx;
+  position: fixed;
+  top: 88rpx;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 2rpx solid #707070;
+  padding-bottom: 30rpx;
+}
+.nothing{
+  height: 180rpx;
+  background-color: #fff;
+  margin-bottom: 60rpx;
+}

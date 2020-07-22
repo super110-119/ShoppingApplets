@@ -1,6 +1,6 @@
 <!--commonents/goods-item/goods-item.wxml-->
 <view class="goods">
-  <image src="{{mes.show.img || mes.image }}" lazy-load class="fuzzy"/>
+  <image src="{{mes.show.img || mes.image || mes.img }}" lazy-load class="fuzzy"/>
   <view class="goods-title">{{mes.title}}</view>
   <view class="item">
     <text class="price">￥:{{mes.price}}</text>

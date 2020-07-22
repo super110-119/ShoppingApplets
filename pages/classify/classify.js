@@ -1,66 +1,92 @@
 // pages/classify/classify.js
+import {
+  getClassifyData,
+  getClassifyMessage
+} from '../../network/classify.js'
+ 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    
+    maitKey: 3627,
+    miniWallkey: 10062603,
+    type: 'pop',
+    mesList: [],
+    isActive: 0,
+    classifyGoods: [],
+    isShow: false,
+    lists: ['流行', '精选', '新款']
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    getClassifyData()
+      .then(res => {
+        const lists = res.data.data.category.list
+        console.log(lists)
+        this.setData({
+          mesList: lists
+        })
+      })
+    getClassifyMessage(
+      this.data.maitKey,
+      this.data.miniWallkey,
+      this.data.type
+    ).then(res => {
+      console.log(res.data)
+      this.setData({
+        classifyGoods: res.data
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
+  },
+
+  // 自定义事件-----------------------
+  itemClick(e){
+    const i = e.detail.i
+    this.setData({
+      isActive: i,
+      maitKey: this.data.mesList[i].maitKey,
+      miniWallkey: this.data.mesList[i].miniWallkey
+    })
+    wx.showToast({
+      title: "已改为：" + this.data.mesList[this.data.isActive].title
+    })
+    getClassifyMessage(
+      this.data.maitKey,
+      this.data.miniWallkey,
+      this.data.type
+    ).then(res => {
+      console.log(res.data)
+      this.setData({
+        classifyGoods: res.data
+      })
+    })
+  },
+  consrolChenge(e){
+    const i = e.detail.index
+    let demo = ''
+    if(i === 0){
+      demo = 'pop'
+    }else if(i === 1){
+      demo = 'new'
+    }else{
+      demo = 'sell'
+    }
+    this.setData({
+      type: demo
+    })
+    getClassifyMessage(
+      this.data.maitKey,
+      this.data.miniWallkey,
+      this.data.type
+    ).then(res => {
+      console.log(res.data)
+      this.setData({
+        classifyGoods: res.data
+      })
+    })
   }
+
 })
