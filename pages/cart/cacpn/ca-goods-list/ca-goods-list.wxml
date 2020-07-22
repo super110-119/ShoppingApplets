@@ -1,0 +1,18 @@
+<!--pages/cart/cacpn/ca-goods-list/ca-goods-list.wxml-->
+<view class="box">
+  <block wx:for="{{message}}" wx:key='index'>
+    <view class="list">
+      <view 
+          class="icon" 
+          data-index="{{index}}"
+          bind:tap="iconClick">
+        <view class="active" wx:if="{{item.affirm}}">√</view>
+        <view class="not-active" wx:else></view>
+      </view>
+      <view class="item" bindtap="goddsItemClick" data-iid="{{item.iid}}">
+        <ca-goods-item mes="{{item}}"/>
+      </view>
+    </view>
+  </block>
+</view>
+

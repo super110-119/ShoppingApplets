@@ -1,0 +1,44 @@
+/* pages/seek/seek.wxss */
+.seek{
+  background-color: #ececec;
+  display: flex;
+}
+.seek-input{
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 20rpx -20rpx 20rpx 50rpx;
+  background-color: #fff;
+}
+.seek-input{
+  display: flex;
+}
+.sousuo-ico{
+  margin-left: 30rpx;
+}
+.sousuo-ico::after{
+  content: '|';
+  margin: 0 20rpx;
+}
+.sousuo-input{
+  padding-left: -60rpx;
+}
+.inp{
+  margin-top: 24rpx;
+}
+
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.item{
+  width: 30%;
+  text-align: center;
+  border: 1px solid #ff5777;
+  margin: 30rpx 0;
+  color: #ff5777;
+  border-radius: 80rpx;
+  padding: 30rpx 20rpx;
+  font-size: 24rpx;
+}

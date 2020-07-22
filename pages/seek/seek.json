@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "i-notice-bar": "../../commonents/dist/notice-bar/index",
+    "i-icon": "../../commonents/dist/icon/index",
+    "i-input": "../../commonents/dist/input/index",
+    "i-message": "../../commonents/dist/message/index",
+    "i-button": "../../commonents/dist/button/index"
+  },
+  "navigationBarTitleText": "搜索"
+}

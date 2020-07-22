@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "nav": "../nav/nav",
+    "i-icon": "../../commonents/dist/icon/index"
+  }
+}

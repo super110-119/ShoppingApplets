@@ -1,0 +1,13 @@
+<!--commonents/nav/nav.wxml-->
+
+<view class="nav" style="background-color: {{bgColor}}">
+  <view  class="nav-item nav-left">
+    <slot name="left"/>
+  </view>
+  <view class="nav-center">
+    <slot name="center"/>
+  </view>
+  <view  class="nav-item nav-right">
+    <slot name="right"/>
+  </view>
+</view>

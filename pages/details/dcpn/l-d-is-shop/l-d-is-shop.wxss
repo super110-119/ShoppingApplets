@@ -1,0 +1,84 @@
+/* pages/details/dcpn/l-d-is-shop/l-d-is-shop.wxss */
+.container{
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 98rpx;
+  background-color: rgba(0, 0, 0, .7);
+}
+.box{
+  position: absolute;
+  height: 860rpx;
+  left: 0;
+  right: 0;
+  bottom: 98rpx;
+  background-color: #ececec;
+  z-index: 5;
+}
+.titles{
+  display: flex;
+  margin: 42rpx 0;
+  justify-content: space-evenly;
+}
+.titles image{
+  width: 250rpx;
+  height: 320rpx;
+}
+.content{
+  line-height: 110rpx;
+}
+.btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.btns{
+  display: flex;
+  align-items: center;
+}
+.btns text{
+  margin: 0 10rpx;
+}
+.img-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.img-item{
+  width: 20.2%;
+  height: 200rpx;
+  margin: 20rpx 0;
+}
+.img-item image{
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+.active{
+  box-sizing: border-box;
+  border: 10rpx solid #ff5777;
+}
+.is-shop{
+  height: 120rpx;
+  margin: 60rpx 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.is-shop view{
+  width: 220rpx;
+  border-radius: 30rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+}
+.btn1{
+  background-color: yellowgreen;
+}
+.btn2{
+  background-color: #ff5777;
+  color: #fff;
+}
+

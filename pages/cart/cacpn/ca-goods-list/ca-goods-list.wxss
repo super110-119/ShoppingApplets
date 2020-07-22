@@ -1,0 +1,41 @@
+/* pages/cart/cacpn/ca-goods-list/ca-goods-list.wxss */
+.box{
+  padding-bottom: 80rpx;
+}
+.list{
+  display: flex;
+  height: 300rpx;
+  border: 1rpx solid #707070;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+  margin-bottom: 50rpx;
+}
+.icon{
+  width: 110rpx;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-right: 1rpx solid #707070;
+}
+.item{
+  flex: 1;
+  height: 100%;
+}
+.icon view{
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 50%
+}
+.active{
+  background-color: #ff5777;
+  color: #fff;
+}
+.not-active{
+  border: 3rpx solid #707070;
+  background-color: #fff;
+}
+

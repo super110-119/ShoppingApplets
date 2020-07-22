@@ -1,0 +1,33 @@
+<!--pages/details/dcpn/l-d-is-shop/l-d-is-shop.wxml-->
+<view class="container">
+  <scroll-view class="box" scroll-y>
+    <view class="titles">
+      <image src="{{message[isShow].img}}"/>
+      <view class="content">
+        <view>色彩：{{message[isShow].style}}</view>
+        <view>￥：{{price}}</view>
+        <view>型号：{{message[isShow].size}}</view>
+      </view>
+      <view class="btn">
+        <view class="btns">
+          <button size="mini" bind:tap="numUp"> + </button>
+          <text>{{num}}</text>
+          <button size="mini" bind:tap="numDown"> - </button>
+        </view>
+        <view class="all">总价：{{price * num}}</view>
+      </view>
+    </view>
+    <view class="img-list">
+      <block wx:for="{{message}}" wx:key="index">
+        <view class="img-item" bind:tap="imgItemClick" data-index="{{index}}">
+          <image src="{{item.img}}" class="{{isShow === index ? 'active' : ''}}"/>
+        </view>
+      </block>
+    </view>
+    <view class="is-shop">
+      <view class="btn1" bind:tap="isOk">确认</view>
+      <view class="btn2" bind:tap="isNo">取消</view>
+    </view>
+  </scroll-view>
+</view>
+  

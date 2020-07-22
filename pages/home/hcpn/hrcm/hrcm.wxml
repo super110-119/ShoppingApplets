@@ -1,0 +1,12 @@
+<!--pages/home/hcpn/hrcm/hrcm.wxml-->
+<view class="recommend">
+  <view class="recommend-text">热门推荐</view>
+  <view class="recommend-list">
+    <block wx:for="{{mes}}" wx:key="index">
+      <view class="recommend-item">
+        <image src="{{item.image}}"/>
+        <view>{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+</view>

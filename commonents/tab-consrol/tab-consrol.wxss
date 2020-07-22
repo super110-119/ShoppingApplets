@@ -1,0 +1,25 @@
+/* commonents/tab-consrol/tab-consrol.wxss */
+.tab{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #fff;
+  margin: 40rpx 0;
+  position: sticky;
+  top: 88rpx;
+  left: 0;
+  right: 0;
+}
+.active{
+  color: #ff5777;
+}
+.active::after{
+  content: '';
+  display: block;
+  width: 120%;
+  height: 5rpx;
+  margin: -10%;
+  background-color: #ff5777;
+}

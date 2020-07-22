@@ -1,0 +1,13 @@
+<!--pages/cart/cacpn/ca-goods-item/ca-goods-item.wxml-->
+<view class="box">
+  <image src="{{mes.img}}"/>
+  <view>
+    <view class="title">{{mes.title}}</view>
+    <view class="content">
+      <text>型号：{{mes.size}}</text>
+      <text>单价：{{mes.price}}</text>
+      <text>数量：{{mes.num}}</text>
+      <text>{{mes.color}}</text>
+    </view>
+  </view>
+</view>

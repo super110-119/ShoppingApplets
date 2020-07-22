@@ -1,0 +1,33 @@
+<!--pages/details/dcpn/l-d-shop/l-d-shop.wxml-->
+<!-- 店铺名称和头像 -->
+<view class="logo">
+  <image src="{{message.logos}}"/>
+  <text>{{message.name}}</text>
+</view>
+<!-- 店铺评价 -->
+<view class="synopsis">
+  <view class="synopsis-view1">
+    <view class="synopsis-sell">
+      <view class="is-mes">{{message.sell}}</view>
+      <view>全部销量</view>
+    </view>
+    <view class="synopsis-goods">
+      <view class="is-mes">{{message.gooods}}</view>
+      <view>全部宝贝</view>
+    </view>
+  </view>
+  <view class="synopsis-view2">
+    <block wx:for="{{message.score}}" wx:key="index">
+      <view class="{{item.isBetter ? 'active' : ''}}">
+        {{item.name}} {{item.score}}
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 按钮 -->
+<view class="btn">进入店铺</view>
+<!-- 店铺简介 -->
+<view class="desc">
+  {{message.desc}}
+</view>
+

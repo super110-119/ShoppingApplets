@@ -1,0 +1,17 @@
+/* commonents/goods-list/goods-list.wxss */
+.goods{
+  width: 100%;
+  background-color: #fff;
+}
+.goods-list{
+  width: 50%;
+  height: 640rpx;
+  display: inline-block;
+  text-align: center;
+}
+.goods-item{
+  width: 100%;
+  height: 100%;
+  padding: 0 10rpx;
+  margin: 20rpx 0;
+}

@@ -1,0 +1,53 @@
+/* pages/details/dcpn/l-d-rate/l-d-rate.wxss */
+.rate-title::before{
+  content: '|';
+  display: inline-block;
+  margin: 0 20rpx;
+}
+.rate-title{
+  color: #ff5777;
+  margin: 20rpx 0;
+  font-size: 42rpx;
+  font-weight: 600;
+}
+.rate-icon{
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #c7c7c7;
+}
+.rate-icon image{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  font-size: 38rpx;
+  margin: 0 20rpx;
+}
+.color{
+  color: #ff5777;
+  margin: 10rpx 0;
+  font-size: 32rpx;
+}
+.content{
+  margin: 30rpx 0;
+}
+.extraInfo{
+  display: flex;
+  color: #666;
+  font-size: 22rpx;
+  color: #ff5777;
+  justify-content: space-evenly;
+}
+.images{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 40rpx 0;
+  padding-bottom: 30rpx;
+}
+.images image{
+  width: 30%;
+  height: 260rpx;
+}
+

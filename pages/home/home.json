@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "nav-search": "/commonents/nav-search/NavSearch",
+    "banner": "/commonents/banner/banner",
+    "hrcm": "./hcpn/hrcm/hrcm",
+    "tab-consrol": "/commonents/tab-consrol/tab-consrol",
+    "goods-list": "/commonents/goods-list/goods-list",
+    "go-top": "/commonents/back-top/back-top"
+  },
+  "navigationBarTitleText": "购物街"
+}

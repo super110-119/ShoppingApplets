@@ -1,0 +1,9 @@
+<!--pages/cart/cacpn/ca-tab-bar/ca-tab-bar.wxml-->
+<view class="box">
+  <view class="isActive" bind:tap="allClick">
+    <text class="{{isActive ? 'acives' : 'not-active'}}">√</text>
+    全选/全不选
+  </view>
+  <view class="prices">合计：￥{{prices}}</view>
+  <view class="btn" bindtap="isnums">结算({{isNum}})</view>
+</view>

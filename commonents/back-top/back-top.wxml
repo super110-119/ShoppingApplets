@@ -1,0 +1,2 @@
+<!--commonents/back-top/back-top.wxml-->
+<view class="go-top" bind:tap="goTopClick">↑</view>

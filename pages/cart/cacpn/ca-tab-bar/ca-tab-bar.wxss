@@ -1,0 +1,48 @@
+/* pages/cart/cacpn/ca-tab-bar/ca-tab-bar.wxss */
+.box{
+  position: fixed;
+  height: 98rpx;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1rpx solid #7c7c7c;
+  background-color: #fff;
+  display: flex;
+}
+.isActive{
+  height: 100%;
+  display: flex;
+  font-size: 26rpx;
+  align-items: center;
+  width: 240rpx;
+}
+.isActive text{
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 60rpx;
+  margin: 24rpx 12rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  font-size: 36rpx;
+}
+.not-active{
+  border: 3rpx solid #222;
+  box-sizing: border-box;
+}
+.acives{
+  background-color: #ff5777;
+}
+.prices{
+  line-height: 98rpx;
+  flex: 1;
+}
+.btn{
+  width: 200rpx;
+  height: 100%;
+  background-color: #e00;
+  color: #fff;
+  text-align: center;
+  line-height: 98rpx;
+}

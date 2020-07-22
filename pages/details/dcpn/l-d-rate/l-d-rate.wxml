@@ -1,0 +1,29 @@
+<!--pages/details/dcpn/l-d-rate/l-d-rate.wxml-->
+<!-- 标题 -->
+<view class="rate-title">
+  精选评论
+</view>
+<!-- 头像信息 -->
+<view class="rate-icon">
+  <image src="{{message.user.avatar}}"/>
+  <view>
+    <view>{{message.user.uname}}</view>
+    <view class="color">{{message.style}}</view>
+  </view>
+</view>
+<!-- 评论信息 -->
+<view class="content">{{message.content}}</view>
+<!-- 用户数据 -->
+<view class="extraInfo">
+  <block wx:for="{{message.extraInfo}}" wx:key="idnex">
+    <view>{{item}}</view>
+  </block>
+</view>
+<!-- ? 用户评论的图片 -->
+<view class="images" wx:if='{{message.images}}'>
+  <block wx:for="{{message.images}}" wx:key='index'>
+    <image src="{{item}}"/>
+  </block>
+</view>
+
+

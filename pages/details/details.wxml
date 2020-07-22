@@ -1,0 +1,44 @@
+<!--pages/details/details.wxml-->
+<!-- 轮播图 -->
+<view class="banner">
+  <banner banner="{{banners}}"/>
+</view>
+<!-- 标题数据 -->
+<view class="titles">
+  <d-titles message="{{thisTitles}}"/>
+</view>
+<!-- 店铺信息 -->
+<view class="shopping">
+  <d-shop message="{{shoppings}}"/>
+</view>
+<!-- 商品图片展示 -->
+<view class="images">
+  <d-image message="{{imageData}}"/>
+</view>
+<!-- 商品参数 -->
+<view class="params">
+  <d-params message="{{InfiParams}}"/>
+</view>
+<!-- 精选评论 -->
+<view class="rate">
+  <d-rate message="{{rateItem}}"/>
+</view>
+<!-- 热门推荐 -->
+<view class="goods-list">
+  <d-goods message="{{recommendData}}"/>
+</view>
+<!-- 返回顶部 -->
+<view class="go-top" wx:if="{{showTop}}">
+  <go-top/>
+</view>
+<!-- 下面的选择导航栏 -->
+<view class="my-tab-bar">
+  <d-tab-bar bind:shopppingClick="shopppingClick"/>
+</view>
+<!-- 加入购物车 -->
+<view class="is-shopping" hidden="{{shopShow}}">
+  <d-is-shop 
+      message="{{isShoppping}}" 
+      bind:shopOkClick="shopOkClick"
+      bind:userClickNo="shopppingClick"/>
+</view>

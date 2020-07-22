@@ -1,0 +1,14 @@
+<!--pages/details/dcpn/l-d-goods/l-d-goods.wxml-->
+<view class="title">热门推荐</view>
+<view class="goods">
+  <block wx:for='{{message}}' wx:key="index">
+    <view class="goods-list">
+      <view 
+          class="goods-item"
+          data-iid="{{item.iid}}"
+          bindtap="goodsClick">
+        <goods-item mes="{{item}}"/>
+      </view>
+    </view>
+  </block>
+</view>

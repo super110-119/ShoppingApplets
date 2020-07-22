@@ -1,0 +1,13 @@
+<!--commonents/goods-list/goods-list.wxml-->
+<view class="goods">
+  <block wx:for="{{goods[types].list}}" wx:key="index">
+    <view class="goods-list">
+      <view 
+          class="goods-item"
+          data-iid="{{item.iid}}"
+          bindtap="goodsClick">
+        <goods-item mes="{{item}}"/>
+      </view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,12 @@
+<!--commonents/nav-search/NavSearch.wxml-->
+<nav>
+  <view slot="center" class="nav-search" bind:tap="navSearchClick">
+    <i-icon type="search" size="18" />
+    <text>搜索</text>
+  </view>
+  <view slot="right" class="nav-share">
+    <button size="mini" open-type="share">
+      <i-icon type="share" size="21"/>
+    </button>
+  </view>
+</nav>

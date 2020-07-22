@@ -1,0 +1,22 @@
+<!--pages/details/dcpn/l-d-tab-bar/l-d-tab-bar.wxml-->
+<view class="tab-bar">
+  <view class="icon">
+    <view class="kf">
+      <i-icon type="customerservice" size="32" color="#ff5777"/>
+      <view>客服</view>
+    </view>
+    <view class="dp">
+      <i-icon type="shop_fill" size="32"/>
+      <view>店铺</view>
+    </view>
+    <view class="sc" bind:tap="scClick">
+      <i-icon wx:if="{{!isShow}}" type="collection" size="32"/>
+      <i-icon wx:if="{{isShow}}" type="collection_fill" size="32" color="gold"/>
+      <view>收藏</view>
+    </view>
+  </view>
+  <view class="btn">
+    <view class="shop" bind:tap="shopClick"> 加入购物车</view>
+    <view class="by" bind:tap="byClick">购买</view>
+  </view>
+</view>

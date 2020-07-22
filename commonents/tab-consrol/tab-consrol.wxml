@@ -1,0 +1,11 @@
+<!--commonents/tab-consrol/tab-consrol.wxml-->
+<view class="tab">
+  <block wx:for="{{lists}}" wx:key="index">
+    <view 
+        class="{{isActive === index ? 'active' : ''}}"
+        bind:tap="isChenge"
+        data-index="{{index}}">
+      {{item}}
+    </view>
+  </block>
+</view>

@@ -1,0 +1,41 @@
+/* pages/details/dcpn/l-d-tab-bar/l-d-tab-bar.wxss */
+.tab-bar{
+  height: 98rpx;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1rpx solid #c7c7c7;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 1;
+}
+.tab-bar>view{
+  width: 50%;
+}
+.icon{
+  display: flex;
+  justify-content: space-around;
+  font-size: 22rpx;
+  text-align: center;
+}
+.btn{
+  display: flex;
+  line-height: 98rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.btn view{
+  flex: 1;
+}
+.shop{
+  background-color: gold;
+}
+.by{
+  background-color: #ff5777;
+  color: #fff;
+}
+
+

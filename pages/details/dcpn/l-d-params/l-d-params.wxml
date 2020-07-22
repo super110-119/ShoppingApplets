@@ -1,0 +1,28 @@
+<!--pages/details/dcpn/l-d-params/l-d-params.wxml-->
+<!-- 产品参数 -->
+<view class="titles">
+  {{message.info.key}}
+</view>
+<!-- 简介 -->
+<view class="disclaimer">
+  {{message.rule.disclaimer}}
+</view>
+<!--  尺码  -->
+<view class="tables">
+  <block wx:for="{{message.rule.tables[0]}}" wx:key="index" wx:for-item="mes">
+    <view class="list">
+      <block wx:for="{{mes}}" wx:key="index">
+        <view class="item">{{item}}</view>
+      </block>
+    </view>
+  </block>
+</view>
+<!-- 信息 -->
+<view class="set">
+  <block wx:for="{{message.info.set}}" wx:key="index">
+    <view class="set-list">
+      <text class="set-key">{{item.key}}</text>
+      <text>{{item.value}}</text>
+    </view>
+  </block>
+</view>

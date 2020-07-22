@@ -1,0 +1,8 @@
+<!--pages/cart/cacpn/ca-nav-bar/ca-nav-bar.wxml-->
+<view class="nav">
+  <nav bgColor="#ff5777">
+    <view slot="right" class="right" bindtap="deleteClick">删除</view>
+    <view slot="center" class="center">购物车({{ num }})</view>
+  </nav>
+</view>
+

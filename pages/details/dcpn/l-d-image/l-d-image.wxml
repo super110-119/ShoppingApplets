@@ -1,0 +1,9 @@
+<!--pages/details/dcpn/l-d-image/l-d-image.wxml-->
+<view class="titles">{{message.key}}</view>
+<view class="img-list">
+  <block wx:for="{{message.list}}" wx:key="index">
+    <view class="img-item">
+      <image lazy-load src="{{item}}"/>
+    </view>
+  </block>
+</view>

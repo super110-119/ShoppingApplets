@@ -1,0 +1,33 @@
+<!--pages/details/dcpn/l-d-titles/l-d-titles.wxml-->
+<!-- 标题部分 -->
+<view class="titles">
+  <text>【{{message.dp}}】</text>
+  <text>{{message.titles}}</text>
+</view>
+<!-- 价格部分 -->
+<view class="prices xhx">
+  <text class="nowprice">{{message.price}}</text>
+  <text class="oldprice">{{message.oldprice}}</text>
+  <text class="discountDesc">{{message.discountDesc}}</text>
+</view>
+<!-- 销量部分 -->
+<view class="xhx">
+  <view class="columns">
+    <block wx:for="{{message.columns}}" wx:key="index">
+      <text>{{item}}</text>
+    </block>
+  </view>
+</view>
+<!-- 承诺部分 -->
+<view class="xhx">
+  <view class="services">
+    <block wx:for="{{message.services}}" wx:key="index">
+      <view>
+        <image src="{{item.icon}}"/>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+
+

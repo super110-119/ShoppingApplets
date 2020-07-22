@@ -1,0 +1,45 @@
+<!--pages/seek/seek.wxml-->
+<!-- 文字提示框 -->
+<i-notice-bar 
+    icon="systemprompt" 
+    closable 
+    loop 
+    speed="1500">
+  该小程序，为个人学习制作，希望多多包涵
+</i-notice-bar>
+<!-- 搜索 -->
+<view class="seek">
+  <view class="seek-input">
+    <view class="sousuo-ico">
+      <i-icon type="search" size="25" class="suo-ico"/>
+    </view>
+    <view class="sousuo-input">
+      <input 
+          class="inp" 
+          placeholder="请输入关键字" 
+          focus 
+          value="{{inputValue}}"
+          bind:input="inputChenge"/>
+    </view>
+    <view class="sousuo-no">
+      <i-icon 
+          type="delete" 
+          size="18" 
+          bind:tap="iconClick"
+          wx:if="{{iconShow}}"/>
+    </view>
+  </view>
+  <i-button 
+      bind:click="handleClick"
+      class="btn"
+      inline
+      size="mini"
+      type="success">搜索</i-button>
+      <i-message id="message" />
+</view>
+
+<view class="list">
+  <block wx:for="{{message}}" wx:key="index">
+    <view class="item">{{item.words}}</view>
+  </block>
+</view> 

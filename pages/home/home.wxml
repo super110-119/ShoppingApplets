@@ -1,0 +1,26 @@
+<!--pages/home/home.wxml-->
+<!-- 导航栏 -->
+<nav-search class="search" bind:navSearchClick="navSearchClick"/>
+<!-- 轮播图 -->
+<view class="banner">
+  <banner banner="{{banner}}"/>
+</view>
+<!-- 本周流行 -->
+<view class="popular">
+  <image src="/assets/img/home/recommend_bg.jpg"/>
+</view>
+<!-- 推荐数据 -->
+<hrcm mes="{{recommend}}"/>
+<!-- 选择导航栏 -->
+<tab-consrol 
+    lists="{{lists}}" 
+    id="h-tab-control"
+    bind:consrolChenge="consrolChenge"/>
+<!-- 商品数据 -->
+<view class="goods">
+  <goods-list goods="{{goods}}" types="{{currentType}}"/>
+</view>
+<!-- 返回顶部 -->
+<view class="go-top" wx:if="{{showTop}}">
+  <go-top/>
+</view>

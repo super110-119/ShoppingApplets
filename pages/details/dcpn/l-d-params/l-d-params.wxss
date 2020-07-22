@@ -1,0 +1,43 @@
+/* pages/details/dcpn/l-d-params/l-d-params.wxss */
+.titles{
+  margin: 30rpx 0;
+  color: #ff5777;
+  font-size: 42rpx;
+}
+.titles::before{
+  content: '|';
+  display: inline-block;
+  margin: 0 20rpx;
+}
+.disclaimer{
+  color: #ff5777;
+}
+.disclaimer::after{
+  content: '';
+  height: 3rpx;
+  display: block;
+  margin: 20rpx 0;
+}
+.list{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 30rpx 0;
+  padding: 10rpx 0;
+  border-bottom: 1px solid #7c7c7c;
+}
+.set-list{
+  margin: 40rpx 0;
+}
+.set-key{
+  color: #ff5777;
+  margin: 0 30rpx;
+}
+.set::after{
+  content: '';
+  height: 50rpx;
+  background-color: #cecece;
+  width: 100%;
+  display: block;
+  margin: 30rpx 0;
+}

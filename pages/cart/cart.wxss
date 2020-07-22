@@ -1,0 +1,10 @@
+/* pages/cart/cart.wxss */
+.nothingShop{
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 600;
+  margin: 50rpx 0;
+}
+.goHome{
+  color: #ff5777;
+}

@@ -1,0 +1,17 @@
+/* commonents/back-top/back-top.wxss */
+.go-top{
+  width: 84rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+  border-radius: 50%;
+  color: #ff5777;
+  border: 1px solid #ff5777;
+  background-color: #fff;
+  position: fixed;
+  bottom: 160rpx;
+  right: 50rpx;
+  z-index: 3;
+  font-weight: 700;
+  font-size: 42rpx;
+}

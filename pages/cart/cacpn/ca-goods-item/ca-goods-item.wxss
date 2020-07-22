@@ -1,0 +1,38 @@
+/* pages/cart/cacpn/ca-goods-item/ca-goods-item.wxss */
+.box{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.box image{
+  width: 210rpx;
+  height: 100%;
+  margin-right: 10rpx;
+}
+.box>view{
+  flex: 1;
+}
+.title{
+  height: 100rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-weight: 500;
+  font-size: 38rpx;
+  margin: 6rpx 0;
+}
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-content: space-around;
+  justify-content: space-evenly;
+  color: #ff5777;
+  height: 200rpx;
+}
+.content text{
+  width: 50%;
+}

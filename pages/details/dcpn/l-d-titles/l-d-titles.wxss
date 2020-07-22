@@ -1,0 +1,49 @@
+/* pages/details/dcpn/l-d-titles/l-d-titles.wxss */
+.titles{
+  font-weight: 800;
+  font-size: 42rpx;
+}
+.prices{
+  margin: 30rpx 0;
+}
+.nowprice{
+  color: #ff5777;
+  font-weight: 800;
+  font-size: 64rpx;
+  margin:0 30rpx;
+}
+.oldprice{
+  text-decoration:line-through
+}
+.discountDesc{
+  margin: -12rpx 20rpx;
+  padding: 16rpx 10rpx;
+  border-radius: 20rpx;
+  background-color: #ff5777;
+  color: #fff;
+  font-size: 22rpx;
+}
+.xhx::after{
+  content: '';
+  width: 100%;
+  margin-top: 30rpx;
+  height: 2rpx;
+  background-color: #c7c7c7;
+  display: block;
+}
+.columns{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 24rpx;
+}
+
+.services{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20rpx;
+  margin-top: 30rpx;
+}
+.services image{
+  width: 20rpx;
+  height: 20rpx;
+}

@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "banner": "/commonents/banner/banner",
+    "go-top": "/commonents/back-top/back-top",
+
+    "d-titles": "./dcpn/l-d-titles/l-d-titles",
+    "d-shop": "./dcpn/l-d-shop/l-d-shop",
+    "d-image": "./dcpn/l-d-image/l-d-image",
+    "d-params": "./dcpn/l-d-params/l-d-params",
+    "d-rate": "./dcpn/l-d-rate/l-d-rate",
+    "d-goods": "./dcpn/l-d-goods/l-d-goods",
+    "d-tab-bar": "./dcpn/l-d-tab-bar/l-d-tab-bar",
+    "d-is-shop": "./dcpn/l-d-is-shop/l-d-is-shop"
+  },
+  "navigationBarTitleText": "商品详情"
+}

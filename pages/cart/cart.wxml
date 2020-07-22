@@ -1,0 +1,28 @@
+<!--pages/cart/cart.wxml-->
+<!-- 页面导航栏 -->
+<view class="nav-bar">
+  <ca-nav-bar 
+      num="{{ shopList.length }}"
+      bind:deleteClick="deleteClick"/>
+</view>
+<!-- 查看商品数量是否为 0 -->
+<view class="nothingShop" wx:if="{{shopList.length === 0}}">
+  您的购物车空空如也，点击
+  <text class="goHome" bindtap="goHome">首页</text>
+  购物吧
+</view>
+<!-- 如果不为 0 就显示下列数据 -->
+<view wx:else>
+  <ca-goods-list
+       message="{{shopList}}"
+       bind:iconClick="iconClick"/>
+</view>
+<!-- 底部导航栏 -->
+<view class="ca-tab-bar">
+  <ca-tab-bar 
+    isActive="{{isActive}}"
+    prices="{{prices}}"
+    isNum="{{isNum}}"
+    bind:clickALL="clickALL"/>
+</view>
+

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "ca-nav-bar": "./cacpn/ca-nav-bar/ca-nav-bar",
+    "ca-goods-list": "./cacpn/ca-goods-list/ca-goods-list",
+    "ca-tab-bar": "./cacpn/ca-tab-bar/ca-tab-bar"
+  },
+  "navigationBarTitleText": "购物车"
+}
