@@ -5,10 +5,10 @@ import {
 } from './local/index.js'
 App({
   onLaunch(){
-    getMessage()
-      .catch(() => {
-        console.log("即将准备存储数据中...")
-        setMessage(userMessage())
-      })
+    let value = wx.getStorageSync('userMessage')
+    if(!value){
+      let obj = userMessage()
+      wx.setStorageSync('userMessage', obj)
+    }
   }
 })

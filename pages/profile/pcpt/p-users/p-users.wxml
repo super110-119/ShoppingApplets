@@ -1,0 +1,15 @@
+<!--pages/profile/pcpt/p-users/p-users.wxml-->
+<view class="user">
+  <view class="user-icon">
+    <i-icon type="mine" size="160" wx:if="{{!getMes.load}}" color="#fff"/>
+    <i-icon type="mine_fill"  size="160" wx:else color="#fff"/>
+  </view>
+  <view class="user-name">
+    <view class="user-load-true" wx:if="{{getMes.load}}">
+      <view>{{getMes.username}}</view>
+    </view>
+    <view class="user-load-false" wx:else>
+      <view>登录/注册</view>
+    </view>
+  </view>
+</view>

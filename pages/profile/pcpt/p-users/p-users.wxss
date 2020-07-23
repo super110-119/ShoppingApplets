@@ -1,0 +1,12 @@
+/* pages/profile/pcpt/p-users/p-users.wxss */
+.user{
+  display: flex;
+  align-items: center;
+  font-size: 64rpx;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: #ff5777;
+}

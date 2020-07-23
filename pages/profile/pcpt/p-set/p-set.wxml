@@ -1,0 +1,23 @@
+<!--pages/profile/pcpt/p-set/p-set.wxml-->
+<view class="container">
+  <view class="box">
+    <i-icon type="message_fill" color="#ff5777" size="25"/>
+    <text>我的消息</text>
+  </view>
+  <view class="box">
+    <i-icon type="coupons_fill" color="#ff5777" size="25"/>
+    <text>积分商城</text>
+  </view>
+  <view class="box">
+    <i-icon type="businesscard_fill" color="#ff5777" size="25"/>
+    <text>会员中心</text>
+  </view>
+  <view class="box">
+    <i-icon type="integral_fill" color="#ff5777" size="25"/>
+    <text>下载APP</text>
+  </view>
+  <view class="box">
+    <i-icon type="setup_fill" color="#ff5777" size="25"/>
+    <text>设置</text>
+  </view>
+</view>

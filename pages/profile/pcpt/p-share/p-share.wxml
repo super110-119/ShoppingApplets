@@ -1,0 +1,20 @@
+<!--pages/profile/pcpt/p-share/p-share.wxml-->
+
+<view class="container">
+  <view class="box1">
+    <i-icon type="tasklist" size="36"/>
+    <view>待付款</view>
+  </view>
+  <view class="box1">
+    <i-icon type="time"  size="36"/>
+    <view>待发货</view>
+  </view>
+  <view class="box1">
+    <i-icon type="task"  size="36"/>
+    <view>待收货</view>
+  </view>
+  <view class="box1">
+    <i-icon type="share"  size="36"/>
+    <view>待分享</view>
+  </view>
+</view>

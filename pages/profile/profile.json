@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "p-users": "./pcpt/p-users/p-users",
+    "p-benefit": "./pcpt/p-benefit/p-benefit",
+    "p-share": "./pcpt/p-share/p-share",
+    "p-set": "./pcpt/p-set/p-set"
+  }
 }

@@ -1,0 +1,8 @@
+/* pages/profile/pcpt/p-share/p-share.wxss */
+.container{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding-bottom: 30rpx;
+  border-bottom: 30rpx solid #eee;
+}

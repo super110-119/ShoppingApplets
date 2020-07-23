@@ -1,0 +1,24 @@
+<!--pages/profile/pcpt/p-benefit/p-benefit.wxml-->
+<view class="container">
+  <view class="box1">
+    <view>
+      <text class="nums">0.00</text>
+      <text>元</text>
+    </view>
+    <view>我的余额</view>
+  </view>
+  <view class="box1">
+    <view>
+      <text class="nums">0</text>
+      <text>个</text>
+    </view>
+    <view>我的优惠券</view>
+  </view>
+  <view class="box2">
+    <view>
+      <text class="nums">0</text>
+      <text>分</text>
+    </view>
+    <view>我的积分</view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+/* pages/profile/pcpt/p-set/p-set.wxss */
+.box{
+  margin: 50rpx 40rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #ececec;
+}
+.box text{
+  margin-left: 40rpx;
+}
+.box::after{
+  content: '>';
+  display: inline-block;
+  float: right;
+  color: #ff5777;
+}

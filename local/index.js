@@ -1,5 +1,5 @@
 // 导出存储数据函数
-export function setMessage(data, key = 'userMessage'){
+export function setMessage(data, key="userMessage"){
   return new Promise((resolve, reject) => {
     wx.setStorage({
       data: data,

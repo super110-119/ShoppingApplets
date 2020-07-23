@@ -1,0 +1,20 @@
+/* pages/profile/pcpt/p-benefit/p-benefit.wxss */
+.container{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 50rpx 0;
+  padding-bottom: 80rpx;
+  border-bottom: 30rpx solid #eee;
+}
+.nums{
+  font-size: 42rpx;
+  color: #ff5777;
+  margin: 0 20rpx;
+}
+.box1{
+  border-right: 2rpx solid #c7c7c7;
+  padding-right: 50rpx;
+  box-sizing: border-box;
+}
+

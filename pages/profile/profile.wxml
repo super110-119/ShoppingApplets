@@ -1,2 +1,18 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<!-- 头像/用户名等部分 -->
+<view class="userIcon">
+  <p-users getMes="{{getMes}}" bindtap="userClick"/>
+</view>
+<!-- 我的余额、积分等 -->
+<view class="price">
+  <p-benefit/>
+</view>
+<!-- 关于商品的操作 -->
+<view class="share">
+  <p-share/>
+</view>
+<!-- 关于用户设置 -->
+<view class="set">
+  <p-set/>
+</view>
+
