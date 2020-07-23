@@ -1,1 +1,20 @@
 /* pages/load/load.wxss */
+.title{
+  font-weight: 700;
+  font-size: 66rpx;
+  color: #ff5777;
+  text-align: center;
+  margin: 50rpx 0;
+}
+.box{
+  margin: 30rpx 0;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #cecece;
+}
+.box input{
+  width: 80%;
+  margin-left: 50rpx;
+}
+.passworld{
+  display: flex;
+}

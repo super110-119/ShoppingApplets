@@ -19,6 +19,12 @@ Page({
 
   },
   userClick(){
+    if(this.data.getMes.load){
+      wx.showToast({
+        title: '你已经登录成功！',
+      })
+      return
+    }
     wx.navigateTo({
       url: "/pages/load/load"
     })

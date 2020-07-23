@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/home/home",
+    "pages/load/load",
     "pages/profile/profile",
     "pages/classify/classify",
     "pages/cart/cart",
-    "pages/home/home",
     "pages/details/details",
-    "pages/seek/seek",
-    "pages/load/load"
+    "pages/seek/seek"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff5777",
