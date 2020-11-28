@@ -1,0 +1,67 @@
+<!--pages/trainingclass/trainingclass.wxml-->
+<view class="page line_black" style="width:100%;overflow-x:hidden;">
+  <view class="up_border"></view>
+  <view class="pad_view" wx:if='{{traininglist.length > 0}}'>
+  <block wx:for='{{traininglist}}' wx:key='index'>
+    <view class="product_css" bindtap="trainSchedule" data-index="{{index}}">
+      <view class="view_size between_Css" style="height: 4vh;">
+        <view class="view_size left_Css">
+          <view class="circle_css  {{item.trainstate === 0 ? 'circle_color1':'circle_color2'}}"></view>
+          <view wx:if='{{item.trainstate === 0}}' class="font2">进行中</view>
+          <view wx:else class="font2 font2color">已结束</view>
+        </view>
+        <view wx:if='{{item.trainstate === 0}}' class="product_css2 view_size">
+          <image class="inc_css" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-align-left.svg"></image>
+          <view class="font4">进行中</view>
+        </view>
+        <view wx:else class="product_css2 product_css3_color view_size">
+          <image class="inc_css" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-align-left.svg"></image>
+          <view class="font4">可回看</view>
+        </view>
+      </view>
+      <view class="view_size between_Css" style="height: 26vh;">
+        <view class="product_css3">
+          <view style="margin-top:3vh">
+            <view class="font3">{{item.trainmonth}}月</view>
+            <view class="shixian_css" style="margin-top:1vh"></view>
+            <view class="font3" style="margin-top:1vh">{{item.trainyear}}年</view>
+          </view>
+        </view>
+        <view class="product_css4" >
+          <view class="view_size left_Css font1" >{{item.traintitle}}</view>
+          <view class="view_size left_Css" style="margin-top:1vh">
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-user.svg"></image>
+            <text class="font4 font4color">讲师：{{item.trainteacher}}</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-thumbtack.svg"></image>
+            <text class="font4 font4color">举办部门：{{item.trainpartment}}</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-users.svg"></image>
+            <text class="font4 font4color">班级人数：{{item.trainnum}}人</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-clock.svg"></image>
+            <text class="font4 font4color">日期： {{item.trainstartime}}~{{item.trainendtime}}</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-clock.svg"></image>
+            <text class="font4 font4color">时间： {{item.traintime}}</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-map-marker.svg"></image>
+            <text class="font4 font4color">地点：{{item.trainplace}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  </view>
+  <view class="noClass" wx:else>
+    <view>
+      <view>暂无加入任何培训班哦！！！</view>
+      <view>快去首页加入吧</view>
+    </view>
+  </view>
+</view>

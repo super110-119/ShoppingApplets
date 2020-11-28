@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "success": "/common/success/success"
+  },
+  "navigationBarTitleText": "培训报名"
+}

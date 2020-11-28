@@ -1,0 +1,64 @@
+//定义常量
+const httpHead = "http://api.pomesoft.com/sems-api/";
+const appId = "wxd4b642d1daf94b09";
+var userMessage = null;
+
+//app.js
+App({
+  onLaunch: function () {
+    // 展示本地存储能力
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs)
+
+    // 登录
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        const code = res.code
+        wx.request({
+          url: httpHead + 'api/weixinOauthWxapp.action',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8',
+          },
+          data: {
+            coopCode : 'chengde',
+            appCode : 'chengde',
+            code : code
+          },
+          method: 'post',
+          success: res => {
+            console.log(res)
+            if(res.data == "" ||res.data.ret == -1){
+              wx.reLaunch({
+                url: '../common_pages/login/login',
+              })
+            }else{
+              this.globalData.userMessage = res.data.data;
+              if(res.data.data.frontUser.isVisitor === 'Y'){
+                wx.reLaunch({
+                  url: '../common_pages/login/login',
+                })
+              }
+            }
+          },
+          fail: res => {
+            console.log('登录接口访问失败')
+          }
+        })
+      }
+    })
+
+  },
+  // 修改用户信息
+  changeMes(obj){
+    userMessage = obj
+  },
+  globalData: {
+    userInfo: null,
+    httpHead: httpHead,
+    appId : appId,
+    // openId : openId,
+    userMessage
+  }
+})

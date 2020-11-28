@@ -1,0 +1,7 @@
+<!--component/no_data_img/no_data_img.wxml-->
+<view class="no_data_image">
+  <view class="no_data_image_box">
+    <image class="no_data_image_box_img" src="/images/none.png"/>
+    <view class="no_data_image_box_title">{{title}}</view> 
+  </view>
+</view>

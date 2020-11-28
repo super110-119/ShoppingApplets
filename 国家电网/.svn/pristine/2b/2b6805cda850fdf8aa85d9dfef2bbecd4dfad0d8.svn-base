@@ -1,0 +1,131 @@
+/* pages/reserveitem/details/details.wxss */
+.container::before{
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1rpx;
+  box-shadow: 0 2rpx 5rpx #8c8c8c;
+}
+.container{
+  background-color: #EFEFEF;
+  margin: 0;
+  color: #101010;
+  padding: 0;
+}
+.before::before{
+  content: '|';
+  display: inline-block;
+  margin: 0 20rpx;
+}
+.Administration{
+  width: 100%;
+  height: 354rpx;
+}
+.title{
+  font-size: 28rpx;
+  font-weight: 600;
+  margin: 28rpx 0;
+}
+.title-box{
+  width: 100%;
+  height: 246rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 1rpx solid #BBBBBB;
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+}
+.data{
+  font-size: 28rpx;
+  font-weight: 550;
+}
+.success{
+  color: #00BE95;
+}
+.waiting{
+  color: #FF8C00;
+}
+.warn{
+  color: #FF0000;
+}
+.title-box icon{
+  margin-top: 30rpx;
+}
+
+
+.details{
+  width: 100%;
+}
+.details-title{
+  width: 100%;
+  height: 76rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.operation{
+  margin: 0 30rpx;
+  display: flex;
+  color: #638EE3;
+  align-items: center;
+  font-size: 28rpx;
+}
+.detail-box{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 1rpx solid #BBBBBB;
+  margin-bottom: 30rpx;
+}
+.details-mes{
+  display: flex;
+  height: 80rpx;
+  font-size: 26rpx;
+  color: #666;
+  white-space: nowrap;/*不允许换行*/
+  overflow: hidden;/*超出隐藏*/
+  text-overflow: ellipsis;/*文本超出三点代替*/
+  align-items: center;
+}
+.details-mes-title{
+  color: #101010;
+  font-weight: 550;
+  margin: 0 10rpx;
+}
+.operation .icon{
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0 10rpx;
+}
+.operation .icon image{
+  width: 100%;
+  height: 100%;
+}
+
+.btn{
+  width: 100%;
+  height: 72rpx;
+  margin: 34rpx 0;
+  line-height: 72rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+}
+.btn view{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  margin: 0 2rpx;
+}
+.btn2{
+  background-color: #00BE95;
+}
+.btn1{
+  background-color: #FF0000;
+}
+

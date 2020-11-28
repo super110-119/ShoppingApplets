@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "items": "./items/items"
+  },
+  "navigationBarTitleText": "需求调查"
+}

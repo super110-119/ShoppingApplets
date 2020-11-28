@@ -1,0 +1,29 @@
+/* common/list-bar/item-bar/item-bar.wxss */
+.item{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.item-img{
+  width: 90rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DFE1E7;
+  border-radius: 50%;
+}
+.item-img image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.active image{
+  width: 75rpx;
+  height: 48rpx;
+}
+.titles{
+  color: #5d82e2;
+}

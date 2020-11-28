@@ -1,0 +1,44 @@
+function getUserMes(app, httpHead = 'https://api.pomesoft.com/sems-api/'){
+  wx.login({
+    success: res => {
+      // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      const code = res.code
+      wx.request({
+        url: httpHead + 'api/weixinOauthWxapp.action',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
+        data: {
+          coopCode : 'chengde',
+          appCode : 'chengde',
+          code : code
+        },
+        method: 'post',
+        success: res => {
+          // console.log(res)
+          if(res.data == "" ||res.data.ret == -1){
+            wx.reLaunch({
+              url: '../common_pages/login/login',
+            })
+          }else{
+            app.globalData.userMessage = res.data.data;
+            if(res.data.data.frontUser.isVisitor === 'Y'){
+              console.log("Hello World!");
+              
+              wx.reLaunch({
+                url: '../common_pages/login/login',
+              })
+            }
+          }
+        },
+        fail: res => {
+          console.log('登录接口访问失败')
+        }
+      })
+    }
+  })
+} 
+
+module.exports = {
+  getUserMes
+}

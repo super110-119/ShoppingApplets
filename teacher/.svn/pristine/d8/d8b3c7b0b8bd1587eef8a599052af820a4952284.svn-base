@@ -1,0 +1,19 @@
+<!--pages/login/login.wxml-->
+<view>
+  <view class="header">
+    <image src="../../images/tab-learn-active.png"></image>
+    <view class="font">昂籁教师</view>
+  </view>
+  <block>
+    
+  </block>
+  <block>
+    <!-- <button class='botton' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo2">
+        微信登录
+    </button> -->
+    <view class='btn-view'>
+      <button size="default" type="primary" class='btn'>微信登录</button>
+      <view class="button_foot">手机号登录/注册</view>
+    </view>
+  </block>
+</view>

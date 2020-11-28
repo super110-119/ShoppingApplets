@@ -1,0 +1,7 @@
+<!--pages/trainingschedule/t-commons/datas/datas.wxml-->
+<view class="box" wx:if="{{datas.length > 0}}">
+  <block wx:for="{{datas}}" wx:key="index">
+    <items mes="{{item}}" class="items"/>
+  </block>
+</view>
+<view wx:else><no-data/></view>

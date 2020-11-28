@@ -1,0 +1,58 @@
+/* pages/home/h-compontent/collapse/collapse-item/collapse-item.wxss */
+.item{
+  width: 100%;
+  margin-bottom: 20rpx;
+  background-color: #f2f4f5;
+  height: 180rpx;
+  position: relative;
+  font-size: 28rpx;
+  border-radius: 3rpx;
+  box-shadow: 1rpx 4rpx 5rpx 0rpx #c4c4c4;
+}
+.item-title{
+  font-size: 14px;
+  font-weight: 600;
+  color: #00BE95;
+  position: absolute;
+  top: 20rpx;
+  left: 15rpx;
+  right: 15rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.item-status{
+  position: absolute;
+  bottom: 10rpx;
+  left: 10rpx;
+}
+
+.isok::before{
+  content: '';
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #20D547;
+  border-radius: 50%;
+  margin: 0 20rpx;
+}
+.isno::before{
+  content: '';
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #f00;
+  border-radius: 50%;
+  margin: 0 20rpx;
+}
+.isnow::before{
+  content: '';
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #D59020;
+  border-radius: 50%;
+  margin: 0 20rpx;
+}

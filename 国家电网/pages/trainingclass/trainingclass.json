@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "no-data-big": "/common/noDataBig/noDataBig"
+  },
+  "navigationBarTitleText": "培训班",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

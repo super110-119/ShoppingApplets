@@ -1,5 +1,5 @@
 import ajax from "./index.js"
-const baseURL = "/api/n3"
+const baseURL = "/api/z8"
 
 export function getClassifyData(){
   return ajax({

@@ -1,0 +1,27 @@
+let {setMustMsg} = require("./setMustMsg");
+let {ajax, baseURL, httpHead2, fileHttp } = require("./index")
+// 获取签到信息
+async function getSignIn(classId){
+  let {
+    coopCode, accessToken, nickname, headimgurl, frontUserId
+  } = {...setMustMsg()}
+  let mes = await ajax({
+    url: `${httpHead2}api/elnSign.action?m=getClassSignAll`,
+    data: { classId, coopCode, accessToken, nickname, headimgurl, frontUserId }
+  })
+  return mes
+}
+// 获取评估信息
+async function getClassEvaluate(classId){
+  let {
+    coopCode, accessToken, nickname, headimgurl, frontUserId
+  } = {...setMustMsg()}
+  let mes = await ajax({
+    url: `${httpHead2}api/elnClass.action?m=getClassEvaluateAll`,
+    data: { classId, coopCode, accessToken, nickname, headimgurl, frontUserId }
+  })
+  return mes
+}
+module.exports = {
+  getSignIn, getClassEvaluate
+}

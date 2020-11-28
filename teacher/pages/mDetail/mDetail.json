@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "details": "./MDComponent/MDComponent"
+  },
+  "navigationBarTitleText": "收益明细",
+  "navigationBarBackgroundColor": "#3F87EE",
+  "navigationBarTextStyle": "white"
+}

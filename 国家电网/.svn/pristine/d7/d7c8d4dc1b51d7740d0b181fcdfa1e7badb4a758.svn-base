@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "classItem": "./class-item/class-item"
+  }
+}

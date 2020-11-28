@@ -1,0 +1,74 @@
+<!--pages/reserveitem/users/scoreFrist/scoreFrist.wxml-->
+<view class="box line_black">
+<!-- 项目详情 -->
+  <view class="box1">
+    <view class="title" bindtap="xmxqClick">
+      <text>项目详情</text>
+      <view class="icon">
+        <image src="/assets/img/comment-icon/bottom.svg" wx:if="{{isShow1}}"/>
+        <image src="/assets/img/comment-icon/right.svg" wx:else/>
+      </view>
+    </view>
+    <view class="box-container" style="padding: 15rpx;" wx:if="{{isShow1}}">
+      <block wx:for="{{details}}" wx:key="index">
+        <view class="list">
+          <text class="item_title">{{item.title}}: </text>
+          <block wx:if="{{item.title !== '项目主要内容'}}">
+            <text class="item_mes">{{item.value}}</text>
+          </block>
+          <block wx:else>
+            <view class="item_mes" style="margin-left: 25rpx;">{{item.value}}</view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 项目评分 -->
+  <view class="box2">
+    <view class="title" bindtap="xmpfClick">
+      <text>项目评分</text>
+      <view class="icon">
+        <image src="/assets/img/comment-icon/bottom.svg" wx:if="{{isShow2}}"/>
+        <image src="/assets/img/comment-icon/right.svg" wx:else/>
+      </view>
+    </view>
+    <view class="box-container" wx:if="{{isShow2}}">
+      <form>
+      <block wx:for="{{questionList}}" wx:key="index">
+        <!-- 判定：单选题模版 -->
+        <block wx:if="{{item.subject.subjectType === 'signle'}}" wx:key="index">
+          <itemquestion subject-t="{{item}}" subject-index="{{index}}" bind:changeList="changeList"></itemquestion>
+        </block>
+        <!-- 判定：问答题模版 -->
+        <block wx:if="{{item.subject.subjectType === 'ask'}}">
+          <itemask subject-t="{{item}}" subject-index="{{index}}" bind:changeAsk="changeAsk"></itemask>
+        </block>
+      </block>
+        <!-- <block wx:for="{{subject}}" wx:key="index">
+          <view class="lists">
+            <view class="titles">
+              <text>1. 需求程度（15分）</text>
+              <input class="items_input" placeholder="输入得分" placeholder-style="padding-left: 20rpx" type="number"/>
+            </view>
+            <view class="textarea">
+              <textarea placeholder="扣分原因：培训的需求是否分析准确，紧迫程度。"/>
+            </view>
+          </view>
+        </block> -->
+
+         <view class="titles max_titles">
+            <text>批复说明：</text>
+          </view>
+          <view class="textarea max_textarea">
+            <textarea placeholder="输入批复说明...." bindinput="bindFormInput"/>
+          </view>
+      </form>
+    </view>
+  </view>
+  <!-- 审核按钮 -->
+  <view class="btns">
+    <view class="btn btn1" bindtap="submitAnswer">评测提交</view>
+    <!-- <view class="btn btn2">审核不通过</view> -->
+  </view>
+</view>
+<view class="get_mask" wx:if="{{isMask}}"></view>

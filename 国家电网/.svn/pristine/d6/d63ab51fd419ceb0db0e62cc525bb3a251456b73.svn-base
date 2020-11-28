@@ -1,0 +1,82 @@
+let {ajax, baseURL, httpHead2} = require("./index")
+async function getHomeMes(datas){
+  let mes = await ajax({
+    url: `${httpHead2}api/elnClass.action?m=getPage`,
+    data: {
+      coopCode: 'chengde',
+      frontUserId: datas.frontUser.frontUserId,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl,
+      accessToken: datas.accessToken
+    }
+  })
+  return mes
+}
+
+async function getClassMes(classId, app){
+  let datas = await app.globalData.userMessage
+  let  mes = await ajax({
+    url: `${httpHead2}api/elnClass.action?m=getDetailEx`,
+    data: {
+      coopCode: 'chengde',
+      classId,
+      frontUserId: datas.frontUser.frontUserId,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl,
+      accessToken: datas.accessToken
+    }
+  })
+  return mes
+}
+
+async function getClassDetali(classId, app){
+  let datas = await app.globalData.userMessage
+  let  mes = await ajax({
+    url: `${httpHead2}api/elnClass.action?m=getClassExamAll`,
+    data: {
+      coopCode: 'chengde',
+      classId,
+      frontUserId: datas.frontUser.frontUserId,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl,
+      accessToken: datas.accessToken
+    }
+  })
+  return mes
+}
+
+async function getExamDetali(classId, app){
+  let datas = await app.globalData.userMessage
+  let  mes = await ajax({
+    url: `${httpHead2}api/examInfo.action?m=getDetail`,
+    data: {
+      coopCode: 'chengde',
+      classId,
+      frontUserId: datas.frontUser.frontUserId,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl,
+      accessToken: datas.accessToken
+    }
+  })
+  return mes
+}
+
+async function getBeginExam(classId, app){
+  let datas = await app.globalData.userMessage
+  let  mes = await ajax({
+    url: `${httpHead2}api/examUserDetail.action?m=beginExam`,
+    data: {
+      coopCode: 'chengde',
+      classId,
+      frontUserId: datas.frontUser.frontUserId,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl,
+      accessToken: datas.accessToken
+    }
+  })
+  return mes
+}
+
+module.exports = {
+  getHomeMes, getClassMes, getClassDetali, getExamDetali, getBeginExam
+}

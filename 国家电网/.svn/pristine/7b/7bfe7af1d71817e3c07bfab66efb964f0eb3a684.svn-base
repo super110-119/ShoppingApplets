@@ -1,0 +1,13 @@
+<!--pages/trainingschedule/t-commons/datas_item/datas_item.wxml-->
+<view class="box">
+  <view class="icon {{mes.isOk ? 'active' : 'not_active'}}">
+    <image src="/assets/img/comment-icon/xing.svg"/>
+  </view>
+  <view class="titles">
+    <view class="my_title">{{mes.timer}}</view>
+  </view>
+  <view class="text">
+    <view class="is_ok" wx:if="{{mes.isOk}}">正常</view>
+    <view class="is_not" wx:else>迟到</view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<!--pages/common_pages/login/login.wxml-->
+<view class="demos"></view>
+<view class="box">
+  <view class="bg">
+    <view class="img">
+      <image src="/assets/img/profile/bg.png" mode="scaleToFill"/>
+    </view>
+  </view>
+  <view class="from" wx:if="{{isBind}}">
+    <form>
+      <view class="box1">
+        <label>
+          <text>员工编号</text>
+          <input placeholder="请输入您的员工编号" placeholder-class="demo" type="number" bindinput="userId"/>
+        </label>
+      </view>
+      <view class="box2">
+        <label>
+          <text>姓名</text>
+          <input placeholder="请输入您的姓名" placeholder-class="demo" bindinput="userName"/>
+        </label>
+      </view>
+      <button form-type="submit" class="btn" size="default"  bindtap="userClick">绑定</button>
+      <!-- <button form-type="submit" class="btn" size="default" open-type="getUserInfo" bindtap="userClick" bindgetuserinfo="userInfo">绑定</button> -->
+    </form>
+  </view>
+  <button form-type="submit" class="btn" size="default" open-type="getUserInfo" bindgetuserinfo="userInfo" wx:else>获取授权信息</button>
+</view>

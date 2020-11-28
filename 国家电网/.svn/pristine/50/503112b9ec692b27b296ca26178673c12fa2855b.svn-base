@@ -1,0 +1,106 @@
+/* pages/trainingschedule/t-commons/tests/tests.wxss */
+.box{
+  width: 710rpx;
+  margin: 40rpx auto;
+  padding: 30rpx 0;
+  height: 220rpx;
+  border-radius: 4rpx;
+  background-color: rgba(242, 244, 245, 1);
+  text-align: center;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0);
+  position: relative;
+}
+.title{
+  position: absolute;
+  font-size: 28rpx;
+  font-weight: 550;
+  top: 14rpx;
+  left: 26rpx;
+  width: 470rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.isTime{
+  position: absolute;
+  top: 66rpx;
+  left: 26rpx;
+  font-size: 24rpx;
+  color: #7F7F7F;
+}
+.datas{
+  position: absolute;
+  left: 28rpx;
+  bottom: 26rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+.data1::before{
+  content: '';
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #20D547;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.data2::before{
+  content: '';
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #FF8C00;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.data3::before{
+  content: '';
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #BBBBBB;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.box::after{
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 2rpx;
+  height: 128rpx;
+  background-color: #bbb;
+  top: 42rpx;
+  right: 192rpx;
+}
+
+.btn1{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 28rpx;
+  width: 144rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  border-radius: 10rpx;
+  background-color: rgba(26, 173, 25, 1);
+  text-align: center;
+  border: 1px solid rgba(5, 5, 5, 0.08);
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.btn2{
+  position: absolute;
+  top: 60rpx;
+  right: 56rpx;
+  font-size: 28rpx;
+  color: #00BE95;
+}
+.icon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

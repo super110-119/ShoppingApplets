@@ -1,0 +1,77 @@
+// pages/trainingclass/trainingclass.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    //trainstate:课程进行状态 0进行中 1已结束  trainre：用户进行状态 0进行中 1可回看
+    traininglist: [
+      {trainstate:0, trainre:0, trainyear: 2020, trainmonth: 8, traintitle: '党校政治理论培训', trainteacher: '李善友', trainpartment: '人力资源部', trainnum: 30, trainstartime: '2020-08-06', trainendtime: '2020-08-10', traintime: '08:00~18:00', trainplace: '培训教室1001'},
+      {trainstate:0, trainre:1, trainyear: 2021, trainmonth: 9, traintitle: '党校政治理论培训', trainteacher: '李善友', trainpartment: '人力资源部', trainnum: 30, traintime: '2020-08-10', trainendtime: '2020-08-12', traintime: '08:00~18:00', trainplace: '培训教室1002'},
+      {trainstate:1, trainre:0, trainyear: 2022, trainmonth: 10, traintitle: '党校政治理论培训', trainteacher: '李善友', trainpartment: '人力资源部', trainnum: 30, traintime: '2020-08-12', trainendtime: '2020-08-14', traintime: '08:00~18:00', trainplace: '培训教室1003'}
+    ]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+  trainSchedule: function () {
+    wx.navigateTo({
+      url: '../trainingschedule/trainingschedule',
+    })
+  }
+})

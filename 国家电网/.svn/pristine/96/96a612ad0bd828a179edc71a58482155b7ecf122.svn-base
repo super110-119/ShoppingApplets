@@ -1,0 +1,10 @@
+<!--method/questions/questions.wxml-->
+<view class="questions_box">
+  <block wx:for="{{message}}" wx:key="index">
+    <view class="questions_list">
+      <only data="{{item}}" index="{{index}}" bind:questionsMsg="questionsMsg" wx:if="{{item.subject.subjectType === 'signle'}}" />
+      <more data="{{item}}" index="{{index}}" bind:questionsMsg="questionsMsg" wx:elif="{{item.subject.subjectType === 'multi'}}" />
+      <only data="{{item}}" index="{{index}}" bind:questionsMsg="questionsMsg" wx:elif="{{item.subject.subjectType === 'ask'}}" />
+    </view>
+  </block>
+</view>

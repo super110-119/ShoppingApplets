@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "big": "/common/noDataBig/noDataBig"
+  },
+  "navigationBarTitleText": "复制储备项目"
+}

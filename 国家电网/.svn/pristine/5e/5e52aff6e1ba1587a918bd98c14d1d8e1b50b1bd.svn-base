@@ -1,0 +1,40 @@
+/* pages/demand/d-page/particulars/particulars.wxss */
+.cotainer::before{
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2rpx 5rpx #666;
+  width: 100%;
+  height: 1rpx;
+  z-index: 1;
+}
+.titles{
+  margin: 44rpx 0;
+  text-align: center;
+  color: #07c160;
+  font-weight: 600;
+}
+.outline{
+  margin: 0 60rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+button{
+  margin: 40rpx;
+  width: 670rpx !important;
+  height: 94rpx !important;
+}
+.get_mask{
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+

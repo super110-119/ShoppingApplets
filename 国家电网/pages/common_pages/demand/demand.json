@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "subject": "/common/subject/subject",
+    "success": "/common/success/success",
+    "questions": "/method/questions/questions"
+  },
+  "navigationBarTitleText": "课程评估"
+}

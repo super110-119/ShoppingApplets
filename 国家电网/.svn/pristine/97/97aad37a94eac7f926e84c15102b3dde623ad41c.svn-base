@@ -1,0 +1,9 @@
+<!--pages/home/h-compontent/collapse/collapse-item/collapse-item.wxml-->
+<view class="item">
+  <view class="item-title">{{mes.projectTitle}}</view>
+  <view class="item-status">
+    <view class="isok" wx-if="{{mes.curCheckStatus === '1'}}">已审核通过</view>
+    <view class="isno" wx-if="{{mes.curCheckStatus === '0'}}">审核未通过</view>
+    <view class="isnow" wx-if="{{mes.curCheckStatus === '2'}}">正在审查中</view>
+  </view>
+</view>

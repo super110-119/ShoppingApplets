@@ -1,0 +1,5 @@
+/* commonents/banner/banner.wxss */
+swiper, swiper-item, image{
+  width: 100%;
+  height: 100%;
+}

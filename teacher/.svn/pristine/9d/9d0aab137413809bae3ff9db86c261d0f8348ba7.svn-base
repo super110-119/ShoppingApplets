@@ -1,0 +1,18 @@
+<!--pages/login/login.wxml-->
+<view>
+  <view class="header">
+    <image src="../../images/tab-learn-active.png"></image>
+    <view class="font">昂籁教师</view>
+  </view>
+  <block wx:if="{{true}}">
+    <view class='btn-view'>
+      <button size="default" type="primary" class='btn' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信用户授权</button>
+      <!-- <view class="button_foot">手机号登录/注册</view> -->
+    </view>
+  </block>
+  <block wx:if="{{false}}">
+    <view>
+      <button size="default" type="primary" class='btn' open-type="getPhoneNumber" bindgetuserinfo="bindgetphonenumber">号码绑定登录</button>
+    </view>
+  </block>
+</view>

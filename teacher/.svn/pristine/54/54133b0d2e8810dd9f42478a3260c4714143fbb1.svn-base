@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "querys": "../classComponents/querys/querys"
+  },
+  "navigationBarTitleText": "课程问答",
+  "navigationBarBackgroundColor": "#3F87EE",
+  "navigationBarTextStyle": "white"
+}

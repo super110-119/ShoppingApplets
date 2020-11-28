@@ -1,0 +1,15 @@
+/* common/noData/noData.wxss */
+.no_data_container{
+  width: 100%;
+  height: 420rpx;
+  position: relative;
+}
+.no_data_titles{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  font-size: 34rpx;
+  color: #999;
+  transform: translate(-50%, -50%);
+}

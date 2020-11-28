@@ -1,0 +1,63 @@
+<!--pages/reserveitem/reserveitem.wxml-->
+<view class="page line_black" style="width:100%;overflow-x:hidden;">
+  <view class="pad_view">
+    <!-- 审核项目模块 -->
+    <block wx:if="{{userpermissions == 1}}">
+      <view class="view_size product_css" style="justify-content: space-between; padding:0 20%; margin-bottom:2vh">
+        <view class="view_size btn2_css {{btnselect == 0 ? 'btn2bottom_css font5':'font2'}}" bindtap="changeSelect" data-index="0">
+          待审核项目
+        </view>
+        <view class="view_size btn2_css {{btnselect == 1 ? 'btn2bottom_css font5':'font2'}}" bindtap="changeSelect" data-index="1">
+          已审核列表
+        </view>
+      </view>
+    </block>
+
+    <!-- 创建人员项目列表 -->
+    <view wx:if="{{btnselect == 0 ? (itemlist1.length > 0) : (itemlist2.length > 0)}}">
+      <block wx:for="{{btnselect == 0 ? itemlist1 : itemlist2}}"  wx:key="index">
+        <view class="product2_css" bindtap="productClick" data-index="{{index}}">
+          <view class="view_size between_Css product3_css" style="height: 4vh;">
+            <view class="font3 headtext" style="font-weight: 700;">{{item.projectTitle}}</view>
+            <view class="font2 font_num" style="font-weight: 700;">￥{{item.budgetMoneyTotal}}</view>
+          </view>
+          <view class="view_size left_Css product3_css" style="height: 4vh;">
+            <view class="font2 font_min_title">{{item.masterOrgName}}/{{item.actionOrgName}}</view>
+          </view>
+          <view class="view_size2 left_Css product3_css overtext" style="height: 9vh;">
+            <view class="font4" style="color: #A1A1A2;">{{item.projectSummary}}</view>
+          </view>
+          <view class="view_size left_Css product3_css" style="height: 4vh;">
+            <view class="font4">申请时间：{{item.createTime}}</view>
+          </view>
+          <view class="view_size left_Css product3_css" style="height: 4vh;">
+            <block wx:if="{{item.checkStatus === '0'}}">
+              <view class="circle_css circle_color3"></view>
+              <view class="font2">未通过</view>          
+            </block>
+            <block wx:elif="{{item.checkStatus === '1'}}">
+              <view class="circle_css circle_color2"></view>
+              <view class="font2">已通过</view>          
+            </block>
+            <block wx:elif="{{item.curCheckPhaseCode === 'D' && item.curCheckStatus === '0'}}">
+              <view class="circle_css circle_color3"></view>
+              <view class="font2">项目驳回</view>   
+            </block>
+            <block wx:elif="{{item.curCheckPhaseCode === 'D' && item.curCheckStatus === '1'}}">
+              <view class="circle_css circle_color2"></view>
+              <view class="font2">项目立项通过</view>   
+            </block>
+            <block wx:elif="{{item.curCheckPhaseCode === 'D' && item.curCheckStatus === '2'}}">
+              <view class="circle_css circle_color1"></view>
+              <view class="font2">终审阶段</view>   
+            </block>    
+          </view>
+
+        </view>
+      </block>
+      <view class="no_more_msg">-- 暂无更多数据 --</view>
+    </view>
+    <view wx:else><no-data-big/></view>
+  </view>
+</view>
+<view class="get_mask" wx:if="{{isMask}}"></view>

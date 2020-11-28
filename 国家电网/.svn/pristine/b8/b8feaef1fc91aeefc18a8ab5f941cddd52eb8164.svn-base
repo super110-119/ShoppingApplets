@@ -1,0 +1,2 @@
+<!--pages/jumpcommon/jumpcommon.wxml-->
+    <web-view src="http://c.51eln.com/h5_logins.html?messages={{userMes}}" ></web-view>

@@ -1,0 +1,165 @@
+/* pages/trainingclass/trainingclass.wxss */
+.pad_view {
+  /* width: 100%; */
+  min-height: 90vh;
+}
+
+.up_border{
+  border-top: 2px #c8c8c8 solid;
+}
+
+.view_size {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.product_css {
+  padding: 0 0 0 5%;
+  margin: 1vh 2vh;
+  height: 35vh;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 3px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.4);
+  margin-top: 4vh;
+  margin-bottom: 1vh;
+}
+
+.product_css2 {
+  height: 3.5vh;
+  width: 22%;
+  border-radius: 20px 0px 0px 20px;
+  background-color: rgba(0, 190, 149, 1);
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 4vh;
+}
+
+.product_css3 {
+  border: 1px solid rgba(187, 187, 187, 1);
+  border-radius: 7px;
+  background-color: rgba(0, 190, 149, 1);
+  height: 16vh;
+  width: 16vh;
+  margin-bottom: 5vh;
+}
+
+.product_css3_color {
+  background-color: #FF8C00;
+}
+
+.product_css4_color{
+  /* background-color: rgb(96, 134, 218); */
+  background-color: #10AEFF;
+}
+
+.product_css4 {
+  height: 22vh;
+  width: 43vh;
+  margin-left: 1vh;
+}
+
+.between_Css {
+  justify-content: space-between;
+}
+
+.left_Css {
+  justify-content: flex-start;
+}
+
+.inc_css {
+  width: 20px;
+  height: 12px;
+  margin-left: 12px;
+}
+
+.inc_css2 {
+  width: 20px;
+  height: 12px;
+}
+
+.shixian_css {
+  margin-left: 10%;
+  width: 80%;
+  border-top:2px solid rgba(255, 255, 255, 1);
+}
+
+.font1 {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(91, 91, 91, 1);
+}
+
+.font2 {
+  font-size: 14px;
+  color: rgba(16, 16, 16, 1);
+}
+
+.font2color {
+  color: #B8B8B8;
+}
+
+.font3 {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.font4 {
+  font-size: 12px;
+}
+
+.font5 {
+  font-size: 14px;
+}
+
+.font4color {
+  color:rgba(91, 91, 91, 1);
+}
+
+.circle_css {
+  border: 1px #BFBCB7 solid;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  margin-right: 2vh;
+}
+
+.circle_color1 {
+  background-color: #20D547;
+}
+
+.circle_color2 {
+  background-color: #B8B8B8;
+}
+
+.circle_color3{
+  background-color: #1485EE;
+}
+
+.get_mask{
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.btns{
+  position: fixed;
+  width: 160rpx;
+  height: 65rpx;
+  text-align: center;
+  line-height: 65rpx;
+  background-color: rgba(0, 190, 149, 1);
+  color: #fff;
+  bottom: 75rpx;
+  right: 45rpx;
+  z-index: 99;
+  font-size: 24rpx;
+  border-radius: 20rpx;
+  box-shadow: 4rpx 4rpx 5rpx rgb(37, 116, 67);
+}

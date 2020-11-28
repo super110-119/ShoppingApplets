@@ -1,0 +1,18 @@
+<!--pages/profile/p-compontent/option/option.wxml-->
+<view class="container" bindtap="itemClick">
+  <view class="img">
+    <image src="{{mes.img}}"/>
+  </view>
+  <view class="title">{{mes.title}}</view>
+  <block wx:if="{{!mes.isswitch}}">
+    <view class="num">{{mes.num}}</view>
+    <view class="more">
+      <image src="/assets/img/profile/next.png"/>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="switchcss">
+      <switch checked="{{switchChecked}}" bindchange="switchChange" color="#00BE95" />
+    </view>
+  </block>
+</view>

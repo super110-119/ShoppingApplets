@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "mp-no-data-img": "/component/no_data_img/no_data_img"
+  },
+  "navigationBarTitleText": "问答",
+  "navigationBarBackgroundColor": "#3F87EE",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f2f4f5",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

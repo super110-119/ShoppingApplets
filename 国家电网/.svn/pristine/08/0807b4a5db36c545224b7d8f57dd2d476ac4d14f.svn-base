@@ -1,0 +1,10 @@
+<!--pages/home/h-compontent/class-list/class-item/class-item.wxml-->
+<view class="item">
+  <view class="item-title">{{mes.mesTitle}}</view>
+  <view class="item-explain">{{mes.explain}}</view>
+  <view class="item-status">
+    <view class="isok" wx-if="{{mes.status === 0}}">进行中</view>
+    <view class="isno" wx-if="{{mes.status === 1}}">已结束</view>
+  </view>
+</view>
+

@@ -1,0 +1,34 @@
+// pages/myClass/classComponents/classItem/classItem.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    message: {
+      type: Object,
+      value: {}
+    }
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    infoClick(){
+      console.log('点击了查看信息按钮');
+    },
+    successClick(){
+      console.log('点击了笔记按钮');
+    },
+    warningClick(){
+      console.log('点击了提问按钮');
+    }
+  }
+})

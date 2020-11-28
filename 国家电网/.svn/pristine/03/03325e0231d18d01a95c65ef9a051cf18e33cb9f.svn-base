@@ -1,0 +1,35 @@
+/* common/success/success.wxss */
+.box{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  overflow: hidden;
+}
+.box>view{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+.icon{
+  top: 250rpx;
+}
+.title{
+  font-size: 28rpx;
+  top: 410rpx;
+}
+.btn{
+  top: 600rpx;
+  width: 670rpx;
+  height: 96rpx;
+  color: #fff;
+  background-color: #00BE95;
+  text-align: center;
+  line-height: 96rpx;
+}

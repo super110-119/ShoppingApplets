@@ -1,0 +1,31 @@
+<!--pages/home/home.wxml-->
+<!-- 外层嵌套的盒子 -->
+<view class="box line_black">
+  <!-- 轮播图部分 -->
+  <view class="banner">
+    <banner 
+      banner="{{bannerImg}}"
+      indicator="{{indicator}}"
+      indicatorActive="{{indicatorActive}}"/>
+  </view>
+  <!-- 四个图标与文字 -->
+  <view class="list-bar">
+    <list-bar 
+      mes="{{listBarMes}}"
+      bind:listBarClick="listBarClick"/>
+  </view>
+  <!-- 我的项目 -->
+  <view class="project">
+    <collapse
+     mes="{{project}}"
+     bind:collapseClick="projectClick"/>
+  </view>
+  <!-- 我的培训班 -->
+  <view class="training">
+    <classDemo
+     mes="{{training}}"
+     bind:classClick="trainingClick"/>
+  </view>
+</view>
+<view class="get_mask" wx:if="{{isMask}}"></view>
+

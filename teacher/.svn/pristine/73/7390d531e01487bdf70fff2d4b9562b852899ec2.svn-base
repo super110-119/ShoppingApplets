@@ -1,0 +1,18 @@
+<!--pages/myClass/question/question.wxml-->
+<view class="box">
+  <view class="box_title">
+    <view class="box1 {{isActive === 0 ? 'is_active' : ''}}">
+      <view bindtap="box1Click">未回复</view>
+    </view>
+    <view class="box2 {{isActive === 1 ? 'is_active' : ''}}">
+      <view bindtap="box2Click">已回复</view>
+    </view>
+  </view>
+  <view class="box_body">
+    <block wx:for="{{notReplied}}" wx:key="index">
+      <view class="box_bodys">
+        <querys message="{{item}}" bindtap="itemClick"/>
+      </view>
+    </block>
+  </view>
+</view>

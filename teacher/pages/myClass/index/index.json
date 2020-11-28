@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "class-item": "../classComponents/classItem/classItem",
+    "mp-no-data-img": "/component/no_data_img/no_data_img"
+  },
+  "navigationBarTitleText": "我的课程",
+  "navigationBarBackgroundColor": "#3F87EE",
+  "navigationBarTextStyle": "white"
+}

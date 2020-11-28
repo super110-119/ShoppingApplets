@@ -1,0 +1,47 @@
+/* pages/myClass/classComponents/querys/querys.wxss */
+.box{
+  width: 642rpx;
+  margin: 60rpx auto;
+  height: 266rpx;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 22rpx;
+  box-shadow: 0px 0px 3px 1px #c4c4c4;
+  background-color: #fff;
+}
+.box>view{
+  position: absolute;
+}
+.box_img{
+  width: 100rpx;
+  height: 100rpx;
+  top: 20rpx;
+  left: 20rpx;
+}
+.box_img image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.box_name{
+  top: 20rpx;
+  left: 140rpx;
+  font-weight: 550;
+}
+.box_time{
+  top: 80rpx;
+  left: 140rpx;
+  font-size: 26rpx;
+  color: #555;
+}
+.querys{
+  left: 10rpx;
+  right: 10rpx;
+  top: 145rpx;
+  text-indent: 2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  }

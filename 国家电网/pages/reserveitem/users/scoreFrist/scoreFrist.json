@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "itemquestion": "../../../../common/itemquestion/itemquestion",
+    "itemask": "../../../../common/itemask/itemask"
+  },
+  "navigationBarTitleText": "批复项目"
+}

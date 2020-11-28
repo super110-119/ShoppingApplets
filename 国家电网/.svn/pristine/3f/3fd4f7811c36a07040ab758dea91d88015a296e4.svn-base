@@ -1,0 +1,143 @@
+// pages/trainingclass/trainingclass.js
+let {getMyClass} = require("../../network/home")
+let {timeFormat} = require("../../utils/getTime")
+
+let app = getApp()
+let arrs = []
+let pageNum = 1
+
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    //trainstate:课程进行状态 0进行中 1已结束  trainre：用户进行状态 0进行中 1可回看
+    traininglist: [
+/*       {trainstate:0, trainyear: 2020, trainmonth: 8, traintitle: '党校政治理论培训', trainteacher: '李善友', trainpartment: '人力资源部', trainnum: 30, trainstartime: '2020-08-06', trainendtime: '2020-08-10', traintime: '08:00~18:00', trainplace: '培训教室1001'},
+      {trainstate:1, trainyear: 2021, trainmonth: 9, traintitle: '党校政治理论培训', trainteacher: '李善友', trainpartment: '人力资源部', trainnum: 30, traintime: '2020-08-10', trainendtime: '2020-08-12', traintime: '08:00~18:00', trainplace: '培训教室1002'},
+      {trainstate:1, trainyear: 2022, trainmonth: 10, traintitle: '党校政治理论培训', trainteacher: '李善友', trainpartment: '人力资源部', trainnum: 30, traintime: '2020-08-12', trainendtime: '2020-08-14', traintime: '08:00~18:00', trainplace: '培训教室1003'} */
+    ],
+    classList: [],
+
+    // 定义是否遮罩
+    isMask: true
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad:async function (options) {
+    // 加载动画
+    wx.showLoading({
+      title: '加载中...',
+      mask: true
+    }) 
+    
+    
+    // 获取我的培训班数据
+    let usermessage = app.globalData.userMessage
+    let datas = await getMyClass(usermessage, pageNum);
+    let list = datas.data.data.list;
+    arrs.push(...list)
+    let arr = []
+    // 重新定义数据
+    for(let i of arrs){
+      let obj = {}
+      obj.trainstate = i.classPhase === "course" ? 0 : 1
+      obj.trainyear = timeFormat(i.createTime, 'yyyy') || '暂无'
+      obj.trainmonth = timeFormat(i.createTime, 'mm') || '暂无'
+      obj.traintitle = i.className || '暂无'
+      obj.trainteacher = i.masterTeacherName || '暂无'
+      obj.trainpartment = i.orgName || '暂无'
+      obj.trainnum = i.curNum || '暂无'
+      obj.trainstartime = timeFormat(i.beginTime, 'yyyy/mm/dd') || '暂无'
+      obj.trainendtime = timeFormat(i.endTime, 'yyyy/mm/dd') || '暂无'
+      obj.traintime = timeFormat(i.beginTime, 'hh:ii:ss') + '~' + timeFormat(i.endTime, 'hh:ii:ss') || '暂无'
+      obj.trainplace = i.address  || '暂无'
+      arr.push(obj)
+    }
+    // 重新赋值
+    this.setData({
+      traininglist: arr,
+      classList: list,
+      isMask: false
+    })
+    // 关闭加载
+    wx.hideLoading()
+    // 关闭下拉
+    wx.stopPullDownRefresh()
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    pageNum++;
+    this.onLoad()
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+  /**
+   * 用户点击下拉刷新
+   */
+   onPullDownRefresh(){
+     this.onLoad()
+  },
+
+  // 点击详情
+  trainSchedule: function (e) {
+    let i = e.currentTarget.dataset.index
+    if(this.data.traininglist[i].trainstate != 0){
+      wx.showToast({
+        title: '课程已结束',
+        mask: true 
+      })
+      return
+    }
+    wx.navigateTo({
+      url: '../trainingschedule/trainingschedule?classId='+this.data.classList[i].classId
+    }) 
+  }
+})

@@ -1,0 +1,31 @@
+<!--pages/common_pages/examination/examination.wxml-->
+<view class="box line_black">
+  <!-- 时间和题数 -->
+  <view class="information">
+    <view>剩余时间：{{mm}}分{{ss}}秒</view>
+    <view>已答： {{num}}题/{{message.data.length}}题</view>
+  </view>
+  <!-- 考试标题 -->
+  <view class="title">
+    {{message.titles}}
+  </view>
+  <!-- 测试内容 -->
+  <view class="box_content">
+    <block wx:for="{{message.data}}" wx:key="index">
+      <exam
+        data="{{item}}"
+        index="{{index}}"
+        bind:examGetMes="examGetMes"/>
+    </block>
+  </view>
+  <!-- 提交按钮 -->
+  <view class="btn" bindtap="btnClick">交卷</view>
+</view>
+<!-- 完成后显示 -->
+<view class="success" wx:if="{{isShow}}">
+  <success bind:btnsClick="btnsClick">
+    <view slot="title1">交卷成功</view>
+    <view slot="btn">返回</view>
+  </success>
+</view>
+<view class="get_mask" wx:if="{{isMask}}"></view>

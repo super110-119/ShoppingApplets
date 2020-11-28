@@ -1,0 +1,140 @@
+/* pages/reserveitem/users/scoreSecond/scoreSecond.wxss */
+.box{
+  padding-bottom: 80rpx;
+}
+
+.title{
+  color: #101010;
+  font-size: 28rpx;
+  font-weight: 550;
+  margin: 22rpx 0;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #dcdcdc;
+  padding-bottom: 20rpx;
+}
+.title::before{
+  content: "|";
+  display: inline-block;
+  margin: 0 16rpx;
+}
+.title>text{
+  flex: 1
+}
+.icon{
+  width: 26rpx;
+  height: 26rpx;
+  margin: 0 40rpx;
+}
+.icon image{
+  width: 100%;
+  height: 100%;
+}
+.box-container{
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  font-family: Arial;
+  border: 1px solid rgba(187, 187, 187, 1);
+  margin: 0 24rpx 60rpx 12rpx;
+  color: rgba(93, 90, 90, 1);
+  background-color: #fff;
+  font-size: 26rpx;
+}
+.list{
+  display: block;
+  font-size: 28rpx;
+  color: #888888;
+}
+.item_title{
+  margin: 0 15rpx;
+  color: #101010;
+}
+
+
+
+
+
+
+
+
+.lists{
+  margin: 30rpx;
+  box-sizing: border-box;
+  height: 300rpx;
+}
+.titles{
+  display: flex;
+  align-items: center;
+}
+.titles>text{
+  flex: 1;
+  color: #101010;
+  margin: 0 12rpx;
+}
+.items_input{
+  width: 200rpx;
+  height: 60rpx;
+  border: 1rpx solid #ccc;
+  box-sizing: border-box;
+}
+.textarea{
+  width: 100%;
+  height: 100%;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.textarea textarea{
+  height: 120rpx;
+  width: 100%;
+  border: 1rpx solid #d0d0d0;
+  box-sizing: border-box;
+}
+.max_textarea{
+  width: 90%;
+  margin-left: 5%;
+  padding-bottom: 45rpx;
+}
+.max_textarea textarea{
+  height: 250rpx;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(187, 187, 187, 1);
+}
+.max_titles{
+  margin: 30rpx;
+}
+
+label{
+  font-size: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.item_view{
+  margin: 20rpx 0;
+}
+
+
+
+.btns{
+  margin: 30rpx 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.btn{
+  width: 340rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  font-weight: 600;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.btn1{
+  background-color: #00BE95;
+}
+.btn2{
+  background-color: #FF8C00;
+}

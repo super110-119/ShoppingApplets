@@ -1,0 +1,85 @@
+/* pages/demand/d-components/item/item.wxss */
+.item{
+  width: 706rpx;
+  border-radius: 4rpx;
+  height: 226rpx;
+  background-color: rgba(242, 244, 245, 1);
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0);
+  margin: 42rpx 24rpx 0 20rpx;
+  position: relative;
+}
+.item::after{
+  content: '';
+  position: absolute;
+  width: 2rpx;
+  height: 128rpx;
+  background-color: #BBBBBB;
+  top: 42rpx;
+  left: 512rpx;
+  display: inline-block;
+}
+.item-title{
+  position: absolute;
+  font-size: 28rpx;
+  top: 34rpx;
+  left: 24rpx;
+  font-weight: 550;
+  max-width: 500rpx;
+  white-space: nowrap;/*不允许换行*/  
+  overflow: hidden;/*超出隐藏*/
+  text-overflow: ellipsis;/*文本超出三点代替*/
+}
+.item-outtime{
+  position: absolute;
+  top: 92rpx;
+  left: 26rpx;
+  color: rgba(127, 127, 127, 1);
+  font-size: 24rpx;
+}
+.doing{
+  position: absolute;
+  top: 156rpx;
+  left: 0;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.todo::before{
+  content: '';
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #20D547;
+  border-radius: 50%;
+  margin: 0 24rpx;
+}
+.nottodo::before{
+  content: '';
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #B8B8B8;
+  border-radius: 50%;
+  margin: 0 24rpx;
+}
+.succeed{
+  position: absolute;
+  top: 52rpx;
+  left: 568rpx;
+  font-size: 28rpx;
+}
+.succeed>view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.succeed>view>text{
+  margin-top: 12rpx;
+}
+.succeedTrue{
+  color: #00BE95;
+}
+.succeedFalse{
+  color: #FF0303;
+}

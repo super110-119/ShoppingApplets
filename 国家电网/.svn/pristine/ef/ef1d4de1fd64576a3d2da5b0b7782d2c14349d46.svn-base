@@ -1,0 +1,8 @@
+/* pages/profile/p-compontent/list/list.wxss */
+.box>view{
+  margin-bottom: 10rpx;
+}
+.box3>view{
+  font-size: 28rpx;
+  margin: 40rpx 0 15rpx 25rpx;
+}

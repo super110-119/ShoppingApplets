@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "datas": "./t-commons/datas/datas"
+  },
+  "navigationBarTitleText": "班级课表"
+}

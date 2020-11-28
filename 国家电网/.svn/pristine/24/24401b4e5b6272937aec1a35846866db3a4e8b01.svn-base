@@ -1,0 +1,18 @@
+let {ajax, baseURL, httpHead2, setMustMsg} = require("./index")
+// 获取全部培训班
+async function getHomeMes(pageNo, pageSize=4){
+  return await ajax({
+    url: `${httpHead2}api/elnClass.action?m=getPage`,
+    data: { pageSize, pageNo, ...setMustMsg() }
+  })
+}
+// 获取培训班详情- -课程
+async function getClassMes(classId){
+  return await ajax({
+    url: `${httpHead2}api/elnClass.action?m=getDetailEx`,
+    data: { classId, ...setMustMsg() }
+  })
+}
+module.exports = {
+  getHomeMes, getClassMes
+}

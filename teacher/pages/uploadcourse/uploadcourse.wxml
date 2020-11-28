@@ -1,0 +1,69 @@
+<!--pages/uploadcourse/uploadcourse.wxml-->
+<view class="line_black">
+  <!-- 背景蓝色块 -->
+  <view class="bg">
+    <view class="content">
+      <view class="content1">
+        <view class="text_title">上传微课</view>
+      </view>
+      <!-- <view class="content2"></view> -->
+    </view>
+  </view>
+  <!-- 微课信息 -->
+  <view class="user">
+    <view class="container">
+      <view class="box">
+        <view class="view_size between_Css">
+          <view>
+            <view class="name">添加微课</view>
+            <view class="user-id">视频最大时长：60s</view>
+            <view wx:if="{{videoTime !== ''}}" class="user-id">当前视频时长：{{videoTime}}s</view>
+          </view>
+          <view class="img-up" bindtap="chooseVideo" wx:if="{{videoSrc === ''}}">
+            <image mode="aspectFill" src="../../images/add.png" class="add_img"></image>
+          </view>
+          <view class="img-up" wx:else>
+            <video bindfullscreenchange="bindVideoScreenChange" src="{{videoSrc}}" class="img-up"></video>
+          </view>
+        </view>
+        <view class="input-box">
+          <input placeholder="输入微课标题" bindinput="inputTitle"></input>
+        </view>
+        <view class="area-box">
+          <textarea placeholder="输入微课描述" maxlength="300" bindinput="inputMsg"/>
+        </view>
+      </view>
+      <!-- <view class="box2">
+        <view class="name">上传微课素材</view>
+        <view class="view_size between_Css">
+          <view class="inputbox">
+            <image mode="aspectFill" src="../../images/add.png" class="add_video"></image>
+          </view>
+          <view class="inputbox">
+            <image mode="aspectFill" src="../../images/add.png" class="add_video"></image>
+          </view>
+        </view>
+      </view>
+      <view class="box3 view_size between_Css">
+          <picker mode="date" fields="year" class="selectbox">
+            <view class="select-text">
+              选择类别
+              <image class="inc_css icon_s" src="../../images/md-arrow_drop_down.svg"></image>
+            </view>
+          </picker>
+          <picker mode="date" fields="year" class="selectbox">
+            <view class="select-text">
+              可见范围
+              <image class="inc_css icon_s" src="../../images/md-arrow_drop_down.svg"></image>
+            </view>
+          </picker>
+      </view> -->
+      <view class='box4'></view>
+    </view>
+  </view>
+
+  <!-- 上传按钮 -->
+  <view class='btn-view'>
+      <button size="default" type="primary" class='btn' bindtap="uploadvideo">确认上传</button>
+  </view>
+</view>

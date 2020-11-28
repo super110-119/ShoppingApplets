@@ -1,0 +1,19 @@
+<!--pages/demand/d-components/item/item.wxml-->
+<view class="item">
+  <view class="item-title">{{mes.title}}</view>
+  <view class="item-outtime">截止时间：{{mes.outtime}}</view>
+  <view class="doing">
+    <view wx:if="{{mes.doing}}" class="todo">进行中</view>
+    <view wx:else class="nottodo">已结束</view>
+  </view>
+  <view class="succeed">
+    <view class="succeedTrue" wx:if="{{mes.succeed}}">
+      <icon type="success" size='48rpx' color='#00BE95'/>
+      <text>已完成</text>
+    </view>
+    <view class="succeedFalse" wx:else>
+      <icon type="waiting" size='48rpx' color='#FF0303'/>
+      <text>未完成</text>
+    </view>
+  </view>
+</view>

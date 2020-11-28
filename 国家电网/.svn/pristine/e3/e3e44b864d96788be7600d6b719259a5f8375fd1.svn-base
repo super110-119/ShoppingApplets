@@ -1,0 +1,9 @@
+<!--pages/profile/profile.wxml-->
+<view class="box line_black">
+  <!-- 背景蓝色块 -->
+  <view class="bg"><bg/></view>
+  <!-- 用户信息 -->
+  <view class="user"><user mes="{{userMes}}" load="{{isLoad}}"/></view>
+  <!-- 下列选项 -->
+  <view class="list"><list/></view>
+</view>

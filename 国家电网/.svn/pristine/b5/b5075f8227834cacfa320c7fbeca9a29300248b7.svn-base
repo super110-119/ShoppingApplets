@@ -1,0 +1,25 @@
+<!--pages/reserveitem/reserveitem.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+  <view class="up_border"></view>
+  <view class="pad_view">
+  <block wx:for="{{itemlist}}"  wx:key="index">
+    <view class="product2_css">
+      <view class="view_size between_Css product3_css" style="height: 4vh;">
+        <view class="font3" style="font-weight: 700;">{{item.projectTitle}}</view>
+        <view class="product4_css">
+          <view class="font2" style="margin: auto;" bindtap="copyItem" data-index="{{item.projectId}}">复制本项目</view> 
+        </view>
+      </view>
+      <view class="view_size left_Css product3_css" style="height: 4vh;">
+        <view class="font2">{{item.masterOrgName}}/{{item.actionOrgName}}</view>
+      </view>
+      <view class="view_size2 left_Css product3_css overtext" style="height: 8.5vh;">
+        <view class="font4" style="color: #A1A1A2;">{{item.projectSummary}}</view>
+      </view>
+      <view class="view_size left_Css product3_css" style="height: 4vh;">
+        <view class="font4">创建时间：{{item.createTime}}</view>
+      </view>
+    </view>
+  </block>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+let {ajax, baseURL, httpHead2, fileHttp } = require("./index")
+async function getMyClass(datas){
+  let mes = await ajax({
+    url: `${httpHead2}api/elnClassUser.action?m=getMyClassPage`,
+    data: {
+      coopCode: 'chengde',
+      frontUserId: datas.frontUser.frontUserId,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl,
+      accessToken: datas.accessToken
+    }
+  })
+  return mes
+}
+async function getHomeMes(datas){
+  let mes = await ajax({
+    url: `${httpHead2}/api/portalSetting.action?m=getWXMainPageDataChengde`,
+    data: {
+      coopCode: 'chengde',
+      frontUserId: datas.frontUser.frontUserId,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl,
+      accessToken: datas.accessToken,
+      pageSize: 2,
+      pageNo: 1
+    }
+  })
+  return mes
+}
+
+module.exports = {
+  getMyClass, getHomeMes, fileHttp
+}

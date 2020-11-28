@@ -1,0 +1,115 @@
+//引入代码
+var call = require("../../utils/request.js")
+var base64 = require("../../utils/base64.js")
+
+// pages/login/login.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    code: null
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    // 通过微信获取code码，用于后台绑定操作
+    wx.login({
+      success: res => {
+        if(res.code){
+          this.setData({code:res.code})
+        }else{
+          console.log('code码获取失败')
+          wx.showModal({
+            title: "提示",
+            content: "获取用户code码、请联系管理员！！！",
+            showCancel: false
+          })
+        }
+      }
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+  //授权获取用户信息。进行用户注册
+  bindGetUserInfo: function (e) {
+    //判断用户是否同意授权操作
+    if(e.detail.userInfo){
+      let data = {
+        coopCode: 'wxy',
+        appCode: 'wxy',
+        code: this.data.code,
+        userinfoJson: base64.CusBASE64.encoder(JSON.stringify(e.detail.userInfo))
+      }
+      call.request('weixinOauthWxapp.action?m=register', false, data, this.registerSuc, this.failRequest)
+    }else{
+      //用户拒绝授权
+      wx.showModal({
+        title: '提示',
+        content: '您已拒绝授权，将无法进行后续操作',
+        showCancel: false
+      })
+    }
+  },
+
+  //用户信息注册成功
+  registerSuc: function (data) {
+    console.log(data)
+  },
+
+  //接口调用失败
+  failRequest: function () {
+    console.log('接口调用失败')
+  }
+})

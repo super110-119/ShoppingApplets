@@ -1,0 +1,11 @@
+<!--pages/demand/demand.wxml-->
+<view class="box">
+  <view class="linear"></view>
+  <block wx:for="{{messages}}" wx:key="index">
+    <items
+      mes="{{item}}"
+      data-index="{{index}}"
+      bind:tap="listClick"/>
+  </block>
+</view>
+

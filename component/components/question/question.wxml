@@ -1,0 +1,95 @@
+<!--components/question/question.wxml-->
+<!-- 
+  注： 
+
+传入参数： 
+  info：名称
+    参数内容：
+      state 表示当前题目类型
+              - 0  表示单选
+              - 1  表示多选
+              - 2  表示填空
+      titles 表示题目标题
+      questions 表示问题题目
+
+  index 表示当前题目下标
+
+返回值： 对象
+        value: 记录的数据
+        index： 记录题目下标
+        cursor: ''
+        title: 标题名称
+        types: 题目类型
+
+返回事件： userChangeInfo
+ -->
+<view class="question_container">
+  <!-- 单选/判断 -->
+  <view wx:if="{{info.state === 0}}">
+    <!-- 题目标题部分 -->
+    <view class="question_radio_title question_titles">
+      <view class="question_radio_title_index">第{{index + 1}}题：</view>
+      <view class="question_radio_title_item">{{info.titles}}</view>
+    </view>
+    <!-- 题目信息 -->
+    <view class="question_radio_list question_list">
+      <!-- 大的 radio-group 包裹 -->
+      <radio-group bindchange="itemChange">
+        <!-- 循环遍历题目 -->
+        <block wx:for="{{info.questions}}" wx:key="index">
+          <!-- view 包裹每一道选项 -->
+          <view class="question_radio_item">
+            <label class="question_radio_item_label">
+              <radio name="{{info.titles + index}}" value="{{item}}" style="transform:scale(0.6)" />
+              <text>{{item}}</text>
+            </label>
+          </view>
+        </block>
+      </radio-group>
+    </view>
+  </view>
+
+  <!-- 多选 -->
+  <view wx:if="{{info.state === 1}}">
+    <!-- 题目标题部分 -->
+    <view class="question_checkbox_title question_titles">
+      <view class="question_checkbox_title_index">第{{index + 1}}题：</view>
+      <view class="question_checkbox_title_item">{{info.titles}}</view>
+    </view>
+    <!-- 题目信息 -->
+    <view class="question_checkbox_list question_list">
+      <!-- 大的 checkbox-group 包裹 -->
+      <checkbox-group bindchange="itemChange">
+        <!-- 循环遍历题目 -->
+        <block wx:for="{{info.questions}}" wx:key="index">
+          <!-- view 包裹每一道选项 -->
+          <view class="question_checkbox_item">
+            <label class="question_checkbox_item_label">
+              <checkbox name="{{info.titles + index}}" value="{{item}}" style="transform:scale(0.6)" />
+              <text>{{item}}</text>
+            </label>
+          </view>
+        </block>
+      </checkbox-group>
+    </view>
+  </view>
+
+  <!-- 填空 -->
+  <view wx:if="{{info.state === 2}}">
+    <!-- 题目标题部分 -->
+    <view class="question_textarea_title question_titles">
+      <view class="question_textarea_title_index">第{{index + 1}}题：</view>
+      <view class="question_textarea_title_item">{{info.titles}}</view>
+    </view>
+    <!-- 题目信息 -->
+    <view class="question_textarea_test">
+      <textarea 
+        class="question_textarea_item" 
+        placeholder="请输入您的回答" 
+        placeholder-class="placeholder_class"
+        bindblur="itemChange"
+        bindconfirm="itemChange"/>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,30 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+view{
+  box-sizing: border-box;
+  font-family: PingFangSC-regular;
+  /* color: #101010; */
+}
+.line_black::after{
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1rpx;
+  box-shadow: 0 2rpx 5rpx #8c8c8c;
+}
+.headtext{
+  white-space: nowrap;/*不允许换行*/
+  overflow: hidden;/*超出隐藏*/
+  text-overflow: ellipsis;/*文本超出三点代替*/
+}

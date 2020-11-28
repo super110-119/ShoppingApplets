@@ -1,0 +1,87 @@
+<!--method/exam/exam.wxml-->
+<view class="questions_box">
+  <!-- 判断题目类型，进行区分 -->
+
+  <!-- 单选与判断 -->
+  <view wx:if="{{data.itemType === 'judge' || data.itemType === 'signle'}}">
+    <!-- 标题 -->
+    <view class="question_title">
+      <!-- 前面的题数 -->
+      <view class="question_title_index">第 {{index + 1}} 题：</view>
+      <!-- 题目主体 -->
+      <view class="question_title_text">{{data.itemTitle}}</view>
+    </view>
+    <view class="question_list">
+      <!-- 用于监听每一次选择框的修改 -->
+      <radio-group bindchange="examMsg">
+        <block wx:for="{{data.optionArray}}" wx:for-index="i" wx:key="i">
+          <view class="question_item">
+            <!-- label -->
+            <label class="item_lable">
+              <!-- 选择框 -->
+              <radio name="{{index}}" value="{{item}}" style="transform:scale(0.7)" class="item_radio"/>
+              <!-- 题目 -->
+              <view class="item_text">
+                <!-- 题干 -->
+                <text>{{item}}</text>
+                <!-- (分数) -->
+                <text wx:if="{{item.itemScore || item.itemScore === 0}}">({{item.itemScore}}分)</text>
+              </view>
+            </label>
+          </view>
+        </block>
+      </radio-group>
+    </view>
+  </view>
+
+  <!-- 多选 -->
+  <view wx:elif="{{data.itemType === 'multi'}}">
+    <!-- 标题 -->
+    <view class="question_title">
+      <!-- 前面的题数 -->
+      <view class="question_title_index">第 {{index + 1}} 题：</view>
+      <!-- 题目主体 -->
+      <view class="question_title_text">{{data.itemTitle}}</view>
+    </view>
+    <view class="question_list">
+      <!-- 用于监听每一次选择框的修改 -->
+      <checkbox-group bindchange="examMsg">
+        <block wx:for="{{data.optionArray}}" wx:for-index="i" wx:key="i">
+          <view class="question_item">
+            <!-- label -->
+            <label class="item_lable">
+              <!-- 选择框 -->
+              <checkbox name="{{index}}" value="{{item}}" style="transform:scale(0.7)" class="item_radio"/>
+              <!-- 题目 -->
+              <view class="item_text">
+                <!-- 题干 -->
+                <text>{{item}}</text>
+                <!-- (分数) -->
+                <text wx:if="{{item.itemScore || item.itemScore === 0}}">({{item.itemScore}}分)</text>
+              </view>
+            </label>
+          </view>
+        </block>
+      </checkbox-group>
+    </view>
+  </view>
+
+  <!-- 问答 -->
+  <view wx:elif="{{data.itemType === 'ask'}}">
+    <!-- 标题 -->
+    <view class="question_title">
+      <!-- 前面的题数 -->
+      <view class="question_title_index">第 {{index + 1}} 题：</view>
+      <!-- 题目主体 -->
+      <view class="question_title_text">{{data.itemTitle}}</view>
+    </view>
+    <view class="question_test">
+      <textarea 
+        placeholder="请输入您的回答！！！" 
+        placeholder-class="textarea_placeholder" 
+        disable-default-padding
+        class="textarea"
+        bindblur="examMsg"/>
+    </view>
+  </view>
+</view>

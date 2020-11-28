@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "banner": "../../common/banner/banner",
+    "list-bar": "../../common/list-bar/list-bar",
+
+    "collapse": "./h-compontent/collapse/collapse",
+    "classDemo": "./h-compontent/class-list/class-list",
+    "bg": "/pages/profile/p-compontent/bg/bg"
+  },
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

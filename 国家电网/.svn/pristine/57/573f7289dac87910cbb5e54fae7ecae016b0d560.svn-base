@@ -1,0 +1,37 @@
+let {ajax, baseURL, httpHead2} = require("./index")
+// 获取全部培训班
+async function getHomeMes(datas){
+  let mes = await ajax({
+    url: `${httpHead2}api/elnClass.action?m=getPage`,
+    data: {
+      coopCode: 'chengde',
+      frontUserId: datas.frontUser.frontUserId,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl,
+      accessToken: datas.accessToken
+    }
+  })
+  return mes
+}
+// 获取培训班详情- -课程
+async function getClassMes(classId, app){
+  let datas = await app.globalData.userMessage
+  let  mes = await ajax({
+    url: `${httpHead2}api/elnClass.action?m=getDetailEx`,
+    data: {
+      coopCode: 'chengde',
+      classId,
+      frontUserId: datas.frontUser.frontUserId,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl,
+      accessToken: datas.accessToken
+    }
+  })
+  return mes
+}
+
+
+
+module.exports = {
+  getHomeMes, getClassMes
+}

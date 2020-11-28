@@ -1,0 +1,71 @@
+<!--pages/reserveitem/createitem/createtraining/createtraining.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+    <view class="up_border"></view>
+    <view class="pad_view">
+        <!-- <view class="product_css view_size between_Css" style="margin-top:1vh">
+            <view class="font1">需求点 <text style="color:red">*</text></view>
+            <view class="font2">需求点</view>
+        </view> -->
+        <mp-cell link>
+            <view class="font1">需求点 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">需求点</view>
+        </mp-cell>
+        <mp-cell link>
+            <view class="font1">单位名称 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">国网北京电力</view>
+        </mp-cell>
+        <mp-cell link>
+            <view class="font1">项目所属单位 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">国网北京海淀供电公司</view>
+        </mp-cell>
+         <mp-cell>
+            <view class="font1">项目名称 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">变电运行教材开发项目</view>
+        </mp-cell>
+        <mp-cell link>
+            <view class="font1">一级分类 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">培训项目及教材、课件开发</view>
+        </mp-cell>
+        <mp-cell link>
+            <view class="font1">二级分类 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">培训软课题研究或培训项目开发</view>
+        </mp-cell>
+        <mp-cell link>
+            <view class="font1">三级分类 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">**</view>
+        </mp-cell>        
+        <mp-cell link>
+            <view class="font1">实施范围 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">省公司(直属单位)级</view>
+        </mp-cell>     
+        <mp-cell>
+            <view class="font1">项目必要性 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">项目的必要性要输入</view>
+        </mp-cell>
+        <mp-cell>
+            <view class="font1">项目主要内容 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">变电运行教材开发</view>
+        </mp-cell>
+        <mp-cell link>
+            <view class="font1">主办部门 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">人力资源部</view>
+        </mp-cell>
+        <mp-cell link>
+            <view class="font1">承办单位 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">人力资源部</view>
+        </mp-cell> 
+        <mp-cell>
+            <view class="font1">总费用（预算）<text style="color:red">*</text></view>
+            <view class="font2" slot="footer">100000元</view>
+        </mp-cell>  
+        <mp-cell link>
+            <view class="font1">经费来源 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">按工资总额提取的培训教育经费</view>
+        </mp-cell>         
+        <mp-cell>
+            <view class="font1">责任人 <text style="color:red">*</text></view>
+            <view class="font2" slot="footer">张三</view>
+        </mp-cell>
+        <button class="weui-btn" type="primary" bindtap="submitForm" style="width: 100%;">提交</button>
+    </view>
+</view>

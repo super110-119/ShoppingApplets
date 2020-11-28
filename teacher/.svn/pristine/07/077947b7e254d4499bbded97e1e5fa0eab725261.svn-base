@@ -1,0 +1,17 @@
+{
+  "usingComponents": {
+    "mp-cells": "/miniprogram_npm/weui-miniprogram/cells/cells",
+    "mp-cell": "/miniprogram_npm/weui-miniprogram/cell/cell",
+    "mp-badge": "/miniprogram_npm/weui-miniprogram/badge/badge",
+    "mp-icon": "/miniprogram_npm/weui-miniprogram/icon/icon",
+    
+    "mp-no-data-img": "/component/no_data_img/no_data_img",
+    "mp-load": "/component/show_load/show_load"
+  },
+  "navigationBarTitleText": "首页",
+  "navigationBarBackgroundColor": "#3F87EE",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f2f4f5",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

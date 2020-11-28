@@ -1,0 +1,16 @@
+<!--common/itemquestion/itemquestion.wxml-->
+<view class="lists">
+  <view class="titles">
+    <text>{{subjectIndex+1}}. {{subjectT.subject.subjectTitle}}</text>
+  </view>
+  <radio-group bindchange="radioChange">
+    <block wx:for="{{subjectT.itemList}}" wx:key="index">
+      <view class="item_view">
+        <label>
+            <radio class="radios" style="transform:scale(0.7)" value="{{item.itemId}}"/>
+            <text class="headtext texts">{{item.itemContent}}({{item.itemScore}}分)</text>
+        </label>
+      </view>
+    </block>
+  </radio-group>
+</view>

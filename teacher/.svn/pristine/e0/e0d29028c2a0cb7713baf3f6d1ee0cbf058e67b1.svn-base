@@ -1,0 +1,62 @@
+/* pages/login/login.wxss */
+page {
+  background-color: #f2f4f5;
+}
+
+.header {
+  margin: 200rpx 0 90rpx 50rpx;
+  text-align: center;
+  width: 650rpx;
+  height: 300rpx;
+}
+
+.header image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.font {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 6rpx;
+  margin-top: 5rpx;
+}
+
+.botton {
+  border-radius: 10rpx;
+  margin: 50rpx 50rpx;
+  font-size: 35rpx;
+}
+
+.btn-view {
+  width: 100%;
+  padding: 10rpx 0;
+  text-align: center;
+}
+
+button[size='default']{
+  width: 600rpx !important;
+}
+
+button[type='primary']{
+  background-color: #3F87EE !important;
+}
+
+.button_foot {
+  font-size: 14px;
+  margin-top: 40rpx;
+  color: #4169E1;
+}
+
+.box1 {
+  width: 525rpx;
+  height: 20rpx;
+  margin: auto;
+  border-bottom: 1px solid #B0C4DE;
+  margin-bottom: 50rpx;
+}
+
+.demo{
+  color: #B0C4DE;
+  font-size: 25rpx;
+}

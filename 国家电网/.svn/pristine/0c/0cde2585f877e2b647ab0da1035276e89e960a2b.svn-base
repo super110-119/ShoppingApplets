@@ -1,0 +1,8 @@
+<!--pages/reserveitem/delete/delete.wxml-->
+<view class="container">
+  <view class="icon">
+    <icon type="success" size="104rpx"/>
+  </view>
+  <view class="text">删除成功</view>
+  <view class="btn">返回</view>
+</view>

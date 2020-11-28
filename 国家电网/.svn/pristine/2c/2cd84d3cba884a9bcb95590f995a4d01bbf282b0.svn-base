@@ -1,0 +1,38 @@
+/* pages/reserveitem/delete/delete.wxss */
+.container::before{
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1rpx;
+  box-shadow: 0 2rpx 5rpx #8c8c8c;
+}
+.container{
+  position: relative;
+}
+.container>view{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.icon{
+  top: 250rpx;
+}
+.text{
+  top: 410rpx;
+  text-align: center;
+  color: #101010;
+  font-size: 28rpx;
+}
+.btn{
+  width: 670rpx;
+  height: 94rpx;
+  text-align: center;
+  line-height: 94rpx;
+  background-color: #00BE95;
+  color: #fff;
+  top: 602rpx;
+  border-radius: 2rpx;
+}

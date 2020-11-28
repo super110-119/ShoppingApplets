@@ -1,0 +1,14 @@
+<!--common/success/success.wxml-->
+<view class="box line_black">
+  <view class="icon">
+    <icon type="success" size="104rpx"/>
+  </view>
+  <view class="title">
+    <slot name="title1">提交成功</slot>
+    <slot name="title2"></slot>
+  </view>
+  <view class="btn">
+    <slot name="btn">返回</slot>
+  </view>
+</view>
+

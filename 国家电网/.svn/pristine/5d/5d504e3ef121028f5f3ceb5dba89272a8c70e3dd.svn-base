@@ -1,0 +1,11 @@
+<!--pages/profile/p-compontent/option/option.wxml-->
+<view class="container" bindtap="itemClick">
+  <view class="img">
+    <image src="{{mes.img}}"/>
+  </view>
+  <view class="title">{{mes.title}}</view>
+  <view class="num">{{mes.num}}</view>
+  <view class="more">
+    <image src="/assets/img/profile/next.png"/>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "items": "../datas_item/datas_item"
+  }
+}

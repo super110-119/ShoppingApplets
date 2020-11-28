@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+	"tests": "./t-commons/tests/tests",
+    "datas": "./t-commons/datas/datas",
+    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
+    "no-data": "/common/noData/noData"
+  },
+  "navigationBarTitleText": "班级课表"
+}

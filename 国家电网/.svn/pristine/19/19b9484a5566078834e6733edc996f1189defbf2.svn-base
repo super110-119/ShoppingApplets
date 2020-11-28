@@ -1,0 +1,64 @@
+<!--pages/reserveitem/users/scoreSecond/scoreSecond.wxml-->
+<view class="box line_black">
+<!-- 项目详情 -->
+  <view class="box1">
+    <view class="title" bindtap="xmxqClick">
+      <text>项目详情</text>
+      <view class="icon">
+        <image src="/assets/img/comment-icon/bottom.svg" wx:if="{{isShow1}}"/>
+        <image src="/assets/img/comment-icon/right.svg" wx:else/>
+      </view>
+    </view>
+    <view class="box-container" wx:if="{{isShow1}}">
+      <block wx:for="{{details}}" wx:key="index">
+        <text class="list">
+          <text class="item_title">{{item.title}}: </text>
+          <text class="item_mes">{{item.value}}</text>
+        </text>
+      </block>
+    </view>
+  </view>
+  <!-- 项目评分 -->
+  <view class="box2">
+    <view class="title" bindtap="xmpfClick">
+      <text>项目评分</text>
+      <view class="icon">
+        <image src="/assets/img/comment-icon/bottom.svg" wx:if="{{isShow2}}"/>
+        <image src="/assets/img/comment-icon/right.svg" wx:else/>
+      </view>
+    </view>
+    <view class="box-container" wx:if="{{isShow2}}">
+      <form>
+        <block wx:for="{{subject}}" wx:key="i" wx:for-item="list" wx:for-index="i">
+          <view class="lists">
+            <view class="titles">
+              <text>{{i + 1}}. {{list.title}}（{{list.fraction}}分）</text>
+            </view>
+            <radio-group>
+              <block wx:for="{{list.lists}}" wx:key="index">
+                <view class="item_view">
+                  <label>
+                    <radio value="{{item}}" name="{{i}}" class="radios"/>
+                    <text class="headtext texts">{{item}}</text>
+                  </label>
+                </view>
+              </block>
+            </radio-group>
+          </view>
+        </block>
+         <view class="titles max_titles">
+            <text>批复说明：</text>
+          </view>
+          <view class="textarea max_textarea">
+            <textarea placeholder="输入批复说明...."/>
+          </view>
+      </form>
+    </view>
+  </view>
+  <!-- 审核按钮 -->
+  <view class="btns">
+    <view class="btn btn1">审核通过</view>
+    <view class="btn btn2">审核不通过</view>
+  </view>
+</view>
+

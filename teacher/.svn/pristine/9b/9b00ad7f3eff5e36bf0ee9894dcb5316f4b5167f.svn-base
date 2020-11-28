@@ -1,0 +1,159 @@
+// pages/myClass/question/question.js
+import { timeFormat } from '../../../utils/getTime'
+
+Page({
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    isActive: 0,
+
+    // 未回复数据
+    notReplied: [
+      {
+        userImg: 'http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg',
+        userName: '管清友',
+        thisTime: timeFormat(new Date().getTime()),
+        querys: '假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！'
+      },{
+        userImg: 'http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg',
+        userName: '管清友',
+        thisTime: timeFormat(new Date().getTime()),
+        querys: '假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！'
+      },{
+        userImg: 'http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg',
+        userName: '管清友',
+        thisTime: timeFormat(new Date().getTime()),
+        querys: '假如你女朋友和你妈同时掉进了水里，并且都不会游泳，假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！只能救一个的你，会选择救谁！'
+      },{
+        userImg: 'http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg',
+        userName: '管清友',
+        thisTime: timeFormat(new Date().getTime()),
+        querys: '假如你女朋友和你妈同时掉进了水里，并且都不会游泳，假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！只能救一个的你，会选择救谁！'
+      },{
+        userImg: 'http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg',
+        userName: '管清友',
+        thisTime: timeFormat(new Date().getTime()),
+        querys: '假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！'
+      },{
+        userImg: 'http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg',
+        userName: '管清友',
+        thisTime: timeFormat(new Date().getTime()),
+        querys: '假如你女朋友和你妈同时掉进了水里，并且都不会游假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！泳，只能救一个的你，会选择救谁！'
+      },{
+        userImg: 'http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg',
+        userName: '管清友',
+        thisTime: timeFormat(new Date().getTime()),
+        querys: '假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！'
+      },{
+        userImg: 'http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg',
+        userName: '管清友',
+        thisTime: timeFormat(new Date().getTime()),
+        querys: '假如你女朋友和你妈同时掉进了水里，并且都不会游假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！泳，只能救一个的你，会选择救谁！'
+      },{
+        userImg: 'http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg',
+        userName: '管清友',
+        thisTime: timeFormat(new Date().getTime()),
+        querys: '假如你女朋友和你妈同时掉进了水里，并且都假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！不会游泳，只能救一个的你，会选择救谁！'
+      },{
+        userImg: 'http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg',
+        userName: '管清友',
+        thisTime: timeFormat(new Date().getTime()),
+        querys: '假如你女朋友和你妈同时掉进了水里，并且假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！都不会游泳，只能救一个的你，会选择救谁！'
+      },{
+        userImg: 'http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg',
+        userName: '管清友',
+        thisTime: timeFormat(new Date().getTime()),
+        querys: '假如你女朋友和你妈同时掉进了水里，并且都不会游泳，只能救一个的你，会选择救谁！'
+      }
+    ]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+
+  /**
+   * 自定义事件-----------------
+   */
+  // 点击未回复
+  box1Click(){
+    if(this.data.isActive === 0){
+      return
+    }
+    console.log('点击了未回复！');
+    this.setData({
+      isActive: 0
+    })
+  },
+  // 点击已回复
+  box2Click(){
+    if(this.data.isActive === 1){
+      return
+    }
+    console.log('点击了已回复！');
+    this.setData({
+      isActive: 1
+    })
+  },
+  // 点击详情
+  itemClick(){
+    console.log('点击了课程详情');
+    wx.navigateTo({
+      url: '/pages/answer/answer',
+    })
+  }
+})

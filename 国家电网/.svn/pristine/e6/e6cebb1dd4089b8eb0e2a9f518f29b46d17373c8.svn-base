@@ -1,0 +1,93 @@
+// pages/profile/p-compontent/list/list.js
+
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    mes: {
+      type: Object,
+      value: {}
+    },    
+    mes1: {
+      type: Object,
+      value: {}
+    },
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    box1: {
+      img: "../../../../assets/img/profile/profile-icon/wdcbxm.png",
+      title: "我的储备项目",
+      num: 0
+    },
+    box2: {
+      img: "../../../../assets/img/profile/profile-icon/wcjdpxb.png",
+      title: "我参加的培训班",
+      num: 0
+    },
+/*     box3: {
+      img: "../../../../assets/img/profile/profile-icon/wgldpxb.png",
+      title: "我管理的培训班",
+      num: 3
+    }, */
+    box4: {
+      img: "../../../../assets/img/profile/profile-icon/wshdxm.png",
+      title: "待审核项目",
+      num: 0
+    }
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    box1Click(){
+      // console.log('点击我的储备项目');
+      wx.switchTab({
+        url: '../reserveitem/reserveitem?role=0',
+      })
+    },
+    box2Click(){
+      // console.log('点击我参加的培训班');
+      wx.switchTab({
+        url: '../../../../trainingclass/trainingclass'
+      })
+    },
+    box3Click(){
+      // console.log('点击我管理的培训班');
+    },
+    box4Click(){
+      // console.log('点击项目审核');
+      wx.navigateTo({
+        url: '../../../../checkproject/checkproject',
+      })
+    }
+  },
+  /*组件生命周期*/ 
+  lifetimes: {
+    ready: function(){
+      let timer = setInterval(() => {
+        let that = this.properties.mes1
+        if(that.projectTotalCount >= 0 || that.classTotalCount >= 0 || that.mgrProjectCount >= 0){
+          //clearInterval(timer)
+          let box1 = this.data.box1;
+          box1.num = that.projectTotalCount || 0;
+          let box2 = this.data.box2;
+          box2.num = that.classTotalCount || 0;
+          let box4 = this.data.box4;
+          box4.num = that.mgrProjectCount || 0;    
+          this.setData({
+            box1, box2, box4
+          })
+        }else{
+          return
+        }
+      }, 120)
+    }
+  }
+
+})

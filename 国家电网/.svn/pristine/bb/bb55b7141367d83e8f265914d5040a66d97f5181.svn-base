@@ -1,0 +1,43 @@
+/* pages/home/home.wxss */
+/* 外层嵌套的盒子 */
+.box{
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  background-color: #f2f4f5;
+  border-bottom: 20rpx solid #f2f4f5;
+}
+/* 轮播图 banner */
+.banner{
+  width: 666rpx;
+  margin: 0 auto;
+  margin-top: -220rpx;
+  height: 260rpx;
+  position: relative;
+  z-index: 2;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+
+.titles{
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  top: 10rpx;
+  left: 0;
+  text-align: center;
+  color: gray;
+  /* font-weight: 600; */
+}
+
+.get_mask{
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}

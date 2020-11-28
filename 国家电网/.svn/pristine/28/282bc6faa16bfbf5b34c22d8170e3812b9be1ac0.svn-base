@@ -1,0 +1,205 @@
+// pages/trainingschedule/trainingschedule.js
+var qrcode = require('../../utils/weapp.qrcode.min.js')
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    //切换项目
+    btnselect: 0,
+    showOneButtonDialog: false,
+    oneButton: [{text: '关闭'}],
+    // state : 0 - 进行中/ 1 - 未开始/ 2 - 已结束
+    mes1: [
+      {
+        titles: "党校理论考试（一）",
+        onTime: "2020-9-20 16:00",
+        outTime: "2020-9-20 17:00",
+        state: 0,
+        cuccess: true,
+        btnText: '开始考试'
+      },{
+        titles: "党校理论考试（二）",
+        onTime: "2020-9-20 16:00",
+        outTime: "2020-9-20 17:00",
+        state: 1,
+        cuccess: true,
+        btnText: '开始考试'
+      },{
+        titles: "党校理论考试（三）",
+        onTime: "2020-9-20 16:00",
+        outTime: "2020-9-20 17:00",
+        state: 2,
+        cuccess: false,
+        btnText: '开始考试'
+      }
+    ],
+    mes2: [
+      {
+        titles: "培训学习评估（一）",
+        onTime: "2020-9-20 16:00",
+        outTime: "2020-9-20 17:00",
+        state: 0,
+        cuccess: true,
+        btnText: '开始评估'
+      },{
+        titles: "培训学习评估（二）",
+        onTime: "2020-9-20 16:00",
+        outTime: "2020-9-20 17:00",
+        state: 1,
+        cuccess: true,
+        btnText: '开始评估'
+      },{
+        titles: "培训学习评估（三）",
+        onTime: "2020-9-20 16:00",
+        outTime: "2020-9-20 17:00",
+        state: 2,
+        cuccess: false,
+        btnText: '开始考试'
+      }
+    ],
+    mes3 :[
+      {
+        time: '2020年7月25日',
+        open: true,
+        msglist:[{
+          title: '习近平新时代下的社会主义思想（一）',
+          name: '洪祥波'
+        },{
+          title: '习近平新时代下的社会主义思想（二）',
+          name: '洪祥波'         
+        }]
+      },
+      {
+        time: '2020年7月26日',
+        open: true,
+        msglist:[{
+          title: '习近平新时代下的社会主义思想（三）',
+          name: '洪祥波'
+        }]
+      }      
+    ]
+   },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+  //标签切换
+  changeSelect: function (e) {
+    const selectnum = e.currentTarget.dataset['index'];
+    var itemlist = null;
+    this.setData({ 
+      btnselect: selectnum
+    })
+  },
+
+  //二维码生成以及weui弹窗
+  downQrcode: function () {
+    qrcode({
+      width: 200,
+      height: 200,
+      canvasId: 'myQrcode',
+      text: 'http://www.sgcc.com.cn/'
+    })
+    this.setData({
+      showOneButtonDialog: true
+    })
+  },
+
+  tapDialogButton: function () {
+    this.setData({
+      showOneButtonDialog: false
+    })
+  },
+
+  //防止滑动事件
+  noneEnoughPeople: function () {
+
+  },
+
+  //列表展示切换
+  listChange: function (e) {
+    const selectnum = e.currentTarget.dataset['index'];
+    const list = this.data.mes3
+    if(list[selectnum].open === true){
+      list[selectnum].open = !list[selectnum].open
+    }else{
+      list[selectnum].open = true
+    }
+    this.setData({
+      mes3: list
+    })
+  },
+
+  examClick(e){
+    let i = e.currentTarget.dataset.index;
+    if(this.data.mes1[i].cuccess){
+      wx.navigateTo({
+        url: '/pages/common_pages/examination/examination',
+      })
+    }
+  },
+
+  assessClick(e){
+    let i = e.currentTarget.dataset.index;
+    if(this.data.mes2[i].cuccess){
+      wx.navigateTo({
+        url: '/pages/common_pages/demand/demand',
+      })
+    }
+  }
+})

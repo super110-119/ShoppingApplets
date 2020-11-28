@@ -1,0 +1,46 @@
+<!--pages/reserveitem/reserveitem.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+  <view class="up_border"></view>
+  <view class="pad_view">
+    <block>
+      <view class="view_size product_css" style="justify-content: space-between;">
+        <text class="font1">我的储备项目</text>
+        <view class="view_size btn_css">
+          <view class="font2" style="margin: auto;" bindtap="createItem">+ 创建</view> 
+        </view>
+      </view>
+    </block>
+
+    <block wx:for="{{itemlist}}">
+      <view class="product2_css">
+        <view class="view_size between_Css product3_css" style="height: 4vh;">
+          <view class="font3" style="font-weight: 700;">{{item.itemtitle}}</view>
+          <view class="font2" style="font-weight: 700;">{{item.itemnum}}</view>
+        </view>
+        <view class="view_size left_Css product3_css" style="height: 4vh;">
+          <view class="font2">{{item.itemclassification}}</view>
+        </view>
+        <view class="view_size2 left_Css product3_css overtext" style="height: 9vh;">
+          <view class="font4" style="color: #A1A1A2;">{{item.itemint}}</view>
+        </view>
+        <view class="view_size left_Css product3_css" style="height: 4vh;">
+          <view class="font4">申请时间：{{item.itemtime}}</view>
+        </view>
+        <view class="view_size left_Css product3_css" style="height: 4vh;">
+          <block wx:if="{{item.itemstate == 0}}">
+            <view class="circle_css circle_color1"></view>
+            <view class="font2">待批复</view>
+          </block>
+          <block wx:elif="{{item.itemstate == 1}}">
+            <view class="circle_css circle_color2"></view>
+            <view class="font2">已批复通过</view>          
+          </block>
+          <block wx:else>
+            <view class="circle_css circle_color3"></view>
+            <view class="font2">批复不通过</view>
+          </block>          
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<!--pages/common_pages/login/login.wxml-->
+<view class="demos"></view>
+<view class="box">
+  <view class="bg">
+    <view class="img">
+      <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=531895259,1506251970&fm=26&gp=0.jpg" mode="aspectFill"/>
+    </view>
+  </view>
+  <view class="from">
+    <form>
+      <view class="box1">
+        <label>
+          <text>员工编号</text>
+          <input placeholder="请输入您的员工编号" placeholder-class="demo"/>
+        </label>
+      </view>
+      <view class="box2">
+        <label>
+          <text>姓名</text>
+          <input placeholder="请输入您的姓名" placeholder-class="demo"/>
+        </label>
+      </view>
+      <button form-type="submit" class="btn" size="default">绑定</button>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+/* pages/profile/profile.wxss */
+.box{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f2f4f5;
+}
+.bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 320rpx;
+  width: 100%;
+}
+.user{
+  position: absolute;
+  top: 64rpx;
+  left: 21rpx;
+  height: 330rpx;
+  width: 708rpx;
+}
+.list{
+  position: absolute;
+  top: 440rpx;
+  left: 21rpx;
+  width: 708rpx;
+}
+
+.btns{
+  position: absolute;
+  bottom: 20rpx;
+  left: 15%;
+  width: 70%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  text-align: center;
+  background-color: #5d82e2;
+}

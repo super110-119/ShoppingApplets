@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "class-item": "../classComponents/classItem/classItem"
+  },
+  "navigationBarTitleText": "我的课程",
+  "navigationBarBackgroundColor": "#3F87EE",
+  "navigationBarTextStyle": "white"
+}

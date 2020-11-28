@@ -1,0 +1,60 @@
+<!--pages/reserveitem/details/details.wxml-->
+<view class="container">
+  <!-- 状态信息 -->
+  <view class="Administration">
+    <!-- 标题部分 -->
+    <view class="title before">项目状态</view>
+    <!-- 详细状态 -->
+    <view class="title-box">
+      <view class="waiting data" wx:if="{{datas.state == 2}}">
+        <icon type="waiting" size="76rpx" color="#FF8C00"></icon>
+        <view>审核中...</view>
+      </view>
+      <view class="success data" wx:if="{{datas.state == 1}}">
+        <icon type="success" size="76rpx"></icon>
+        <view>已通过审核</view>
+      </view>
+      <view class="warn data" wx:if="{{datas.state == 0}}">
+        <icon type="warn" size="76rpx"></icon>
+        <view>审核未通过</view>
+      </view>
+      <view class="thisTime" wx:if="{{datas.state == 2}}">创建时间：{{datas.time}}</view>
+      <view class="thisTime" wx:else>审核时间：{{datas.time}}</view>
+      <view class="explain">审核说明：{{datas.memo}}</view>
+    </view>
+  </view>
+  <!-- 项目详情信息 -->
+  <view class="details">
+    <!-- 标题说明 -->
+    <view class="details-title">
+      <view class="before title">项目详情</view>
+      <!-- icon 测试 -->
+      <view class="operation" wx:if="{{datas.state != 1}}" bindtap="upPro">
+        <view class="icon"><image src="/assets/img/comment-icon/pen.svg"/></view>
+        <view class="text">
+          <text wx:if="{{datas.state == 2}}">编辑</text>
+          <text wx:if="{{datas.state == 0}}">修改</text>
+        </view>
+      </view>
+    </view>
+    <!-- 下列主要数据 -->
+    <view class="detail-box">
+      <block wx:for="{{details}}" wx:key="index">
+        <view class="details-mes">
+          <text  class="details-mes-title">
+            {{item.title}}:
+          </text>
+          <text  class="details-mes-mes">
+            {{item.value}}
+          </text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class="btn"  wx:if="{{Transition != 1}}">
+    <view class="btn1" wx:if="{{datas.state == 2}}" bindtap="btnClick">删除</view>
+    <view class="btn2" wx:if="{{datas.state == 0}}" bindtap="changeClick">修改项目</view>
+  </view>
+</view>
+<view class="get_mask" wx:if="{{isMask}}"></view>

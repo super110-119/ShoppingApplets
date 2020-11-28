@@ -1,0 +1,42 @@
+<!--学生提问-->
+<view class="view_pad">
+  <view style="margin-bottom:110rpx">
+    <view class="question_css">
+      <view class="view_size between_Css user_msg">
+        <view class="course_user view_size left_Css">
+          <image src="{{askDetail.headimgurl===''?defaultImg:askDetail.headimgurl}}" class="course_user_img"/>
+          <view class="user_text font1_css">{{askDetail.nickname}}的课程提问</view>
+        </view>
+        <view class="time_text font3_css">{{askDetail.compareTime}}</view>
+      </view>
+      <view class="border_line"></view>
+      <view class="title_text day_font">日期</view>
+      <view class="day_font">{{askDetail.createTime}}</view>
+      <view class="title_text day_font">课程提问</view>
+      <view class="day_font">{{askDetail.askTitle}}</view>
+      <view class="font3_css foot_css">所属课程：{{askDetail.elnCourseTitle}}</view>
+    </view>
+
+    <!-- 教师回答 -->
+    <block wx:if="{{askDetail.myAnswerList.length > 0}}" wx:for="{{askDetail.myAnswerList}}" wx:key='index'>
+      <view class="answer_css">
+        <view class="view_size between_Css user_msg">
+          <view class="course_user view_size left_Css">
+            <image src="{{item.headimgurl===''?defaultImg:item.headimgurl}}" class="course_user_img"/>
+            <view class="user_text font1_css">{{item.nickname}}的回答：</view>
+          </view>
+          <view class="time_text font3_css">{{item.createTime}}</view>
+        </view>
+        <view class="day_font">{{item.answerContent}}</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 底层输入框 -->
+  <view class="view_input" style="bottom:{{bottom}}px">
+    <view class="view_area">
+      <input placeholder="请输入文字内容" bindfocus="foucus" bindblur="blur" bindinput="inputAnswer" adjust-position="{{false}}" value="{{answer}}"></input>
+      <view class="view_button" bindtap="sendAnswer">发送</view>
+    </view>
+  </view>
+</view>

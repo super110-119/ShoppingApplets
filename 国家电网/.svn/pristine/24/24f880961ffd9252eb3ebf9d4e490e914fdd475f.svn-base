@@ -1,0 +1,17 @@
+<!--pages/profile/p-compontent/list/list.wxml-->
+<view class="box">
+  <view class="box1" wx:if="{{mes.role == 0}}">
+    <option mes="{{box1}}" bind:optionItemClick="box1Click"/>
+  </view>
+  <view class="box3" wx:elif="{{mes.role == 1}}">
+    <!-- <view>我是项目审查员</view> -->
+    <option mes="{{box4}}" bind:optionItemClick="box4Click"/>
+  </view>
+  <view class="box2">
+    <option mes="{{box2}}" bind:optionItemClick="box2Click"/>
+  </view>
+  <!-- <view class="box3">
+    <view>我是讲师</view>
+    <option mes="{{box3}}" bind:optionItemClick="box3Click"/>
+  </view> -->
+</view>

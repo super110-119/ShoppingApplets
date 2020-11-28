@@ -1,0 +1,50 @@
+// pages/trainingschedule/t-commons/datas/datas.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    // 自定义项目信息--------
+    datas: [
+      {
+        timer: "2020-09-10 08:02",
+        isOk: true,
+        where: "解放大道长征路008号"
+      },{
+        timer: "2020-09-10 12:02",
+        isOk: true,
+        where: "解放大道长征路007号"
+      },{
+        timer: "2020-09-10 14:52",
+        isOk: false,
+        where: "解放大道长征路006号"
+      },{
+        timer: "2020-09-11 08:02",
+        isOk: true,
+        where: "解放大道长征路005号"
+      },{
+        timer: "2020-09-11 12:02",
+        isOk: false,
+        where: "解放大道长征路004号"
+      },{
+        timer: "2020-09-11 11:52",
+        isOk: true,
+        where: "解放大道长征路003号"
+      }
+    ]
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+
+  }
+})

@@ -1,0 +1,174 @@
+// pages/reserveitem/details/details.js
+let app = getApp()
+let httpHead = app.globalData.httpHead2
+let {timeFormat} = require("../../../utils/getTime")
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    datas: {},
+    projectId: null,
+    details: [],
+    obj: null,
+    isMask: true
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    let Transition = options.Transition
+    let projectId = options.projectId
+    this.setData({
+      Transition:0,
+      projectId
+    })
+    this.reserveitemDetail()
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+
+  /**
+   * 自定义删除事件
+   */
+  btnClick(){
+    if(this.data.Transition == 0){
+      let projectId = this.data.obj.projectId;
+      let userMessage = app.globalData.userMessage
+      wx.showModal({
+        title: "您确定删除吗？",
+        success(res){
+          if (res.confirm) {
+            wx.request({
+              url: httpHead + 'api/elnProject.action?m=delete&projectId='+projectId,
+              header: {
+                'content-type': 'application/x-www-form-urlencoded;charset=UTF-8',
+              },
+              data: {
+                coopCode : 'chengde',
+                frontUserId : userMessage.frontUser.frontUserId, 
+                accessToken : userMessage.accessToken,
+              },
+              success: res => {
+                console.log(res)
+                wx.navigateTo({
+                  url: '../delete/delete', 
+                })
+              }
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
+  },
+  // 点击修改按钮
+  changeClick(){
+    this.upPro()
+  },
+  //查看列表详情
+  reserveitemDetail: function () {
+    let userMessage = app.globalData.userMessage
+    let projectId = this.data.projectId
+    wx.request({
+      url: httpHead + 'api/elnProject.action?m=getDetail',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded;charset=UTF-8',
+      },
+      data: {
+        coopCode : 'chengde',
+        frontUserId : userMessage.frontUser.frontUserId, 
+        accessToken : userMessage.accessToken,
+        projectId
+      },
+      method: 'post',
+      success: res => {
+        let datas = {};
+        if(res.data.msg === 'success'){
+          let a = res.data.data.elnProject
+          if(a.curCheckStatus === "0"){
+            datas.state = 0
+          }else if(a.curCheckStatus === "1"){
+            datas.state = 1
+          }else if(a.curCheckStatus === "2"){
+            datas.state = 2
+          }
+          datas.memo = a.memo || '暂无';
+          datas.time = timeFormat(a.checkUpdateTime || a.createTime)
+          let details = [{title:'项目名称',value:a.projectTitle},{title:'单位名称',value:a.orgName,},{title:'项目所属单位',value:a.belongOrgName},{title:'项目分类',value:a.projectType},{title:'实施范围',value:a.rangeOrgName},{title:'项目必要性',value:a.trainingGoal || '暂无'},{title:'项目主要内容',value:a.projectSummary},{title:'主办部门',value:a.masterOrgName},{title: "承办单位",value: a.actionOrgName},{title: "总费用(预算)",value: a.budgetMoneyTotal},{title: "经费来源",value: a.moneySource},{title: "费用类型",value: a.moneyType || '暂无'},{title: "责任人",value: a.masterName},{title: "联系人",value: a.contactName=='null'?'暂无':a.contactName},{title: "备注",value: a.memo=='null'?'暂无':a.memo},{title: "自评分", value: a.selfEvaluateScore}]
+          this.setData({details, obj:a, datas, isMask:false})
+        }
+      }
+    })
+  },
+
+  //编辑
+  upPro: function () {
+    let obj = this.data.obj
+    wx.setStorageSync({
+      key:"projectlist",
+      data:obj
+    })
+    if(obj.projectCat === 'PXKF'){
+      wx.navigateTo({
+        url: '../createitem/createtraining/createtraining',
+      })
+    }else{
+      wx.navigateTo({
+        url: '../createitem/createworker/createworker',
+      })
+    }
+  }
+})

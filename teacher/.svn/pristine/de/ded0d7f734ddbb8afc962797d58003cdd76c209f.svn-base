@@ -1,0 +1,63 @@
+<!--pages/uploadcourse/uploadcourse.wxml-->
+<view class="line_black">
+  <!-- 背景蓝色块 -->
+  <view class="bg">
+    <view class="content">
+      <view class="content1">
+      </view>
+      <!-- <view class="content2"></view> -->
+    </view>
+  </view>
+  <!-- 用户信息 -->
+  <view class="user">
+    <view class="container">
+      <view class="box">
+        <view class="view_size between_Css">
+          <view>
+            <view class="name">达梦课堂</view>
+            <view class="user-id">LV.2</view>
+            <view class="user-id" style="width:400rpx;"><progress percent="80" color="#3F87EE" active stroke-width="3"/></view>
+            <view class="user-id view_size left_Css"><view class="font_name">向伟</view><view class="font_charm">魅力值 1682/2000</view></view>
+          </view>
+          <view class="img-up"></view>  
+        </view>
+      </view>
+      <view class="box2">
+        <view class="view_size between_Css">
+          <view class="inputbox item">
+            <view class="span">粉丝</view>
+            <view>14</view>
+          </view>
+          <view class="inputbox item">
+            <view class="span">总提问</view>
+            <view>200</view>
+          </view>
+          <view class="inputbox item">
+            <view class="span">课程</view>
+            <view>4</view>
+          </view>
+          <view class="inputbox item">
+            <view class="span">总收益</view>
+            <view>1224</view>
+          </view>
+        </view>
+      </view>
+      <view class="box2 mp-cell">
+        <mp-cell link value="我的收益" ext-class="mp_css border_bottom" bindtap="myEarnings">
+          <mp-icon slot="icon" type="outline" icon="shop" color="#9594A4" size="{{20}}" extClass="icon"></mp-icon>
+        </mp-cell>
+        <mp-cell link value="我的视频" ext-class="mp_css border_bottom">
+          <mp-icon slot="icon" type="outline" icon="contacts" color="#9594A4" size="{{20}}" extClass="icon"></mp-icon>
+        </mp-cell>
+        <mp-cell link value="我的设置" ext-class="mp_css" bindtap="mySetting">
+          <mp-icon slot="icon" type="outline" icon="setting" color="#9594A4" size="{{20}}" extClass="icon"></mp-icon>
+        </mp-cell>
+      </view>
+    </view>
+  </view>
+
+  <!-- 上传按钮 -->
+  <view class='btn-view'>
+      <button size="default" type="primary" class='btn' bindtap="clickToLogin">退出登录</button>
+  </view>
+</view>

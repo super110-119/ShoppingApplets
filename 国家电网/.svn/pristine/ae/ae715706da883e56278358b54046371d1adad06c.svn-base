@@ -1,0 +1,13 @@
+<!--pages/demand/d-page/succeed/succeed.wxml-->
+<view class="cotainer">
+  <view class="box icon">
+    <icon type="success" size="104rpx"/>
+  </view>
+  <view class="box text-title">
+    <view>提交成功</view>
+    <view>感谢您的参与，谢谢。</view>
+  </view>
+  <view class="box btn">
+    <button type="primary" bindtap="btnClick">返回</button>
+  </view>
+</view>

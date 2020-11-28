@@ -1,0 +1,132 @@
+// pages/profile/profile.js
+var app = getApp()
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    // 员工信息数据
+    userMes: {
+      img: "../../../../assets/img/profile/user.jpg",
+      name: "未登录",
+      company: "国网承德供电公司",
+      userId: 0
+    },
+    isLoad: false
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    // let mes = app.globalData.userMessage
+    // if(mes === null ){
+    //     return
+    // } 
+    // let data = app.globalData
+   
+    // let obj = this.data.userMes
+    // obj.img = mes.frontUser.headimgurl
+    // obj.name = mes.frontUser.realName || '加载中...'
+    // obj.userId = mes.frontUser.workId || '000'
+    // this.setData({
+    //   userMes: obj,
+    //   isLoad: true
+    // })
+    // // 关闭下拉
+    // wx.stopPullDownRefresh()
+    this.checkUserMsg()
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+  /**
+   * 用户点击下拉刷新
+   */
+   onPullDownRefresh(){
+     this.checkUserMsg()
+  },
+
+  //查询用户信息
+  checkUserMsg: function() {
+    let mes = app.globalData.userMessage
+    if(mes === null ){
+        return
+    } 
+    let data = app.globalData
+   
+    let obj = this.data.userMes
+    obj.img = mes.frontUser.headimgurl
+    obj.name = mes.frontUser.realName || '加载中...'
+    obj.userId = mes.frontUser.workId || '000'
+    console.log(mes.frontUser.roleCode)
+
+    if(mes.frontUser.roleCode !== undefined && mes.frontUser.roleCode.length > 0){
+      const roleCode = mes.frontUser.roleCode.split(',')
+      //A为审核员
+      const a = roleCode.indexOf('A')
+      if(a > -1){
+        obj.role = 1
+      }else{
+        obj.role = 0
+      }
+    }else{
+      obj.role = 0
+    }
+
+    this.setData({
+      userMes: obj,
+      isLoad: true
+    })
+    // 关闭下拉
+    wx.stopPullDownRefresh()
+  }
+})

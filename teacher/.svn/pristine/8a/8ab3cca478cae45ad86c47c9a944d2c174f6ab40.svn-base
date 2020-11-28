@@ -1,0 +1,66 @@
+/* pages/myClass/classComponents/classItem/classItem.wxss */
+.box{
+  width: 670rpx;
+  margin: 40rpx auto;
+  height: 258rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+  border-radius: 18rpx;
+  box-shadow: 0px 0px 1px 1px #cacaca;
+}
+.box>view{
+  position: absolute;
+}
+.image{
+  width: 200rpx;
+  height: 200rpx;
+  top: 30rpx;
+  left: 40rpx;
+}
+.image image{
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+.title{
+  top: 25rpx;
+  left: 270rpx;
+  font-size: 30rpx;
+  font-weight: 550;
+  height: 100rpx;
+  width: 360rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.time{
+  top: 195rpx;
+  left: 270rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+.btns{
+  display: flex;
+  width: 422rpx;
+  justify-content: space-evenly;
+  right: 0;
+  bottom: 18rpx;
+}
+.btn{
+  font-size: 26rpx;
+  padding: 10rpx 25rpx;
+  border-radius: 10rpx;
+  color: #fff;
+}
+.btn1{
+  background-color: #3399ff;
+}
+.btn2{
+  background-color: #00cc66;
+}
+.btn3{
+  background-color: #ff9900;
+}

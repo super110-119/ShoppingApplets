@@ -1,0 +1,91 @@
+<!--pages/reserveitem/createitem/createtraining/createtraining.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+    <view class="up_border"></view>
+    <view class="pad_view"><progress percent="{{progressnum}}" show-info stroke-width="7"></progress></view>
+    <view class="pad_view">
+        <block wx:if="{{question == 0}}">
+            <mp-cell link>
+                <view class="font1">需求点 <text style="color:red">*</text></view>
+                <!-- <view class="font2" slot="footer">需求点</view> -->
+                <picker slot="footer" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                    <view class="font2">
+                    {{array[index]}}
+                    </view>
+                </picker>
+            </mp-cell>
+            <mp-cell link>
+                <view class="font1">单位名称 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">国网北京电力</view>
+            </mp-cell>
+            <mp-cell link>
+                <view class="font1">项目所属单位 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">国网北京海淀供电公司</view>
+            </mp-cell>
+            <mp-cell>
+                <view class="font1">项目名称 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">变电运行教材开发项目</view>
+            </mp-cell>
+            <mp-cell link>
+                <view class="font1">一级分类 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">培训项目及教材、课件开发</view>
+            </mp-cell>
+            <mp-cell link>
+                <view class="font1">二级分类 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">培训软课题研究或培训项目开发</view>
+            </mp-cell>
+            <mp-cell link>
+                <view class="font1">三级分类 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">**</view>
+            </mp-cell>        
+            <mp-cell link>
+                <view class="font1">实施范围 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">省公司(直属单位)级</view>
+            </mp-cell>     
+        </block>
+        <block wx:if="{{question == 1}}">
+            <mp-cell>
+                <view class="font1">项目必要性 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">项目的必要性要输入</view>
+            </mp-cell>
+            <mp-cell>
+                <view class="font1">项目主要内容 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">变电运行教材开发</view>
+            </mp-cell>
+            <mp-cell link>
+                <view class="font1">主办部门 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">人力资源部</view>
+            </mp-cell>
+            <mp-cell link>
+                <view class="font1">承办单位 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">人力资源部</view>
+            </mp-cell> 
+            <mp-cell>
+                <view class="font1">总费用（预算）<text style="color:red">*</text></view>
+                <view class="font2" slot="footer">100000元</view>
+            </mp-cell>  
+            <mp-cell link>
+                <view class="font1">经费来源 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">按工资总额提取的培训教育经费</view>
+            </mp-cell>         
+            <mp-cell>
+                <view class="font1">责任人 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">张三</view>
+            </mp-cell>
+            <mp-cell>
+                <view class="font1">联系人 </view>
+                <view class="font2" slot="footer">张三</view>
+            </mp-cell>
+            <mp-cell>
+                <view class="font1">备注 </view>
+                <view class="font2" slot="footer">备注</view>
+            </mp-cell>
+            <mp-cell>
+                <view class="font1">储备项目自评分 <text style="color:red">*</text></view>
+                <view class="font2" slot="footer">10%</view>
+            </mp-cell>    
+        </block>
+        <button wx:if="{{question > 0}}" class="weui-btn2" type="default" bindtap="submitForm" style="width: 90%;border: 1px #ADAEAF solid" bindtap="lastQuestion">上一步</button>
+        <button wx:if="{{question < 1}}" class="weui-btn" type="primary" bindtap="submitForm" style="width: 90%;" bindtap="nextQuestion">下一步</button>
+        <button wx:if="{{question == 1}}" class="weui-btn" type="primary" bindtap="submitForm" style="width: 90%;">提交</button>
+    </view>
+</view>

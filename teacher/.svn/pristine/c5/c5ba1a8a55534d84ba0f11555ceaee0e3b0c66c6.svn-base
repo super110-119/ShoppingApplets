@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "问答",
+  "navigationBarBackgroundColor": "#3F87EE",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f2f4f5",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

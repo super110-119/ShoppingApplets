@@ -1,0 +1,257 @@
+// pages/common_pages/examination/examination.js
+let {getExamDeatil} = require("../../../network/class")
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    // 自定义信息
+    message:{
+      data:  [
+        {
+          title: "您所在的单位是？",
+          problem: [
+            "机关部室",
+            "直属单位",
+            "县公司"
+          ]
+        },{
+          title: "您现在从事的单位是？",
+          problem: [
+            "综合行政",
+            "党建管理",
+            "工会管理"
+          ]
+        },{
+          title: "您所在的单位是？",
+          problem: [
+            "机关部室",
+            "直属单位",
+            "县公司"
+          ]
+        },{
+          title: "您现在从事的单位是？",
+          problem: [
+            "综合行政",
+            "党建管理",
+            "工会管理"
+          ]
+        },{
+          title: "您所在的单位是？",
+          problem: [
+            "机关部室",
+            "直属单位",
+            "县公司"
+          ]
+        },{
+          title: "您现在从事的单位是？",
+          problem: [
+            "综合行政",
+            "党建管理",
+            "工会管理"
+          ]
+        },{
+          title: "您所在的单位是？",
+          problem: [
+            "机关部室",
+            "直属单位",
+            "县公司"
+          ]
+        },{
+          title: "您现在从事的单位是？",
+          problem: [
+            "综合行政",
+            "党建管理",
+            "工会管理"
+          ]
+        },{
+          title: "请写下您对培训工作的建议或需求。"
+        }
+      ],
+      titles: "党建考试",
+      outTime: 1
+    },
+    // 分秒
+    mm: 0,
+    ss: "59",
+    isM: true,
+    // 所做题目数量
+    num: 0,
+    // 所选择的答案
+    userAnswer: [],
+    // 是否已经完成
+    isShow: false,
+    // 考试题目 id
+    examId: ''
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad:async function (options) {
+    // 获取考试 id
+/*     let examId = options.examId
+    let examMsg = await getExamDeatil(examId)
+    console.log(examMsg); */
+    
+// 考试倒计时-------------------
+    let toFext = mes => mes > 9 ? mes : '0' + mes
+    // 1、获取时间
+    let mm = this.data.message.outTime
+    // 2、修改时间
+    this.setData({
+      mm: toFext(mm),
+      ss: '00'
+    })
+    // 3、设置计时器开始倒计时(分钟)
+    let timerM = setTimeout(() => {
+      // 获取当前分钟时间
+      let m = this.data.mm
+      m = parseInt(m)
+      m -= 1
+      // 如果还有时间
+      if(m > -1){
+        this.setData({
+          mm: toFext(m)
+        })
+      }else{
+        // 没有时间了
+        noTime()
+      }
+    }, 60000)
+    // 3.1、 设置倒计时(秒钟)
+    let timer = setInterval(() => {
+      // 进入计时器
+      let s = this.data.ss;
+      s = parseInt(s);
+      s -= 1;
+      s = s < 0 ? 59 : toFext(s)
+      this.setData({
+        ss: s
+      })
+    }, 1000)
+    // 3.2、设置倒计时(分)
+    setTimeout(() => {
+      let mm = this.data.mm
+      mm -= 1
+      mm > -1 ? mm : noTime()
+      this.setData({
+        mm: toFext(mm)
+      })
+    }, 1000)
+    // 4、设置时间结束执行的函数
+    function noTime(){
+      clearInterval(timer);
+      clearTimeout(timerM);
+      this.setData({
+        mm: '00',
+        ss: '00'
+      })
+      console.log(11111);
+    }
+// 考试倒计时-------------------
+
+/*     this.setData({
+      examId
+    }) */
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+
+  /**
+   * 自定义方法----------------------------------
+   * 
+   */
+  radioChange(e){
+    let obj = e.detail
+    let arr = this.data.userAnswer
+    for(let i of arr){
+      if(i.index === obj.index){
+        i.value = obj.value
+        this.setData({
+          userAnswer: arr
+        })
+        return
+      }
+    }
+    arr.push(obj)
+    this.setData({
+      userAnswer: arr,
+      num: arr.length
+    })
+  },
+  btnClick(){
+    let n1 = this.data.num;
+    let n2 = this.data.message.data.length;
+    n1 = parseInt(n1)
+    n2 = parseInt(n2)
+    if(n1 === n2){
+      let demo = this.data.isShow;
+      this.setData({
+        isShow: !demo
+      })
+    }else{
+      let n = n2 - n1;
+      wx.showModal({
+        title: "您还有" + n + "题没有答完",
+        content: "答完才能交卷！！！",
+        showCancel: false
+      })
+    }
+  },
+  btnsClick(){
+    wx.navigateBack({
+      delta: 1,
+    })
+  }
+})

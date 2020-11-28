@@ -1,0 +1,82 @@
+/**index.wxss**/
+page {
+  background-color: #F6F6F6;
+}
+
+.justify_css {
+  display: flex;
+  align-items: center;
+}
+
+.left_css {
+  justify-content: flex-start;
+}
+
+.title_css {
+  height: 120rpx;
+  padding: 0 40rpx;
+}
+
+.font1_css {
+  color: #666666;
+  font-size: 16px;
+}
+
+.font2_css {
+  color: #FFFFFF;
+  font-size: 13px;
+  margin: auto;
+}
+
+.font3_css {
+  font-size: 15px;
+  margin-left: 10rpx;
+  color: #888888;
+}
+
+.btn_css {
+  background-color: #3F87EE;
+  height: 70rpx;
+  width: 25%;
+  border-radius: 5px;
+  box-shadow: 1px 6px 5px 0px #c4c4c4;
+}
+
+.course_card {
+  padding: 0 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.course_box {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 1px #c4c4c4;
+}
+
+.course_img_vox {
+  padding: 25rpx 40rpx;
+}
+
+.radio_group {
+  margin-left: 100rpx;
+}
+
+.radio_view {
+  margin-top: 30rpx;
+  font-size: 15px;
+}
+
+.radio_input {
+  border: 1px solid #c4c4c4;
+  margin-left: 20rpx;
+  width: 100rpx;
+}
+
+.radio_sum {
+  margin-left: 20rpx;
+}
+
+radio .wx-radio-input.wx-radio-input-checked{
+  border:1px solid #3F87EE !important;
+  background: #3F87EE !important;
+}

@@ -1,0 +1,201 @@
+// pages/common_pages/demand/demand.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    // 自定义信息
+    message:{
+      data:  [
+        {
+          title: "理论知识水平",
+          problem: [
+            "非常满意",
+            "满意",
+            "基本满意",
+            "不满意"
+          ]
+        },{
+          title: "联系实际的能力",
+          problem: [
+            "非常满意",
+            "满意",
+            "基本满意",
+            "不满意"
+          ]
+        },{
+          title: "讲解的条理性和逻辑性",
+          problem: [
+            "非常满意",
+            "满意",
+            "基本满意",
+            "不满意"
+          ]
+        },{
+          title: "理论知识水平",
+          problem: [
+            "非常满意",
+            "满意",
+            "基本满意",
+            "不满意"
+          ]
+        },{
+          title: "联系实际的能力",
+          problem: [
+            "非常满意",
+            "满意",
+            "基本满意",
+            "不满意"
+          ]
+        },{
+          title: "讲解的条理性和逻辑性",
+          problem: [
+            "非常满意",
+            "满意",
+            "基本满意",
+            "不满意"
+          ]
+        },{
+          title: "理论知识水平",
+          problem: [
+            "非常满意",
+            "满意",
+            "基本满意",
+            "不满意"
+          ]
+        },{
+          title: "联系实际的能力",
+          problem: [
+            "非常满意",
+            "满意",
+            "基本满意",
+            "不满意"
+          ]
+        },{
+          title: "讲解的条理性和逻辑性",
+          problem: [
+            "非常满意",
+            "满意",
+            "基本满意",
+            "不满意"
+          ]
+        },{
+          title: "意见和建议。"
+        }
+      ],
+      titles: "课程评估",
+      outTime: 10
+    },
+    // 所做题目数量
+    num: 0,
+    // 所选择的答案
+    userAnswer: [],
+    // 是否已经完成
+    isShow: false
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+  /**
+   * 自定义方法----------------------------------
+   * 
+   */
+  radioChange(e){
+    let obj = e.detail
+    let arr = this.data.userAnswer
+    for(let i of arr){
+      if(i.index === obj.index){
+        i.value = obj.value
+        this.setData({
+          userAnswer: arr
+        })
+        return
+      }
+    }
+    arr.push(obj)
+    this.setData({
+      userAnswer: arr,
+      num: arr.length
+    })
+  },
+  btnClick(){
+    let n1 = this.data.num;
+    let n2 = this.data.message.data.length;
+    n1 = parseInt(n1)
+    n2 = parseInt(n2)
+    if(n1 === n2){
+      let demo = this.data.isShow;
+      this.setData({
+        isShow: !demo
+      })
+      
+    }else{
+      let n = n2 - n1;
+      wx.showModal({
+        title: "您还有" + n + "题没有答完",
+        content: "答完才能交卷！！！",
+        showCancel: false
+      })
+    }
+  },
+  btnsClick(){
+    wx.navigateBack({
+      delta: 1,
+    })
+  }
+})

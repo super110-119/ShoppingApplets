@@ -1,0 +1,30 @@
+<!--pages/setting/setting.wxml-->
+<view>
+  <view class="justify_css title_css between_Css">
+    <view class="font1_css"></view>
+    <view class="justify_css btn_css">
+      <view class="font2_css" bindtap="createItem">确定</view> 
+    </view>
+  </view>
+
+  <view class="course_card">
+    <view class="course_box">
+      <view class="course_img_vox" style="height:1000rpx;">
+          <view class="font3_css">接待方式</view>
+          <radio-group class="radio_group" >
+            <view class="radio_view justify_css left_Css">
+              <radio>积分问答</radio>
+              <input class="radio_input"></input>
+              <view class="radio_sum">分</view>
+            </view>
+            <view class="radio_view justify_css left_Css">
+              <radio>学分问答</radio>
+              <input class="radio_input"></input>
+              <view class="radio_sum">学币</view>
+            </view>
+          </radio-group>
+      </view>
+
+    </view>
+  </view>
+</view>

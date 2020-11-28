@@ -1,0 +1,20 @@
+<!--method/questions/text/text.wxml-->
+<!-- 
+  填空题模块
+ -->
+<view class="question_box">
+  <!-- 标题部分 -->
+  <view class="question_title">
+    <!-- 显示题数 -->
+    <view class="question_title_index">第 {{index + 1}} 题：</view>
+    <!-- 显示题目 -->
+    <view class="question_title_text">{{data.subject.subjectTitle || '暂无'}}</view>
+  </view>
+  <!-- 题目部分 -->
+  <view class="question_list">
+    <textarea
+      placeholder="请输入您的回答！！！" 
+      placeholder-class="textarea_demos"
+      bindblur="textareaChange"/>
+  </view>
+</view>

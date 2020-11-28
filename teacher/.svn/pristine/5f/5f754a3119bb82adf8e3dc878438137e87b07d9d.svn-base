@@ -1,0 +1,26 @@
+/* component/no_data_img/no_data_img.wxss */
+.no_data_image{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  overflow: hidden;
+}
+.no_data_image_box{
+  width: 250rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.no_data_image_box_img{
+  width: 250rpx;
+  height: 250rpx;
+}
+.no_data_image_box_title{
+  color: #e6e6e6;
+  text-align: center;
+  font-size: 50rpx;
+}

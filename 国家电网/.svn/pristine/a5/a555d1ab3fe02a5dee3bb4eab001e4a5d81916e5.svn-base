@@ -1,0 +1,20 @@
+let {ajax, baseURL, httpHead2, fileHttp } = require("./index")
+async function getClassApply(classId, app){
+  let datas = await app.globalData.userMessage;
+  let mes = await ajax({
+    url: httpHead2 + "api/elnClassUser.action?m=insert",
+    data: {
+      coopCode: 'chengde',
+      frontUserId: datas.frontUser.frontUserId,
+      classId,
+      accessToken: datas.accessToken,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl
+    }
+  })
+  return mes
+}
+
+module.exports = {
+  getClassApply
+}

@@ -1,0 +1,15 @@
+<!--pages/home/h-compontent/collapse/collapse.wxml-->
+<view class="box">
+  <view class="box-titlt">
+    <text class="box-titlt-mes">{{mes.title}}（{{num}}个）</text>
+    <text
+     class="box-titlt-more"
+     bind:tap="collapseClick">更多 ></text>
+  </view>
+  <view class="box-list" wx:if="{{mes.synopsis.length > 0}}">
+    <block wx:for="{{mes.synopsis}}" wx:key="index">
+      <collapseItem mes="{{item}}"/>
+    </block>
+  </view>
+  <view wx:else><no-data/></view>
+</view>

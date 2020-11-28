@@ -1,0 +1,52 @@
+/* pages/earnings/earnings.wxss */
+.box{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  /* background-color: #ccc; */
+  text-align: center;
+}
+.center{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.icon{
+  top: 160rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+.icon image{
+  width: 100%;
+  height: 100%;
+}
+.body{
+  top: 360rpx;
+  font-size: 26rpx;
+  color: #444;
+}
+.body_number{
+  display: flex;
+  align-items: baseline;
+}
+.body_number_num{
+  font-size: 76rpx;
+  color: #000;
+  margin: 0 20rpx;
+}
+
+.btn{
+  bottom: 300rpx;
+}
+.withdraw_deposit{
+  background-color: #3F87EE !important;
+  color: #fff;
+  padding: 25rpx 150rpx !important;
+  font-size: 26rpx !important;
+  box-shadow: 1px 6px 5px 0px #c4c4c4;
+}
+.understand{
+  font-size: 26rpx;
+  color: #3F87EE;
+  bottom: 220rpx;
+}

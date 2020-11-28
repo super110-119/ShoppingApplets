@@ -1,0 +1,12 @@
+<!--pages/profile/p-compontent/user/user.wxml-->
+<view class="container">
+  <view class="img" bindtap="userIconClick">
+    <image src="{{mes.img}}"/>
+  </view>
+  <view class="box">
+    <view class="name" bindtap="userIconClick">{{mes.name}}</view>
+    <view class="company">{{mes.company}}</view>
+    <!-- <view class="user-id" bindtap="onBindMsg">(点击开启消息通知)</view> -->
+    <!-- <view class="user-id" wx:if="{{load}}">(员工编号：{{mes.userId}})</view> -->
+  </view>
+</view>

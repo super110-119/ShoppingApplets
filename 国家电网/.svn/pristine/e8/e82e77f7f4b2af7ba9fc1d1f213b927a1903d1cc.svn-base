@@ -1,0 +1,17 @@
+<!--pages/demand/d-page/particulars/particulars.wxml-->
+<view class="cotainer">
+  <view class="titles">{{message.title}}</view>
+  <view class="outline">描述：{{message.outline}}</view>
+  <form>
+    <block wx:for="{{message.problem}}" wx:key="index">
+      <view class="list">
+        <items
+          info="{{item}}"
+          bind:userChangeInfo="userChangeInfo"
+          index="{{index}}"/>
+      </view>
+    </block>
+    <button type="primary" form-type="submit" bindtap="submit">提交</button>
+  </form>
+</view>
+<view class="get_mask" wx:if="{{isMask}}"></view>

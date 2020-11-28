@@ -1,0 +1,38 @@
+<!--method/questions/more/more.wxml-->
+<!-- 
+  多选题模块
+ -->
+<view class="question_box">
+  <!-- 标题部分 -->
+  <view class="question_title">
+    <!-- 显示题数 -->
+    <view class="question_title_index">第 {{index + 1}} 题：</view>
+    <!-- 显示题目 -->
+    <view class="question_title_text">{{data.subject.subjectTitle || '暂无'}}</view>
+  </view>
+  <!-- 题目部分 -->
+  <view class="question_list">
+    <!-- 用于监听每一次选择框的修改 -->
+    <checkbox-group bindchange="itemChange">
+      <!-- 循环遍历每一个选项 -->
+      <block wx:for="{{data.itemList}}" wx:key="index" wx:for-index="i">
+        <!-- 每一道题目用 view 包裹，方便修改 -->
+        <view class="question_item">
+          <!-- label -->
+          <label class="item_lable">
+            <!-- 选择框 -->
+            <checkbox name="{{index}}" value="{{item.itemId}}" style="transform:scale(0.7)" class="item_radio"/>
+            <!-- 题目 -->
+            <view class="item_text">
+              <!-- 题干 -->
+              <text>{{item.itemContent}}</text>
+              <!-- (分数) -->
+              <text wx:if="{{item.itemScore || item.itemScore === 0}}">({{item.itemScore}}分)</text>
+            </view>
+          </label>
+        </view>
+      </block>
+    </checkbox-group>
+  </view>
+</view>
+

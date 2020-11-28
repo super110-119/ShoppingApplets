@@ -1,0 +1,18 @@
+let {ajax, baseURL, httpHead2, fileHttp, setMustMsg } = require("./index");
+// 获取我的培训班
+async function getMyClass(pageNo, pageSize = 4){
+  return await ajax({
+    url: `${httpHead2}api/elnClassUser.action?m=getMyClassPage`,
+    data: { pageNo, pageSize, ...setMustMsg() }
+  })
+}
+// 获取首页数据
+async function getHomeMes(pageSize = 2){
+  return await ajax({
+    url: `${httpHead2}api/portalSetting.action?m=getWXMainPageDataChengde`,
+    data: { pageSize, ...setMustMsg() }
+  })
+}
+module.exports = {
+  getMyClass, getHomeMes, fileHttp
+}

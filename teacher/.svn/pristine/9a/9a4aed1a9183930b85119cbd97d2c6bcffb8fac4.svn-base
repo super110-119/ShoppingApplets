@@ -1,0 +1,49 @@
+<!--pages/question/question.wxml-->
+<view>
+  <!-- <view class="que-box" bindtap="clickToAnswer">
+    <view class="stu-msg view_size between_Css">
+      <view>
+        <image mode="aspectFill" src="http://file.51eln.com/uploads/gongjiang/resource/elnTeacher/c4bf03eed7024630b02dedd7f1b4e30f.jpg" class="img-box"/>
+        <view class="name-box">学员名称</view>
+      </view>
+      <view class="time-box">
+        <view class="tag-box">未回答</view>
+        <view>2020-05-13 10:05</view>
+      </view>
+    </view>
+    <view class="stu-que">
+      <view class="text-box">
+        <view class="text-line">
+          这是一种基金这是一种基金这是一种基金这是一种基金这是一种基金这是一种基金这是一种基金这是？金这是一种基金这金这是一种基金这金这是一种基金这
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <block wx:for='{{queList}}' wx:key='index'>
+    <view class="que-box" bindtap="clickToAnswer" data-index="{{item.askId}}">
+      <view class="stu-msg view_size between_Css">
+        <view>
+          <image mode="aspectFill" src="{{item.headimgurl===''?defaultImg:item.headimgurl}}" class="img-box"/>
+          <view class="name-box">{{item.nickname}}</view>
+        </view>
+        <view class="time-box">
+          <view class="tag-box">{{item.isResolved==='N'?'未回答':'已回答'}}</view>
+          <view>{{item.createTime}}</view>
+        </view>
+      </view>
+      <view class="stu-que">
+        <view class="text-box">
+          <view class="text-line">
+            {{item.askTitle}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{queList.length <= 0}}">
+    <view class="noneview_css">
+      <image class="noneimg_css" src="../../images/none.png"></image>
+      <view class="nonefont_css">暂无数据</view>
+    </view>
+  </block>
+</view>

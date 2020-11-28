@@ -1,0 +1,52 @@
+//定义常量
+//var userInfo = null;
+//引入代码
+var call = require("/utils/request.js")
+
+//app.js
+App({
+  onLaunch: function () {
+    // 登录
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        let data = {
+          coopCode: 'cloud',
+          appCode: 'baiwanmingshi',
+          code: res.code,
+        }
+        call.request('weixinOauthWxapp.action', false, data, this.loginSuc, this.failRequest)
+      }
+    })
+  },
+
+  loginSuc: function (data) {
+    console.log('用户信息=>', data)
+    if(data.ret == -1){
+      wx.reLaunch({
+        url: '/pages/login/login',
+      })
+    }else{
+      this.globalData.userInfo = data.data;
+      //回调方法
+      if (this.callback) { 
+        this.callback()
+      }
+      //如果不存在‘isTeacher’字段，则说明该用户需要绑定手机号
+      if(!('isTeacher' in data.data.frontUser)  || (data.data.frontUser.isTeacher === 'N')){
+        wx.reLaunch({
+          url: '/pages/login/login',
+        })
+      }
+    }
+  },
+
+  failRequest: function () {
+    console.log('接口调用失败')
+  },
+  
+  globalData: {
+    userInfo:''
+  },
+
+})

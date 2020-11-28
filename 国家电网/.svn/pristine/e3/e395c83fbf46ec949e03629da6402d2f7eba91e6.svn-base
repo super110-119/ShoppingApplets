@@ -1,0 +1,24 @@
+<!--pages/demand/d-page/particulars/items/items.wxml-->
+<view class="box">
+  <view class="title">
+    <text>第{{index + 1}}题 </text>\t
+    <text> {{mes.titles}}</text>
+  </view>
+  <view class="inputs" wx:if="{{mes.list.length !== 0}}">
+    <radio-group bindchange="itemChagnge">
+      <block wx:for="{{mes.list}}" wx:key="index">
+        <label>
+          <radio 
+            value="{{item}}" 
+            name="{{mes.titles}}"/>
+          <text>{{item}}</text>
+        </label>
+      </block>
+    </radio-group>
+  </view>
+  <view class="checkboxs" wx:else>
+    <textarea 
+      placeholder="请输入您的评价！！！"
+      bindinput="textChange"/>
+  </view>
+</view>

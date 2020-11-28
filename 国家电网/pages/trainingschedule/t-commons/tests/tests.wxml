@@ -1,0 +1,22 @@
+<!--pages/trainingschedule/t-commons/tests/tests.wxml-->
+<view class="box">
+  <view class="title">{{mes.titles}}</view>
+  <view class="isTime">
+    <view class="onTime">开始时间：{{mes.onTime}}</view>
+    <view class="outTime">结束时间：{{mes.outTime}}</view>
+  </view>
+  <view class="datas">
+    <view class="data1" wx:if="{{mes.state === 0}}">进行中</view>
+    <view class="data2" wx:if="{{mes.state === 1}}">未开始</view>
+    <view class="data3" wx:if="{{mes.state === 2}}">已结束</view>
+  </view>
+  <view class="btn1" wx:if="{{mes.cuccess}}">
+    <view class="btns">{{mes.btnText}}</view>
+  </view>
+  <view class="btn2" wx:else>
+    <view class="icon">
+      <icon type="success" size="48rpx"/>
+      <text>已完成</text>
+    </view>
+  </view>
+</view>

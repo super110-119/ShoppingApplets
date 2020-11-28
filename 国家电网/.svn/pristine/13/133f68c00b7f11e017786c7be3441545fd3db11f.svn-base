@@ -1,0 +1,29 @@
+let {ajax, baseURL, httpHead2, fileHttp } = require("./index")
+let {setMustMsg} = require("./setMustMsg");
+// 设置用户报名培训班
+async function getClassApply(classId, app){
+  let {
+    coopCode, accessToken, nickname, headimgurl, frontUserId
+  } = {...setMustMsg()}
+  let datas = await app.globalData.userMessage;
+  let mes = await ajax({
+    url: httpHead2 + "api/elnClassUser.action?m=insert",
+    data: { coopCode, frontUserId, classId, accessToken, nickname, headimgurl }
+  })
+  return mes
+}
+// 设置查看考试详情
+async function getExamDeatil(examId){
+  let {
+    coopCode, accessToken, nickname, headimgurl, frontUserId
+  } = {...setMustMsg()}
+  let mes = await ajax({
+    url: httpHead2 + "api/examInfo.action?m=getDetail",
+    data: { coopCode, frontUserId, examId, accessToken, nickname, headimgurl }
+  })
+  return mes
+}
+
+module.exports = {
+  getClassApply, getExamDeatil
+}

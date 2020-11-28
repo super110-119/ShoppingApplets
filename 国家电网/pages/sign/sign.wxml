@@ -1,0 +1,5 @@
+<!--pages/sign/sign.wxml-->
+<success bind:btnsClick="btnsClick" wx:if="{{signResult === 'success'}}">
+  <view slot="title1">签到成功</view>
+  <view slot="btn">返回</view>
+</success>

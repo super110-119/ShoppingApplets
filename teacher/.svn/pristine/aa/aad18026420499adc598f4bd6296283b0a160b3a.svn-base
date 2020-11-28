@@ -1,0 +1,31 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+/* 文字布局 */
+.view_size {
+  display: flex;
+}
+
+.between_Css {
+  justify-content: space-between;
+}
+
+.left_Css {
+  justify-self: start;
+}
+
+.line_clamp2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow : hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,10 @@
+<!--pages/home/h-compontent/class-list/class-item/class-item.wxml-->
+<view class="item">
+  <view class="item-title">{{mes.className}}</view>
+  <view class="item-explain">简介:{{mes.memo || '暂无'}}</view>
+  <view class="item-status">
+    <view class="isok" wx:if="{{isBeing}}">进行中</view>
+    <view class="isno" wx:else>已结束</view>
+  </view>
+</view>
+

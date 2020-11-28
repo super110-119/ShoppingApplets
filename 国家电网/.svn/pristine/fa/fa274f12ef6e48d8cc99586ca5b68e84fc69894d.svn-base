@@ -1,0 +1,10 @@
+<!--common/noDataBig/noDataBig.wxml-->
+<view class="no_data_container">
+  <view class="container_box">
+    <view class="box_img">
+      <image src="/assets/img/error/no_msg1.png"/>
+    </view>
+    <view class="container_title">{{title}}</view>
+  </view>
+</view>
+

@@ -1,0 +1,123 @@
+<!--pages/trainingschedule/trainingschedule.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+  <view>
+      <!-- 背景图以及大标题 -->
+    <view style="width:100%;height:28vh;">
+      <view class="bg_css" style="position:fixed;z-index:2">
+        <image class="bg-image bg_css" mode="center" src="http://file.51eln.com/uploads/wxshake/resource/cmsNews/79890796bcdf4cd39498c5e8ea39fb62.jpg"></image>
+        <view class="view_size right_Css">
+          <image class="inc_css" mode="scaleToFill" bindtap="downQrcode" src="../../assets/img/list-bar-icon/fa-sao.png"></image>
+          <!-- <image class="inc_css" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-download.svg"></image> -->
+        </view>
+        <view class="view_size left_Css title_css">
+          <view class="font1 font_title" style="font-weight: 600;">{{headers.titles || '待定'}}</view>
+        </view>   
+        <view class="view_size left_Css title_css2">
+          <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-clockw.svg"></image>
+          <view class="font2 font_title">时间：{{headers.beginTime || '待定'}}~ {{headers.endTime || '待定'}}</view>
+        </view>    
+        <!-- <view class="view_size left_Css title_css2">
+        <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-map-markerw.svg"></image>
+          <view class="font2 font_title">地点：{{headers.address || '待定'}}</view>
+        </view> -->
+      </view>
+    </view>
+    <!-- 标签选择栏 -->
+    <view class="selcetT_css view_size left_Css header">
+      <view class="selectC_css font3_r"><view class="selectL_css {{btnselect == 0 ? 'childselect fontselect':''}}" bindtap="changeSelect" data-index="0">课表</view></view>
+      <view class="selectC_css font3_r"><view class="selectL_css {{btnselect == 1 ? 'childselect fontselect':''}}" bindtap="changeSelect" data-index="1">签到</view></view>
+      <view class="selectC_css font3_r"><view class="selectL_css {{btnselect == 2 ? 'childselect fontselect':''}}" bindtap="changeSelect" data-index="2">考试</view></view>
+      <view class="selectC_css font3_r"><view class="selectL_css {{btnselect == 3 ? 'childselect fontselect':''}}" bindtap="changeSelect" data-index="3">评估</view></view>
+    </view> 
+  </view>
+
+  <!-- <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas> -->
+
+  <view style="margin-top:8vh;position:relative;z-index:1">
+    <view wx:if="{{btnselect == 0}}">
+      <view class="schedulecss" wx:if="{{mes3.length > 0}}">
+      <block wx:for="{{mes3}}" wx:for-item="i" wx:for-index="idx" wx:key="index">
+        <view class="view_size between_Css" style="margin-bottom: 2vh;">
+          <view class="font4">课程名称：{{i.titles}}</view>
+          <!-- <view class="font4">创建时间：{{i.time}}</view> -->
+          <image bindtap="listChange" data-index="{{idx}}" class="inc_css2" src="../../assets/img/comment-icon/{{i.open===true ? 'bottom':'right'}}.svg"></image>
+        </view>
+        <block wx:for="{{i.msglist}}" wx:for-item="j" wx:if="{{i.open}}" wx:key="index">
+          <view class="view_size between_Css product2_css" >
+            <image class="img_css2" src="http://file.51eln.com/uploads/wxshake/resource/cmsNews/ea7d4d4d8d6a4fad8c08bb1ea581680a.jpg"></image>
+            <view class="product_css" style="position: relative;">
+              <view class="view_size left_Css font3 fontins" style="text-align:left;color:#838383;">讲师：{{j.name}}</view>
+              <!-- <view class="view_size left_Css font3 fontins" style="text-align:left;line-height:1.2">名称：{{j.title}}</view> -->
+              <view class="view_size left_Css font4" style="color:#838383;margin-top:0.5vh;font-size:26rpx">时间：{{j.isTime}}</view>
+              <view class="view_size left_Css font4" style="color:#838383;margin-top:0.5vh">地点：{{j.addresss}}</view>
+              <view bindtap="downFile" data-index="{{j.courseId}}" class="view_size left_Css font2" style="color:#5C5C5C;position:absolute;bottom:0px">
+                <image class="inc_css2" src="../../assets/img/list-bar-icon/antOutline-download.svg"></image> 讲义
+              </view>
+            </view>
+          </view>
+        </block>
+      </block>
+      <view class="no_more_msg" wx:if="{{mes3.length > 0}}">-- 暂无更多数据 --</view>
+      </view>
+      <view wx:else><no-data/></view>
+    </view>
+    <!-- 签到 -->
+    <view wx:elif="{{btnselect == 1}}">
+      <datas datas="{{mes4}}" headers="{{headers}}"/>
+      <view class="no_more_msg"  wx:if="{{mes4.length > 0}}">-- 暂无更多数据 --</view>
+    </view>
+    <!-- 考试 -->
+    <view wx:elif="{{btnselect == 2}}" class="box2">
+      <view wx:if="{{mes1.length > 0 && headers.classPhase !== 'C'}}">
+        <block wx:for="{{mes1}}" wx:key="index">
+          <tests mes="{{item}}" bindtap="examClick" data-index="{{index}}"/>
+        </block>
+        <view class="no_more_msg" wx:if="{{mes1.length > 0}}">-- 暂无更多数据 --</view>
+      </view>
+      <view wx:else>
+        <view wx:if="{{headers.classPhase === 'C'}}">
+          <no-data mes="课程已结束"/>
+        </view>
+        <view wx:else><no-data/></view>
+      </view>
+    </view>
+    <!-- 评估 -->
+    <view wx:elif="{{btnselect == 3}}" class="box2">
+      <view wx:if="{{mes2.length > 0 && headers.classPhase !== 'C'}}">
+        <block wx:for="{{mes2}}" wx:key="index">
+          <tests mes="{{item}}" bindtap="assessClick" data-index="{{index}}"/>
+        </block>
+        <view class="no_more_msg" wx:if="{{mes2.length > 0}}">-- 暂无更多数据 --</view>
+      </view>
+      <view wx:else>
+        <view wx:if="{{headers.classPhase === 'C'}}">
+          <no-data mes="课程已结束"/>
+        </view>
+        <view wx:else><no-data/></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 浮动弹窗 二维码-->
+  <view catchtouchmove="noneEnoughPeople">
+      <mp-dialog title="{{headers.titles || '待定'}}" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+        <view>
+          <canvas class="qrcode" canvas-id="myQrcode"></canvas>
+        </view>
+      </mp-dialog>
+  </view>
+
+  <!-- 浮动弹窗 下载-->
+  <view catchtouchmove="noneEnoughPeople" class="is_boxs">
+    <mp-dialog title="{{downFileList.length <= 0 ? '暂无':''}}文档" show="{{showDownDialog}}" bindbuttontap="tapDialogDown" buttons="{{oneButton}}">
+      <block wx:for="{{downFileList}}" wx:key="index">
+        <view class="view_size between_Css dialog_bottom">
+          <view class="font_name headtext" style="text-align: initial;">{{item.fileOriginalName}}</view>
+          <view class="font_copy" bindtap="copyFilePath" data-index="{{item.filePath}}">点击打开</view>
+        </view>       
+      </block>
+    </mp-dialog>
+  </view>
+</view>
+
+<view class="get_mask" wx:if="{{isMask}}"></view>

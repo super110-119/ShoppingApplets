@@ -1,0 +1,40 @@
+// pages/myClass/classComponents/classItem/classItem.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    message: {
+      type: Object,
+      value: {}
+    }
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    infoClick(e){
+      let index = e.currentTarget.dataset.index
+      wx.navigateTo({
+        url: '/pages/myClass/info/info?courseId='+index,
+      })
+    },
+    successClick(){
+      console.log('点击了笔记按钮');
+    },
+    warningClick(){
+      // console.log('点击了提问按钮');
+      wx.navigateTo({
+        url: '/pages/myClass/question/question',
+      })
+    }
+  }
+})

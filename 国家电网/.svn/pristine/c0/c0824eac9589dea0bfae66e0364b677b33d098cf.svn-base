@@ -1,0 +1,9 @@
+<!--common/list-bar/list-bar.wxml-->
+<view class="list">
+  <block wx:for="{{mes}}" wx:key="index">
+    <item mes="{{item}}" 
+      bindtap="itemClick"
+      i="{{index}}"
+      data-index="{{index}}"/>
+  </block>
+</view>

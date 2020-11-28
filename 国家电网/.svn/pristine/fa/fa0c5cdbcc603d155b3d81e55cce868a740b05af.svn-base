@@ -1,0 +1,10 @@
+<!--common/itemask/itemask.wxml-->
+<view class="lists">
+  <view class="titles">
+    <text>{{subjectIndex+1}}. {{subjectT.subject.subjectTitle}}（{{subjectT.subject.totalScore}}分）</text>
+    <input class="items_input" placeholder="输入得分" placeholder-style="padding-left: 20rpx" type="number" bindinput="bindKeyInput"/>
+  </view>
+  <view class="textarea">
+    <textarea bindinput="bindAskInput" bindblur="sendMsg" placeholder="扣分原因"/>
+  </view>
+</view>

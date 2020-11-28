@@ -1,0 +1,20 @@
+/* common/subject/subject.wxss */
+.box{
+  margin-top: 48rpx;
+}
+.box_title{
+  margin: 16rpx 42rpx;
+  font-size: 32rpx;
+}
+radio-group {
+  margin: 0 24rpx;
+}
+.box_radio{
+  margin: 23rpx 0;
+  font-size: 24rpx;
+}
+textarea{
+  margin: 20rpx 46rpx;
+  height: 210rpx;
+  border: 1px solid rgba(187, 187, 187, 1);
+}

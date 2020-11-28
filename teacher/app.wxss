@@ -1,0 +1,54 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+/* 文字布局 */
+.view_size {
+  display: flex;
+}
+
+.between_Css {
+  justify-content: space-between;
+}
+
+.left_Css {
+  justify-self: start;
+}
+
+.line_clamp2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 空页面样式 */
+.noneview_css {
+  margin-top: 125rpx;
+  padding: 5%;
+}
+
+.noneimg_css {
+  height: 250rpx;
+  width: 250rpx;
+  display: block;
+  margin: auto;
+}
+
+.nonefont_css {
+  display: flex;
+  justify-content: center;
+  margin-top: 35rpx;
+  color: #e6e6e6;
+  font-size: 50rpx;
+  font-weight: 600;
+  letter-spacing: 8rpx;
+}

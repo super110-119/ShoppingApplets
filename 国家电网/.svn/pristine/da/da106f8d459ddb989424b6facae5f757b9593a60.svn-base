@@ -1,0 +1,79 @@
+// pages/reserveitem/reserveitem.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    //itemstate为项目状态 0：待批复 1：已通过 2：不通过
+    itemlist: [
+      {itemtitle: '党校政治理论培训', itemnum: '50.39万', itemclassification: '职工培训类/ 人力资源部', itemint: '需明确培训目的及内容，不少于20字，不多于200字；需明确培训目的及内容，不少于20字，不多于200字；需明确培训目的及内容，不少于20字，不多于200字，不多于200字，不多于200字，不多于200字，不多于200字，不多于200字，不多于200字，不多于200字，不多于200字；', itemtime: '2020-07-20 13:30', itemstate: 0},
+      {itemtitle: '党校政治理论培训', itemnum: '50.39万', itemclassification: '职工培训类/ 人力资源部', itemint: '需明确培训目的及内容，不少于20字，不多于200字；需明确培训目的及内容,少于20字，不多于200字；', itemtime: '2020-07-20 13:30', itemstate: 1},
+      {itemtitle: '党校政治理论培训', itemnum: '50.39万', itemclassification: '职工培训类/ 人力资源部', itemint: '需明确培训目的及内容，不少于20字，不多于200字；需明确培训目的及内容，不少于20字，不多于200字；需明确培训目的及内容，不少于20字，不多于200字；', itemtime: '2020-07-20 13:30', itemstate: 2},     
+    ]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+  // 跳转至创建项目页面
+  createItem: function () {
+    console.log('helloworld')
+    wx.navigateTo({
+      url: './createitem/selectitem/selectitem',
+    })
+  }
+})

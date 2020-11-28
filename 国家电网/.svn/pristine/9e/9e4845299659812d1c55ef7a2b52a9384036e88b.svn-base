@@ -1,0 +1,39 @@
+<!--pages/home/home.wxml-->
+<!-- 外层嵌套的盒子 -->
+<view class="box line_black">
+  <!-- 标题部分 -->
+  <view class="titles"> 欢迎进入国网承德 </view>
+  <!-- 背景部分 -->
+  <view class="bg">
+    <bg/>
+  </view>
+  <!-- 轮播图部分 -->
+  <view class="banner">
+    <banner 
+      banner="{{bannerImg}}"
+      indicator="{{indicator}}"
+      indicatorActive="{{indicatorActive}}"/>
+  </view>
+  <!-- 四个图标与文字 -->
+  <view class="list-bar">
+    <list-bar 
+      mes="{{listBarMes}}"
+      bind:listBarClick="listBarClick"/>
+  </view>
+  <!-- 我的项目 -->
+  <view class="project">
+    <collapse
+     mes="{{project}}"
+     num="{{totalCountP}}"
+     bind:collapseClick="projectClick"/>
+  </view>
+  <!-- 我的培训班 -->
+  <view class="training">
+    <classDemo
+     mes="{{training}}"
+     num="{{totalCount}}"
+     bind:classClick="trainingClick"/>
+  </view>
+</view>
+<view class="get_mask" wx:if="{{isMask}}"></view>
+

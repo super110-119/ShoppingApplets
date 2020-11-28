@@ -1,0 +1,188 @@
+/* pages/trainingschedule/trainingschedule.wxss */
+.up_border{
+  border-top: 2px #c8c8c8 solid;
+}
+
+.header {
+  position:fixed;
+  top:1;
+  z-index:2;
+}
+
+.view_size {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.right_Css {
+  justify-content: flex-end;
+}
+
+.left_Css {
+  justify-content: flex-star;
+}
+
+.between_Css {
+  justify-content: space-between;
+}
+
+
+.bg_css {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:28vh;
+  background-size:cover;
+  z-index:-1;
+}
+
+.img_css {
+  width: 100%;
+  height: 100%;
+}
+
+.img_css2 {
+  width: 20vh;
+  height: 16vh;
+  border-radius: 7px;
+}
+
+.inc_css {
+  width: 24px;
+  height: 24px;
+  margin-top: 2vh;
+  margin-right: 3vh;
+}
+
+.inc_css2 {
+  width: 16px;
+  height: 16px;
+  margin-right: 1vh;
+}
+
+.product_css {
+  height: 16vh;
+  width: 34vh;
+  margin-left: 1vh;
+}
+
+.product2_css {
+  margin-top: 1.5vh;
+  margin-bottom: 5vh;
+}
+
+.font1 {
+  font-size: 20px;
+}
+
+.font2 {
+  font-size: 12px;
+}
+
+.font3 {
+  font-size: 28rpx;
+}
+
+.font3_r {
+  font-size: 32rpx;
+}
+
+.font4 {
+  font-size: 14px;
+}
+
+.font_title {
+  color: rgba(255, 255, 255, 1);
+}
+
+.title_css {
+  margin-top:6vh;
+  margin-left:2vh;
+}
+
+.title_css2 {
+  margin-top:1vh;
+  margin-left:2vh;
+}
+
+.selcetT_css {
+  background-color: #FFFFFF;
+  border-bottom: 1px #DDDDDD solid;
+  width: 100%;
+  height: 8vh;
+}
+
+.selectC_css {
+  width: 25%;
+  height: 8vh;
+  line-height: 8vh;
+}
+
+.fontselect { 
+  color: #00BE95;
+  font-weight: 600;
+}
+
+.childselect {
+  border-bottom: 3px #00BE95 solid;
+}
+
+.selectL_css {
+  height: 8vh;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.schedulecss {
+  width: 100%;
+  padding: 4% 4%;
+}
+
+.qrcode {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.box2{
+  padding: 40rpx 0;
+}
+
+.get_mask{
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.font_name {
+  font-size: 15px;
+  width: 80%;
+  color: #f00;
+}
+
+.font_copy {
+  font-size: 13px;
+  color: blue;
+  text-decoration: underline;
+}
+
+.dialog_bottom {
+  margin-bottom: 15rpx;
+}
+
+.demos{
+  font-size: 26rpx;
+}
+
+.is_boxs{
+  height: 360rpx;
+}

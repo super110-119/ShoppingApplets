@@ -1,0 +1,32 @@
+//定义常量
+const httpHead = "http://api.pomesoft.com/sems-api/";
+const httpHead2 = "http://192.168.1.3:8280/";
+const appId = "wxd4b642d1daf94b09";
+var userMessage = null;
+let demo = function(){}
+
+let {getUserMes} = require("./method/userMsg")
+
+//app.js
+App({
+  onLaunch: function () {
+    // 展示本地存储能力
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs)
+    // 登录
+    getUserMes(this)
+  },
+  // 修改用户信息
+  changeMes(obj){
+    userMessage = obj
+  },
+  globalData: {
+    userInfo: null,
+    httpHead,
+    httpHead2,
+    appId,
+    // openId : openId,
+    userMessage
+  }
+})

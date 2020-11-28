@@ -1,0 +1,113 @@
+// pages/myClass/index/index.js
+import { timeFormat } from "../../../utils/getTime"
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    classList: [
+      {
+        imgUrl: 'http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg',
+        titles: 'java 网易架构大师开课啦，冲冲冲，干就完了你书法课加班费案发把计划书发布案发按双方办法',
+        beginTime: timeFormat(new Date().getTime(), "yyyy-mm-dd hh:ii:ss")
+      },{
+        imgUrl: 'http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg',
+        titles: 'java 网易架构大师开课啦，冲冲冲，干就完了你书法课加班费案发把计划书发布案发按双方办法',
+        beginTime: timeFormat(new Date().getTime(), "yyyy-mm-dd hh:ii:ss")
+      },{
+        imgUrl: 'http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg',
+        titles: 'java 网易架构大师开课啦，冲冲冲，干就完了',
+        beginTime: timeFormat(new Date().getTime(), "yyyy-mm-dd hh:ii:ss")
+      },{
+        imgUrl: 'http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg',
+        titles: 'java 网易架构大师开课啦，冲冲冲，干就完了你书法课加班费案发把计划书发布案发按双方办法',
+        beginTime: timeFormat(new Date().getTime(), "yyyy-mm-dd hh:ii:ss")
+      },{
+        imgUrl: 'http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg',
+        titles: 'java 网易架构大师开课啦，冲冲冲，干就完了',
+        beginTime: timeFormat(new Date().getTime(), "yyyy-mm-dd hh:ii:ss")
+      },{
+        imgUrl: 'http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg',
+        titles: 'java 网易架构大师开课啦，冲冲冲，干就完了你书法课加班费案发把计划书发布案发按双方办法',
+        beginTime: timeFormat(new Date().getTime(), "yyyy-mm-dd hh:ii:ss")
+      },{
+        imgUrl: 'http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg',
+        titles: 'java 网易架构大师开课啦，冲冲冲，干就完了',
+        beginTime: timeFormat(new Date().getTime(), "yyyy-mm-dd hh:ii:ss")
+      },{
+        imgUrl: 'http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg',
+        titles: 'java 网易架构大师开课啦，冲冲冲，干就完了你书法课加班费案发把计划书发布案发按双方办法',
+        beginTime: timeFormat(new Date().getTime(), "yyyy-mm-dd hh:ii:ss")
+      },{
+        imgUrl: 'http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg',
+        titles: 'java 网易架构大师开课啦，冲冲冲，干就完了',
+        beginTime: timeFormat(new Date().getTime(), "yyyy-mm-dd hh:ii:ss")
+      },{
+        imgUrl: 'http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg',
+        titles: 'java 网易架构大师开课啦，冲冲冲，干就完了你书法课加班费案发把计划书发布案发按双方办法',
+        beginTime: timeFormat(new Date().getTime(), "yyyy-mm-dd hh:ii:ss")
+      },{
+        imgUrl: 'http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg',
+        titles: 'java 网易架构大师开课啦，冲冲冲，干就完了你书法课加班费案发把计划书发布案发按双方办法',
+        beginTime: timeFormat(new Date().getTime(), "yyyy-mm-dd hh:ii:ss")
+      }
+    ]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

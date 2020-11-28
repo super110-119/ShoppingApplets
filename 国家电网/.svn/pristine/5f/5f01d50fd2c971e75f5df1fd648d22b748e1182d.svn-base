@@ -1,0 +1,15 @@
+<!--pages/demand/demand.wxml-->
+<view class="box line_black">
+  <view  wx:if="{{messages.length > 0}}">
+    <block wx:for="{{messages}}" wx:key="index">
+      <items
+        mes="{{item}}"
+        data-index="{{index}}"
+        bind:tap="listClick"/>
+    </block>
+  </view>
+  <view wx:else class="nothing">
+    暂无任何需求调查
+  </view>
+</view>
+<view class="get_mask" wx:if="{{isMask}}"></view>

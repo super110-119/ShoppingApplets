@@ -1,0 +1,20 @@
+<!--pages/common_pages/demand/demand.wxml-->
+<view class="box line_black">
+  <!-- 考试标题 -->
+  <view class="title">
+    {{message.titles}}
+  </view>
+  <!-- 测试内容 -->
+  <view class="box_content">
+    <questions message="{{message.data}}" bind:questionMessage="questionMessage"/>
+  </view>
+  <!-- 提交按钮 -->
+  <view class="btn" bindtap="btnClick">交卷</view>
+</view>
+<!-- 完成后显示 -->
+<view class="success" wx:if="{{isShow}}">
+  <success bind:btnsClick="btnsClick">
+    <view slot="title1">交卷成功</view>
+    <view slot="btn">返回</view>
+  </success>
+</view>

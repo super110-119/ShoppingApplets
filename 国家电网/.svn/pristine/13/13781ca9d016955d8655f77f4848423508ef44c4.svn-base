@@ -1,0 +1,15 @@
+<!--commonents/banner/banner.wxml-->
+<swiper 
+      circular 
+      autoplay
+      indicator-dots
+      indicator-color="{{indicator}}"
+      indicator-active-color="{{indicatorActive}}"
+      interval="3000"
+      duration="350">
+    <block wx:for="{{banner}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.image || item}}"/>
+      </swiper-item>
+    </block>
+  </swiper>

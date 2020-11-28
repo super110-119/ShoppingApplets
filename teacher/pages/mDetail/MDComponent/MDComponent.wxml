@@ -1,0 +1,20 @@
+<!--pages/mDetail/MDComponent/MDComponent.wxml-->
+<view class="box">
+  <view class="title big">
+    {{ msg.title }}
+  </view>
+  <view class="time small">
+    {{ msg.time }}
+  </view>
+  <view class="money big">
+    <view class="add" wx:if="{{msg.state === 'A'}}">
+      + {{ msg.money }}
+    </view>
+    <view class="reduce" wx:if="{{msg.state === 'B'}}">
+      - {{ msg.money }}
+    </view>
+  </view>
+  <view class="balance small">
+    余额 {{msg.balance}}
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "no-data-big": "/common/noDataBig/noDataBig"
+  },
+  "navigationBarTitleText": "培训报名",
+  "enablePullDownRefresh": true
+}

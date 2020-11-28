@@ -1,0 +1,170 @@
+<!--pages/reserveitem/createitem/createtraining/createtraining.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+    <view class="up_border"></view>
+    <view class="pad_view" style="padding: 2% 5%;"><progress percent="{{progressnum}}" show-info stroke-width="7"></progress></view>
+    <view class="pad_view border_size">
+        <block wx:if="{{question == 0}}">
+            <mp-cell link ext-class="cell_border">
+                <view class="font1">需求点 <text style="color:red">*</text></view>
+                <picker slot="footer" bindchange="bindPickerChange" value="{{elnListIndex}}" range="{{elnRequirementList}}" range-key="requirementTitle" data-index="elnList">
+                    <view class="font2">
+                    {{elnRequirementList[elnListIndex].requirementTitle}}
+                    </view>
+                </picker>
+            </mp-cell>
+            <mp-cell ext-class="cell_border">
+                <view class="font1">需求归属部门 <text style="color:red">*</text></view>
+                <picker slot="footer" disabled="true" bindchange="bindPickerChange" value="{{elnListIndex}}" range="{{elnRequirementList}}" range-key="orgName" data-index="elnList">
+                    <view class="font2">
+                    {{elnRequirementList[elnListIndex].orgName}}
+                    </view>
+                </picker>
+            </mp-cell>
+            <mp-cell ext-class="cell_border">
+                <view class="font1">单位名称 <text style="color:red">*</text></view>
+                <picker slot="footer" disabled="true" bindchange="bindPickerChange" value="{{cd_org_nameIndex}}" range="{{cd_org_name}}" range-key="{{rangkey}}" data-index="cd_org_name">
+                    <view class="font2">
+                    {{cd_org_name[cd_org_nameIndex].dicName}}
+                    </view>
+                </picker>
+            </mp-cell>
+            <mp-cell ext-class="cell_border">
+                <view class="font1" style="width:200%">项目所属单位 <text style="color:red">*</text></view>
+                <input class="font2" slot="footer" placeholder="请输入" value="{{unit}}" data-index="unit" bindinput="getSource"/>
+            </mp-cell>
+            <mp-cell ext-class="cell_border">
+                <view class="font1" style="width:200%">项目名称 <text style="color:red">*</text></view>
+                <input class="font2" slot="footer" placeholder="请输入" value="{{uname}}" data-index="uname" bindinput="getSource"/>
+            </mp-cell>
+            <mp-cell link ext-class="cell_border">
+                <view class="font1">一级分类 <text style="color:red">*</text></view>
+                <picker slot="footer" bindchange="bindPickerChange1" value="{{first_selectIndex}}" range="{{first_select}}" range-key="typeName">
+                    <view class="font2">
+                    {{first_select[first_selectIndex].typeName}}
+                    </view>
+                </picker>
+            </mp-cell>
+            <mp-cell link ext-class="cell_border">
+                <view class="font1">二级分类 <text style="color:red">*</text></view>
+                <picker slot="footer" bindchange="bindPickerChange2" value="{{second_selectIndex}}" range="{{second_select}}" range-key="typeName">
+                    <view class="font2">
+                    {{second_select[second_selectIndex].typeName}}
+                    </view>
+                </picker>
+            </mp-cell>
+            <mp-cell link ext-class="cell_border">
+                <view class="font1">三级分类 <text style="color:red">*</text></view>
+                <picker slot="footer" bindchange="bindPickerChange3" value="{{third_selectIndex}}" range="{{third_select}}" range-key="typeName">
+                    <view class="font2">
+                    {{third_select[third_selectIndex].typeName}}
+                    </view>
+                </picker>
+            </mp-cell>        
+            <mp-cell link ext-class="cell_border">
+                <view class="font1">实施范围 <text style="color:red">*</text></view>
+                <picker slot="footer" bindchange="bindPickerChange" value="{{cd_rang_org_nameIndex}}" range="{{cd_rang_org_name}}" range-key="{{rangkey}}" data-index="cd_rang_org_name">
+                    <view class="font2">
+                    {{cd_rang_org_name[cd_rang_org_nameIndex].dicName}}
+                    </view>
+                </picker>
+            </mp-cell>
+        </block>
+        <block wx:if="{{question == 1}}">
+            <mp-cell ext-class="cell_border">
+                <view class="cell_textarea">
+                    <view class="font1 font_box" style="width:200%">项目必要性 <text style="color:red">*</text></view>
+                    <textarea 
+                        class="font2 text_box" 
+                        maxlength="{{getMaxLength}}"
+                        slot="footer" 
+                        placeholder="请输入必要性" 
+                        value="{{unecessity}}" 
+                        data-index="unecessity"        
+                        bindinput="getSource"/>
+                    <!-- <input class="font2" slot="footer" placeholder="请输入" value="{{unecessity}}" data-index="unecessity" bindinput="getSource"/> -->
+                </view>
+            </mp-cell>
+            <mp-cell ext-class="cell_border">
+                <view class="cell_textarea">
+                    <view class="font1 font_box" style="width:200%">项目主要内容 <text style="color:red">*</text></view>
+                    <textarea 
+                        class="font2 text_box" 
+                        slot="footer" 
+                        placeholder="请输入内容" 
+                        value="{{umsg}}" 
+                        data-index="umsg" 
+                        maxlength="{{getMaxLength}}"
+                        bindinput="getSource"/>
+                    <!-- <input class="font2" slot="footer" placeholder="请输入" value="{{umsg}}" data-index="umsg" bindinput="getSource"/> -->
+                </view>
+            </mp-cell>
+            <mp-cell>
+                <view class="cell_textarea">
+                    <view class="font1 font_box" style="width:200%">备注 <text style="color:red">*</text></view>
+                    <textarea 
+                        class="font2 text_box" 
+                        slot="footer" 
+                        placeholder="请输入备注" 
+                        value="{{uremarks}}" 
+                        data-index="uremarks" 
+                        maxlength="{{getMaxLength}}" 
+                        bindinput="getSource"/>
+                    <!-- <input class="font2" slot="footer" placeholder="请输入" value="{{unecessity}}" data-index="unecessity" bindinput="getSource"/> -->
+                </view>
+            </mp-cell>
+        </block>
+        <block wx:if="{{question == 2}}">
+            <mp-cell link ext-class="cell_border">
+                <view class="font1">主办部门 <text style="color:red">*</text></view>
+                <picker slot="footer" bindchange="bindPickerChange" value="{{cd_master_org_nameIndex}}" range="{{cd_master_org_name}}" range-key="{{rangkey1}}" data-index="cd_master_org_name">
+                    <view class="font2">
+                    {{cd_master_org_name[cd_master_org_nameIndex].organizeName}}
+                    </view>
+                </picker>
+            </mp-cell>
+            <mp-cell link ext-class="cell_border">
+                <view class="font1">承办单位 <text style="color:red">*</text></view>
+                <picker slot="footer" bindchange="bindPickerChange" value="{{cd_action_org_nameIndex}}" range="{{cd_action_org_name}}" range-key="{{rangkey1}}" data-index="cd_action_org_name">
+                    <view class="font2">
+                    {{cd_action_org_name[cd_action_org_nameIndex].organizeName}}
+                    </view>
+                </picker>
+            </mp-cell> 
+            <mp-cell ext-class="cell_border">
+                <view class="font1" style="width:200%">总费用（预算）<text style="color:red">*</text></view>
+                 <input class="font2" type="digit" slot="footer" placeholder="请输入" value="{{sourceAll}}" data-index="sourceAll" bindinput="getSource"/>
+            </mp-cell>  
+            <mp-cell link ext-class="cell_border">
+                <view class="font1">经费来源 <text style="color:red">*</text></view>
+                <picker slot="footer" bindchange="bindPickerChange" value="{{cd_money_sourceIndex}}" range="{{cd_money_source}}" range-key="{{rangkey}}" data-index="cd_money_source">
+                    <view class="font2">
+                    {{cd_money_source[cd_money_sourceIndex].dicName}}
+                    </view>
+                </picker>
+            </mp-cell> 
+            <mp-cell link ext-class="cell_border">
+                <view class="font1">费用类型 <text style="color:red">*</text></view>
+                <picker slot="footer" bindchange="bindPickerChange" value="{{cd_money_typeIndex}}" range="{{cd_money_type}}" range-key="{{rangkey}}" data-index="cd_money_type">
+                    <view class="font2">
+                    {{cd_money_type[cd_money_typeIndex].dicName}}
+                    </view>
+                </picker>
+            </mp-cell>   
+            <mp-cell ext-class="cell_border">
+                <view class="font1" style="width:200%">责任人 <text style="color:red">*</text></view>
+                <input class="font2" slot="footer" placeholder="请输入" value="{{uliable}}" data-index="uliable" bindinput="getSource"/>
+            </mp-cell>
+            <mp-cell ext-class="cell_border">
+                <view class="font1" style="width:200%">联系人 </view>
+                <input class="font2" slot="footer" placeholder="请输入" value="{{ucontacts}}" data-index="ucontacts" bindinput="getSource"/>
+            </mp-cell>
+            <mp-cell>
+                <view class="font1" style="width:250%">储备项目自评分(%) <text style="color:red">*</text></view>
+                <input class="font2" type="digit" slot="footer" placeholder="请输入" value="{{uscore}}" data-index="uscore" bindinput="getSource"/>
+            </mp-cell>    
+        </block>
+        <button wx:if="{{question > 0}}" class="weui-btn2" type="default" bindtap="submitForm" style="width: 90%;border: 1px #ADAEAF solid" bindtap="lastQuestion">上一步</button>
+        <button wx:if="{{question < 2}}" class="weui-btn" type="primary" bindtap="submitForm" style="width: 90%;" bindtap="nextQuestion">下一步</button>
+        <button wx:if="{{question == 2}}" class="weui-btn" type="primary" bindtap="submitForm" style="width: 90%;">{{upsubimt==0?'提交':'修改'}}</button>
+    </view>
+</view>

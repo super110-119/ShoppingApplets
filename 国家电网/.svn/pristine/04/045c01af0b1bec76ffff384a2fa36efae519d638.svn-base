@@ -1,0 +1,56 @@
+let {ajax, baseURL, httpHead2, fileHttp } = require("./index")
+// 获取需求调查列表
+async function getNeedSurvey(app){
+  let datas = await app.globalData.userMessage;
+  let mes = await ajax({
+    url: httpHead2 + "api/voteInfo.action?m=getPage",
+    data: {
+      coopCode: 'chengde',
+      frontUserId: datas.frontUser.frontUserId,
+      accessToken: datas.accessToken,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl
+    }
+  })
+  return mes
+}
+// 获取需求详情
+async function getNeedDetail(app, voteId){
+  let datas = await app.globalData.userMessage;
+  let mes = await ajax({
+    url: httpHead2 + "api/voteInfo.action?m=getDetail",
+    data: {
+      coopCode: 'chengde',
+      voteId,
+      frontUserId: datas.frontUser.frontUserId,
+      accessToken: datas.accessToken,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl
+    }
+  })
+  return mes
+}
+// 提交用户答案
+async function setMesOut(app, voteId, userAnswerJson){
+  let datas = await app.globalData.userMessage;
+  let mes = await ajax({
+    url: httpHead2 + "api/voteInfo.action?m=saveUserAnswer",
+    data: {
+      coopCode: 'chengde',
+      voteId,
+      frontUserId: datas.frontUser.frontUserId,
+      accessToken: datas.accessToken,
+      nickname: datas.frontUser.nickname,
+      headimgurl: datas.frontUser.headimgurl,
+      userAnswerJson: JSON.stringify(userAnswerJson)
+    },
+    header: {
+      "content-type": "application/x-www-from-urlencoded;charset=UTF-8"
+    }
+  })
+  return mes
+}
+
+module.exports = {
+  getNeedSurvey, getNeedDetail, setMesOut
+}

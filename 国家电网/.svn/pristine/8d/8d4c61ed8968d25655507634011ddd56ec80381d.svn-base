@@ -1,0 +1,28 @@
+/* pages/home/h-compontent/collapse/collapse.wxss */
+.box{
+  width: 710rpx;
+  height: 536rpx;
+  margin: 0 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.box-titlt::before{
+  content: '|';
+  font-size: 32rpx;
+  display: inline-block;
+  margin: 20rpx 10rpx;
+}
+.box-titlt-mes{
+  margin-left: 10rpx;
+}
+.box-titlt-more{
+  float: right;
+  margin: 20rpx;
+  font-size: 25rpx;
+}
+.box-list{
+  width: 680rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 460rpx;
+}

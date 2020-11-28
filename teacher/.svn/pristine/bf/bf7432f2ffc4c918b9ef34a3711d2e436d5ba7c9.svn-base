@@ -1,0 +1,21 @@
+<!--pages/myClass/info/info.wxml-->
+<view class="info_container">
+  <view class="box">
+    <view class="boxs">
+      <view class="box_title">累计学习人数</view>
+      <view class="box1 box_studentNum">{{msg.studentNum}}</view>
+    </view>
+    <view class="boxs">
+      <view class="box_title">累计提问数量</view>
+      <view class="box1 box_questionNum">{{msg.questionNum}}</view>
+    </view>
+    <view class="boxs">
+      <view class="box_title">累计笔记数量</view>
+      <view class="box1 box_noteNum">{{msg.noteNum}}</view>
+    </view>
+    <view class="boxs">
+      <view class="box_title">提问已回复数</view>
+      <view class="box1 box_repliedNum">{{msg.repliedNum}}</view>
+    </view>
+  </view>
+</view>

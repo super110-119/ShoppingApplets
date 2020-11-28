@@ -1,0 +1,10 @@
+/* component/show_load/show_load.wxss */
+.show_load{
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}

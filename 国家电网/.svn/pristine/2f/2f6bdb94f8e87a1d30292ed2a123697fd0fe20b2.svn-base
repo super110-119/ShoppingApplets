@@ -1,0 +1,21 @@
+<!--pages/reserveitem/createitem/selectitem/selectitem.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+  <view class="up_border"></view>
+  <view class="product_css">
+    <view>
+      <view bindtap="createWorker"><image class="inc_css" mode="scaleToFill" src="../../../../assets/img/list-bar-icon/fa-plus-circle.svg"></image>创建职工培训类项目</view>
+    </view>
+  </view>
+
+  <view class="product_css">
+    <view>
+      <view bindtap="createTraining"><image class="inc_css" mode="scaleToFill" src="../../../../assets/img/list-bar-icon/fa-plus-circle.svg"></image>创建培训开发类项目</view>
+    </view>
+  </view>
+
+  <view class="product_css">
+    <view>
+      <view bindtap="copyItem"><image class="inc_css" mode="scaleToFill" src="../../../../assets/img/list-bar-icon/fa-copy.svg"></image>复制已有项目</view>
+    </view>
+  </view>
+</view>

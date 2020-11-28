@@ -1,0 +1,23 @@
+<!--pages/earnings/earnings.wxml-->
+<view class="box">
+  <!-- 零钱图标 -->
+  <view class="icon center">
+    <image src="/images/money.png" mode="aspectFill"/>
+  </view>
+  <!-- 我的收益等... -->
+  <view class="center body">
+    <view class="body_number">
+      <view class="body_number_symbol">￥</view>
+      <view class="body_number_num">
+        {{num || '0.00'}}
+      </view>
+    </view>
+    <view class="body_title">我的收益</view>
+  </view>
+  <!-- 提现按钮 -->
+  <view class="center btn">
+    <button size="mini" class="withdraw_deposit" bindtap="moneyOut">提现</button>
+  </view>
+  <!-- 收益明细 -->
+  <view class="center understand" bindtap="moneyIn">收益明细</view>
+</view>

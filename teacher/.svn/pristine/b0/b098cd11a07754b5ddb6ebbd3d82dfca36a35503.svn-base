@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view>
+  <view class="justify_css title_css between_Css">
+    <view class="font1_css">名师动态</view>
+    <view class="justify_css btn_css">
+      <view class="font2_css" bindtap="createItem">发布微课</view> 
+    </view>
+  </view>
+
+  <block wx:for="{{forumList}}" wx:key='index'>
+    <view class="course_card">
+      <view class="course_box">
+        <mp-cell>
+          <view slot="title" class="course_user">
+              <image mode="aspectFill" src="{{item.headimgurl}}" class="course_user_img"/>
+          </view>
+          <view>{{item.nickname}}</view>
+          <view class="font3_css">2019年12月26号</view>
+        </mp-cell>
+        <view>
+          <view class="course_article line_clamp2">
+              {{item.content}}
+          </view>
+          <view class="course_img_vox">
+              <!-- <image mode="scaleToFill" class="course_img" src="http://file.51eln.com/uploads/wxy/resource/elnCourse/9c32a4f95a914ffcb9e674ed0f5fe491.jpg"/> -->
+              <video object-fit="cover" title="{{item.topicTitle}}" class="course_img" src="{{item.topicImg}}"></video>
+          </view>
+        </view>
+        <view class="icon_flex">
+          <view class="weui-flex__item"><view class="placeholder"><mp-icon type="outline" icon="share" color="#9594A4" size="{{25}}" class="icon"></mp-icon>1</view></view>
+          <view class="weui-flex__item"><view class="placeholder"><mp-icon type="outline" icon="like" color="#9594A4" size="{{25}}" class="icon"></mp-icon>{{item.upCount}}</view></view>
+          <view class="weui-flex__item"><view class="placeholder"><mp-icon type="outline" icon="more2" color="#9594A4" size="{{25}}" class="icon"></mp-icon>{{item.commentCount}}</view></view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{forumList.length <= 0}}">
+    <view class="noneview_css">
+      <image class="noneimg_css" src="../../images/none.png"></image>
+      <view class="nonefont_css">暂无数据</view>
+    </view>
+  </block>
+</view>

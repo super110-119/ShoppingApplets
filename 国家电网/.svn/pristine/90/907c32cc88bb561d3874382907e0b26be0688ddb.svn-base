@@ -1,0 +1,12 @@
+<!--pages/trainingschedule/t-commons/datas/datas.wxml-->
+<view class="box" wx:if="{{datas.length > 0 && headers.classPhase !== 'C'}}">
+  <block wx:for="{{datas}}" wx:key="index">
+    <items mes="{{item}}" class="items"/>
+  </block>
+</view>
+<view wx:else>
+  <view wx:if="{{headers.classPhase === 'C'}}">
+    <no-data mes="课程已结束"/>
+  </view>
+  <view wx:else><no-data/></view>
+</view>

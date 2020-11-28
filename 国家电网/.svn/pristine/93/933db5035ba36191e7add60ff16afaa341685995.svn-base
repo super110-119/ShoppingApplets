@@ -1,0 +1,152 @@
+<!--pages/trainingclass/trainingclass.wxml-->
+<view class="page line_black" style="width:100%;overflow-x:hidden;">
+  <view class="up_border"></view>
+  <view class="pad_view">
+    <view class="product_css" bindtap="trainSchedule">
+      <view class="view_size between_Css" style="height: 4vh;">
+        <view class="view_size left_Css">
+          <view class="circle_css circle_color1"></view>
+          <view class="font2">进行中</view>
+        </view>
+        <view class="product_css2 view_size">
+          <image class="inc_css" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-align-left.svg"></image>
+          <view class="font4">进行中</view>
+        </view>
+      </view>
+      <view class="view_size between_Css" style="height: 26vh;">
+        <view class="product_css3">
+          <view style="margin-top:3vh">
+            <view class="font3">8月</view>
+            <view class="shixian_css" style="margin-top:1vh"></view>
+            <view class="font3" style="margin-top:1vh">2020年</view>
+          </view>
+        </view>
+        <view class="product_css4" >
+          <view class="view_size left_Css font1" >党校政治理论培训</view>
+          <view class="view_size left_Css" style="margin-top:1vh">
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-user.svg"></image>
+            <text class="font4 font4color">讲师：李善友</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-thumbtack.svg"></image>
+            <text class="font4 font4color">举办部门：人力资源部</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-users.svg"></image>
+            <text class="font4 font4color">班级人数：30人</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-clock.svg"></image>
+            <text class="font4 font4color">日期： 2020-08-06~2020-08-10</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-clock.svg"></image>
+            <text class="font4 font4color">时间： 08:00~18:00</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-map-marker.svg"></image>
+            <text class="font4 font4color">地点：培训教室1001</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="product_css"  bindtap="trainSchedule">
+      <view class="view_size between_Css" style="height: 4vh;">
+        <view class="view_size left_Css">
+          <view class="circle_css circle_color2"></view>
+          <view class="font2 font2color">已结束</view>
+        </view>
+        <view class="product_css2 product_css3_color view_size">
+          <image class="inc_css" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-align-left.svg"></image>
+          <view class="font4">可回看</view>
+        </view>
+      </view>
+      <view class="view_size between_Css" style="height: 26vh;">
+        <view class="product_css3">
+          <view style="margin-top:3vh">
+            <view class="font3">8月</view>
+            <view class="shixian_css" style="margin-top:1vh"></view>
+            <view class="font3" style="margin-top:1vh">2020年</view>
+          </view>
+        </view>
+        <view class="product_css4" style="margin-left: 1vh;">
+          <view class="view_size left_Css font1" style="margin-left:1vh">党校政治理论培训</view>
+          <view class="view_size left_Css" style="margin-top:1vh">
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-user.svg"></image>
+            <text class="font4 font4color">讲师：李善友</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-thumbtack.svg"></image>
+            <text class="font4 font4color">举办部门：人力资源部</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-users.svg"></image>
+            <text class="font4 font4color">班级人数：30人</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-clock.svg"></image>
+            <text class="font4 font4color">日期： 2020-08-06~2020-08-10</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-clock.svg"></image>
+            <text class="font4 font4color">时间： 08:00~18:00</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-map-marker.svg"></image>
+            <text class="font4 font4color">地点：培训教室1001</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="product_css"  bindtap="trainSchedule">
+      <view class="view_size between_Css" style="height: 4vh;">
+        <view class="view_size left_Css">
+          <view class="circle_css circle_color1"></view>
+          <view class="font2">进行中</view>
+        </view>
+        <view class="product_css2 view_size">
+          <image class="inc_css" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-align-left.svg"></image>
+          <view class="font4">进行中</view>
+        </view>
+      </view>
+      <view class="view_size between_Css" style="height: 26vh;">
+        <view class="product_css3">
+          <view style="margin-top:3vh">
+            <view class="font3">8月</view>
+            <view class="shixian_css" style="margin-top:1vh"></view>
+            <view class="font3" style="margin-top:1vh">2020年</view>
+          </view>
+        </view>
+        <view class="product_css4" style="margin-left: 1vh;">
+          <view class="view_size left_Css font1" style="margin-left:1vh">党校政治理论培训</view>
+          <view class="view_size left_Css" style="margin-top:1vh">
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-user.svg"></image>
+            <text class="font4 font4color">讲师：李善友</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-thumbtack.svg"></image>
+            <text class="font4 font4color">举办部门：人力资源部</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-users.svg"></image>
+            <text class="font4 font4color">班级人数：30人</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-clock.svg"></image>
+            <text class="font4 font4color">日期： 2020-08-06~2020-08-10</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-clock.svg"></image>
+            <text class="font4 font4color">时间： 08:00~18:00</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-map-marker.svg"></image>
+            <text class="font4 font4color">地点：培训教室1001</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

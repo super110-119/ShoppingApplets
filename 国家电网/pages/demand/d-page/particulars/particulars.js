@@ -1,0 +1,198 @@
+// pages/demand/d-page/particulars/particulars.js
+let {getInfo} = require("../../../../common/question/getInfo");
+let {getNeedDetail, setMesOut} = require("../../../../network/needSurvey");
+let {toJson} = require("../../../../method/toJson")
+let {getNewList} = require("../../../../method/getNewList")
+
+let mesArr = []
+let mes1 = []
+
+let userAnswerJson = {}
+let voteSubjectList = []
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data:{
+    message: {},
+    datas: [],
+
+    // 定义是否遮罩
+    isMask: true,
+    // 定义 voteId
+    voteId: ''
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad:async function (options) {
+    // 加载动画
+    wx.showLoading({
+      title: '加载中...',
+      mask: true
+    }) 
+    // 进来获取调查问卷 id
+    let voteId = options.voteId
+    // 传入 id 请求参数
+    let mes = await getNeedDetail(voteId)
+    // 获取 data 数据
+    let data = mes.data.data
+    // 获取 题目列表
+    voteSubjectList = data.voteSubjectList
+    // 关于标题部分
+    let obj = {}
+    // 题目的总标题
+    obj.title = data.voteInfo.voteTitle || '暂无'
+    // 试题简介
+    obj.outline = data.voteInfo.voteDesc || '暂无'
+    obj.problem = []
+    let list = data.voteSubjectList
+    list.forEach((value, index) => {
+      let newObj = {}
+      // 获取当前小题标题
+      newObj.titles = value.voteSubject.subjectTitle
+      // 获取当前小题 id 
+      newObj.listId = value.voteSubject.subjectId
+      // 获取当前小题 类型
+      newObj.subjectType = value.voteSubject.subjectType
+      // 存储每一个选项
+      let arr1 = []
+      value.itemList.forEach((v, i) =>{
+        let obj1 = {}
+        // 选项的内容
+        obj1.title = v.itemContent
+        // 选项的 id
+        obj1.itemId = v.itemId
+        // 添加试题
+        arr1.push(obj1)
+      })
+      newObj.questions = arr1
+      // 当前题目类型 0 - 单选 、1 - 多选 、 2 - 问答
+      let state;
+      switch(value.voteSubject.subjectType){
+        case "signle":
+          state = 0
+          break;
+        case "multi":
+          state = 1
+          break;
+        case "ask":
+          state = 2
+          break;
+      }
+      // 修改状态
+      newObj.state = state
+      // 将每一道题目对象传入数组
+      obj.problem.push(newObj)
+    })
+    // 修改数据
+    this.setData({
+      message: obj,
+      isMask: false,
+      voteId
+    })
+    
+    // 关闭加载
+    wx.hideLoading()
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+  /**
+   * 
+   * 自定义事件-----------------
+   * 点击提交按钮
+   * async await 
+   */
+  submit: async function(){
+    // 获取已做题目数量
+    let i1 = mesArr.length
+    // 获取全部题目数量
+    let i2 = this.data.message.problem.length
+    // 判断用户是否全部输入完成
+    if(i1 === i2){
+      // 对 voteSubjectList 进行赋值
+      userAnswerJson.voteSubjectList = voteSubjectList
+      // 对 voteSubjectList 内数据重新定义
+      let data = getNewList(mesArr, userAnswerJson.voteSubjectList)
+      // 重新定义 voteSubjectList
+      userAnswerJson.voteSubjectList = data 
+      // console.log(userAnswerJson);
+      // 提交答案
+      let mes = await setMesOut(this.data.voteId, userAnswerJson)
+      console.log(mes);
+      if(mes.data.ret === '0'){
+        wx.reLaunch({
+          url: '../succeed/succeed',
+        })
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: mes.data.err_msg,
+          showCancel: false
+        })
+      }
+     }else{
+      // 没有做完提示
+        wx.showModal({
+          title: '提示',
+          content: "您还有" + (i2 - i1) + "题没有做完、请将问卷输入完整！",
+          showCancel: false
+        })
+    } 
+  },
+  userChangeInfo(e){
+    let mes = getInfo(e, mesArr)
+    userAnswerJson.itemList = mes
+  }
+})

@@ -1,0 +1,37 @@
+/* pages/profile/p-compontent/option/option.wxss */
+.container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.img{
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0 30rpx;
+}
+.img image{
+  width: 100%;
+  height: 100%;
+}
+.more{
+  color: rgba(0, 190, 149, 1);
+  margin: 0 30rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.more image{
+  width: 100%;
+  height: 100%;
+}
+.num{
+  width: 100rpx;
+  text-align: right;
+  color: rgba(0, 190, 149, 1);
+}
+.title{
+  flex: 1;
+  font-size: 28rpx;
+}

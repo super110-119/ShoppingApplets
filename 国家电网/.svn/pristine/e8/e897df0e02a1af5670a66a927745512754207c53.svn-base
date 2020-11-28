@@ -1,0 +1,60 @@
+<!--pages/reserveitem/reserveitem.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+  <view class="up_border"></view>
+  <view class="pad_view">
+    <view class="product2_css">
+      <view class="view_size between_Css product3_css" style="height: 4vh;">
+        <view class="font3" style="font-weight: 700;">变电运行教材开发项目</view>
+        <view class="product4_css">
+          <view class="font2" style="margin: auto;">复制本项目</view> 
+        </view>
+      </view>
+      <view class="view_size left_Css product3_css" style="height: 4vh;">
+        <view class="font2">职工培训类/ 人力资源部</view>
+      </view>
+      <view class="view_size2 left_Css product3_css overtext" style="height: 8.5vh;">
+        <view class="font4" style="color: #A1A1A2;">需明确培训目的及内容，不少于20字，不多于200字；需明确培训目的及内容，不少于20字，不多于200字；需明确培训目的及内容，不少于20字，不多于200字，不多于200字，不多于200字，不多于200字，不多于200字，不多于200字，不多于200字，不多于200字，不多于200字；</view>
+      </view>
+      <view class="view_size left_Css product3_css" style="height: 4vh;">
+        <view class="font4">创建时间：2020-07-20 13:30</view>
+      </view>
+    </view>
+
+    <view class="product2_css">
+      <view class="view_size between_Css product3_css" style="height: 4vh;">
+        <view class="font3" style="font-weight: 700;">党校政治理论培训</view>
+        <view class="product4_css">
+          <view class="font2" style="margin: auto;">复制本项目</view> 
+        </view>
+      </view>
+      <view class="view_size left_Css product3_css" style="height: 4vh;">
+        <view class="font2">职工培训类/ 人力资源部</view>
+      </view>
+      <view class="view_size2 left_Css product3_css overtext" style="height: 9vh;">
+        <view class="font4" style="color: #A1A1A2;">需明确培训目的及内容，不少于20字，不多于200字；需明确培训目的及内容,少于20字，不多于200字；</view>
+      </view>
+      <view class="view_size left_Css product3_css" style="height: 4vh;">
+        <view class="font4">创建时间：2020-07-20 13:30</view>
+      </view>
+    </view>
+
+    <view class="product2_css">
+      <view class="view_size between_Css product3_css" style="height: 4vh;">
+        <view class="font3" style="font-weight: 700;">党校政治理论培训</view>
+        <view class="product4_css">
+          <view class="font2" style="margin: auto;">复制本项目</view> 
+        </view>
+      </view>
+      <view class="view_size left_Css product3_css" style="height: 4vh;">
+        <view class="font2">职工培训类/ 人力资源部</view>
+      </view>
+      <view class="view_size2 left_Css product3_css overtext" style="height: 9vh;">
+        <view class="font4" style="color: #A1A1A2;">需明确培训目的及内容，不少于20字，不多于200字；需明确培训目的及内容，不少于20字，不多于200字；需明确培训目的及内容，不少于20字，不多于200字；</view>
+      </view>
+      <view class="view_size left_Css product3_css" style="height: 4vh;">
+        <view class="font4">创建时间：2020-07-20 13:30</view>
+      </view>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,184 @@
+// pages/myClass/question/question.js
+import { timeFormat } from '../../../utils/getTime'
+let {httpHead, request} = require("../../../utils/request")
+// 这是未/已回复的页数
+// no1 是未回复页数
+// no2 是已回复页数
+let no1 = 1;
+let no2 = 1;
+// 这是存放数据已回复于未回复的
+// arrs1 存放未回复
+// arrs2 存放已回复
+let arrs1 = [];
+let arrs2 = [];
+let nums1, nums2;
+// 这是 courseId / teacherId
+let teacherId, courseId;
+Page({
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    isActive: 0,
+    isLists: [],
+    // 未回复数据
+    notReplied: [],
+    // 已回复的
+    isReplied: []
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: async function (options) {
+    courseId = options.courseId;
+    teacherId = options.teacherId;
+    const _this = this
+    this.getUserMsg(no1, "N", res => {
+      nums1 = res.data.total
+      arrs1.push(..._this.getLists(res.data.list))
+      if(_this.data.isActive === 0){
+        _this.setData({ isLists: arrs1 })
+      }
+    })
+    this.getUserMsg(no2, "Y", res => {
+      nums2 = res.data.total
+      arrs2.push(..._this.getLists(res.data.list))
+      if(_this.data.isActive === 1){
+        _this.setData({ isLists: arrs2 })
+      }
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    this.onLoad({courseId, teacherId})
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    // console.log("触发下拉加载事件");
+    const _this = this
+    let nowActive = this.data.isActive
+    if(nowActive === 0){
+      if(no1 === nums1){ return  }else{ no1++ }
+      this.getUserMsg(no1, "N", res => {
+        nums1 = res.data.total
+        arrs1.push(..._this.getLists(res.data.list))
+        _this.setData({ 
+          isLists:  arrs1,
+          isActive: _this.data.isActive
+         })
+      })
+    }else{
+      if(no2 === nums2){ return  }else{ no2++ }
+      this.getUserMsg(no2, "Y", res => {
+        nums2 = res.data.total
+        arrs2.push(..._this.getLists(res.data.list))
+        _this.setData({ 
+          isLists:  arrs2,
+          isActive: _this.data.isActive
+         })
+      })
+    }
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+
+  /**
+   * 自定义事件-----------------
+   */
+  // 点击未回复
+  box1Click(){
+    if(this.data.isActive === 0){
+      return
+    }
+    // console.log('点击了未回复！');
+    this.setData({ 
+      isLists:  arrs1,
+      isActive: 0
+     })
+  },
+  // 点击已回复
+  box2Click(){
+    if(this.data.isActive === 1){
+      return
+    }
+    // console.log('点击了已回复！');
+    this.setData({ 
+      isLists:  arrs2,
+      isActive: 1
+     })
+  },
+  // 点击详情
+  itemClick(e){
+    let i = e.target.dataset.index;
+    let askId = this.data.isLists[i].askId
+    wx.navigateTo({
+      url: '/pages/answer/answer?askId=' + askId,
+    })
+  },
+
+  /**
+   * 获取用户信息
+   */
+  getUserMsg(pageNo, isResolved, isSucccess){
+    request("askInfo.action?m=getPageByCourseId", true, {
+      courseId, teacherId, pageSize: 15, pageNo, isResolved
+    }, isSucccess , err => {
+      console.log(err);
+    })
+  },
+  getLists(lists){
+    let arrs = []
+    lists.forEach((value, index) => {
+      let newobj = {};
+      let times = value.createTime || new Date().getTime()
+      newobj.userImg = value.headimgurl || '/images/userIcon.png';
+      newobj.userName = value.nickname || '暂无';
+      newobj.thisTime = timeFormat(times, "yyyy-mm-dd hh:ii:ss");
+      newobj.querys = value.askTitle;
+      newobj.askId = value.askId;
+      arrs.push(newobj)
+    })
+    return arrs
+  }
+})

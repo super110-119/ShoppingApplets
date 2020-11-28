@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "classItem": "./class-item/class-item",
+    "no-data": "/common/noData/noData"
+  }
+}

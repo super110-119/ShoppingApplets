@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/earnings/earnings",
+    "pages/login/login",
+    "pages/answer/answer",
+    "pages/question/question",
+    "pages/uploadcourse/uploadcourse",
+    "pages/logs/logs",
+    "pages/mDetail/mDetail",
+    "pages/setting/setting",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#3F87EE",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "微课",
+        "iconPath": "./images/tabbar-icon/bx-slideshow.png",
+        "selectedIconPath": "./images/tabbar-icon/bxs-slideshow.png"
+      },
+      {
+        "pagePath": "pages/question/question",
+        "text": "问答",
+        "iconPath": "./images/tabbar-icon/bx-chat.png",
+        "selectedIconPath": "./images/tabbar-icon/bxs-chat.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./images/tabbar-icon/bx-user.png",
+        "selectedIconPath": "./images/tabbar-icon/bxs-user.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
+}

@@ -1,0 +1,19 @@
+<!--common/subject/subject.wxml-->
+<view class="box">
+  <view class="box_title headtext">
+    第{{i + 1}}题： {{mes.title}}
+  </view>
+  <view class="radio">
+    <radio-group wx:if="{{mes.problem}}" bindchange="radioChange">
+      <block wx:for="{{mes.problem}}" wx:key="index">
+        <view class="box_radio">
+          <label>
+            <radio name="{{i}}" value="{{item}}" style="transform:scale(0.7)"/>
+            <text>{{item}}</text>
+          </label>
+        </view>
+      </block>
+    </radio-group>
+    <textarea wx:else bindblur="radioChange" placeholder="请输入您的内容！！！"/>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+/* pages/trainingschedule/t-commons/datas/datas.wxss */
+.box{
+  padding: 30rpx 0;
+}
+.no_datas{
+  width: 100%;
+  height: 420rpx;
+}

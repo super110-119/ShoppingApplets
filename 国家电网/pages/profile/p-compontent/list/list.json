@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "option": "../option/option",
+    "success": "/common/success/success"
+  }
+}

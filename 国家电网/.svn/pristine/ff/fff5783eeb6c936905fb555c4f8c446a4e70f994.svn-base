@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "no-data-big": "/common/noDataBig/noDataBig"
+  },
+  "navigationBarTitleText": "审核项目",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

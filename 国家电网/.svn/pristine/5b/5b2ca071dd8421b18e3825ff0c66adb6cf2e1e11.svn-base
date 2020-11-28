@@ -1,0 +1,7 @@
+<!--common/list-bar/item-bar/item-bar.wxml-->
+<view class="item">
+  <view class="item-img {{i === 1 ? 'active' : ''}}">
+    <image src="{{mes.img}}"/>
+  </view>
+  <view>{{mes.title}}</view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "collapseItem": "./collapse-item/collapse-item",
+    "no-data": "/common/noData/noData"
+  }
+}

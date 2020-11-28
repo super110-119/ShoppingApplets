@@ -1,0 +1,133 @@
+/* pages/answer/answer.wxss */
+page {
+  background-color: #F6F6F6;
+}
+
+.view_pad {
+  /* padding: 0 4%; */
+}
+
+.question_css {
+  background-color: #FFFFFF;
+  padding: 5% 5%;
+}
+
+.answer_css {
+  background-color: #FFFFFF;
+  padding: 5% 5%;
+  margin-top: 25rpx;
+}
+
+.user_msg {
+  width: 100%;
+}
+
+.course_user {
+  position: relative;
+  margin-right: 20rpx;
+}
+
+.course_user_img {
+  height: 85rpx;
+  width: 85rpx;
+  border: 1px solid #c4c4c4;
+  border-radius: 50%;
+  display: block
+}
+
+.answer_css .course_user_img {
+  height: 55rpx;
+  width: 55rpx;
+}
+
+.user_text {
+  line-height: 85rpx;
+  margin-left: 20rpx;
+}
+
+.answer_css .user_text {
+  line-height: 55rpx;
+  margin-left: 20rpx;
+}
+
+.time_text {
+  line-height: 85rpx;
+}
+
+.border_line {
+  border: 1px solid #F6F6F6;
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.title_text {
+  font-weight: 600;
+  margin-top: 20rpx;
+}
+
+.day_font {
+  font-size: 14px;
+}
+
+.answer_css .day_font {
+  font-size: 13px;
+  color: #666666;
+}
+
+.foot_css {
+  margin-top: 30rpx;
+  font-weight: 600;
+}
+
+.font1_css {
+  color: #666666;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.answer_css .font1_css {
+  font-size: 14px;
+}
+
+.font3_css {
+  font-size: 13px;
+  color: #888888;
+}
+
+/* 消息输入框 */
+.view_input{
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 90rpx;
+  background: #FFFFFF;
+}
+
+.view_input input{
+  /* background: #f1f1f1; */
+  height: 80rpx;
+  padding:10rpx 20rpx;
+  font-size: 34rpx;
+  width:77%;
+}
+
+.view_area{
+  width: 100%;
+  height: 90rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.view_input .view_button{
+  width:20%;
+  position: absolute;
+  background:#3F87EE;
+  height: 90rpx;
+  line-height: 87rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  right:0;
+  top:0;
+  bottom:0;
+}

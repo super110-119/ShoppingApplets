@@ -1,0 +1,15 @@
+<!--pages/home/h-compontent/class-list/class-list.wxml-->
+<view class="box">
+  <view class="box-titlt">
+    <text class="box-titlt-mes">{{mes.title}}（{{mes.synopsis.length}}个）</text>
+    <text
+     class="box-titlt-more"
+     bind:tap="classClick">更多 ></text>
+  </view>
+  <view class="box-list">
+    <block wx:for="{{mes.synopsis}}" wx:key="index">
+      <classItem mes="{{item}}"/>
+    </block>
+  </view>
+</view>
+

@@ -1,0 +1,64 @@
+let {ajax, baseURL, httpHead2, fileHttp } = require("./index")
+let {setMustMsg} = require("./setMustMsg");
+// 设置用户报名培训班
+async function getClassApply(classId, app){
+  let {
+    coopCode, accessToken, nickname, headimgurl, frontUserId
+  } = {...setMustMsg()}
+  let mes = await ajax({
+    url: httpHead2 + "api/elnClassUser.action?m=insert",
+    data: { coopCode, frontUserId, classId, accessToken, nickname, headimgurl }
+  })
+  return mes
+}
+
+// 设置查看考试详情
+async function getExamUserDetaiL(examId){
+  let {
+    coopCode, accessToken, nickname, headimgurl, frontUserId
+  } = {...setMustMsg()}
+  let mes = await ajax({
+    url: httpHead2 + "api/examUserDetail.action?m=beginExam",
+    data: { coopCode, frontUserId, examId, accessToken, nickname, headimgurl }
+  })
+  return mes
+}
+// 设置请求你评估详情
+async function getEvaluateInfo(evaluateId){
+  let {
+    coopCode, accessToken, nickname, headimgurl, frontUserId
+  } = {...setMustMsg()}
+  let mes = await ajax({
+    url: httpHead2 + "api/evaluateInfo.action?m=getDetail",
+    data: { coopCode, frontUserId, evaluateId, accessToken, nickname, headimgurl }
+  })
+  return mes
+}
+
+// 提交考试答案
+async function getExamUserDetails(examId, detailId, userAnswerJson){
+  let {
+    coopCode, accessToken, nickname, headimgurl, frontUserId
+  } = {...setMustMsg()}
+  let mes = await ajax({
+    url: httpHead2 + "api/examUserDetail.action?m=submitExamPaper",
+    data: { coopCode, frontUserId, examId, accessToken, nickname, headimgurl, detailId, userAnswerJson: JSON.stringify(userAnswerJson) }
+  })
+  return mes
+}
+// api/evaluateProject.action?m=saveUserAnswer
+// 提交评估答案
+async function getEvaluateProject(projectId, userAnswerJson){
+  let {
+    coopCode, accessToken, nickname, headimgurl, frontUserId
+  } = {...setMustMsg()}
+  let mes = await ajax({
+    url: httpHead2 + "api/evaluateProject.action?m=saveUserAnswer",
+    data: { coopCode, frontUserId, accessToken, nickname, headimgurl, projectId, userAnswerJson: JSON.stringify(userAnswerJson) },
+    header: { "content-type": "application/x-www-from-urlencoded;charset=UTF-8" }
+  })
+  return mes
+}
+module.exports = {
+  getClassApply, getEvaluateInfo, getExamUserDetaiL, getExamUserDetails, getEvaluateProject
+}

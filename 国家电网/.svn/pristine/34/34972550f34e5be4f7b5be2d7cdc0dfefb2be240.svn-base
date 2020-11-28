@@ -1,0 +1,170 @@
+// pages/home/home.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    // 定义轮播图数据
+    bannerImg: [
+      'http://file.51eln.com/uploads/wxshake/resource/cmsNews/ea7d4d4d8d6a4fad8c08bb1ea581680a.jpg',
+      'http://file.51eln.com/uploads/wxshake/resource/cmsNews/79890796bcdf4cd39498c5e8ea39fb62.jpg',
+      'http://file.51eln.com/uploads/wxshake/resource/cmsNews/aadbe3a7c73f4464893592a34e2a36fe.jpg'
+    ],
+    // 定义小圆点颜色
+    indicator: "#fff",
+    // 定义小圆点激活颜色
+    indicatorActive: "#00BE95",
+    // 定义四个图标与文字内容
+    listBarMes: [
+      {
+        img: "../../../assets/img/list-bar-icon/xqdc.png",
+        title: "需求调查"
+      },{
+        img: "../../../assets/img/list-bar-icon/tjxm.png",
+        title: "创建项目"
+      },{
+        img: "../../../assets/img/list-bar-icon/pxbm.png",
+        title: "培训报名"
+      },{
+        img: "../../../assets/img/list-bar-icon/wdpxb.png",
+        title: "培训班"
+      }
+    ],
+    /**
+     * 定义我的项目板块数据
+     *  title: 为名称
+     *  synopsis 为数据
+     *  mesTitle： 为数据标题
+     *  status: 为当前状态
+     *   0 为审核已经通过
+     *   1 为审核未通过
+     *   2 为审核正在进行
+     */
+    project: {
+      title: "我的项目",
+      synopsis: [
+        {
+          mesTitle: "党校政治理论培训bSIFBIUSAFBusaHBFadSV口碑那八方滑石粉案发时暗示法卡的哈佛打客服会受到客户国防生的后果开始的后果十多个考试大纲收到货感受到时代光华山东化工山东化工时的快感是的",
+          status: 0
+        },{
+          mesTitle: "党校政治理论培训",
+          status: 2
+        },{
+          mesTitle: "党校政治理论培训",
+          status: 1
+        }
+      ]
+    },
+    training: {
+      title: "我的培训班",
+      synopsis: [
+        {
+          mesTitle: "党校政治理论培训",
+          explain: "口碑那八方滑石粉案发时暗示法卡的哈佛打客服会受到客户国防生的后果开始的后果十多个考试大纲收到货感受到时代光华山东化工山东化工时的快感是的",
+          status: 0
+        },{
+          mesTitle: "党校政治理论培训",
+          explain: "口碑那八方滑石粉案发时暗示法卡的哈佛打客服会受到客户国防生的后果开始的后果十多个考试大纲收到货感受到时代光华山东化工山东化工时的快感是的",
+          status: 1
+        }
+      ]
+    }
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+
+
+
+  // 自定义方法----------------------------
+  // 获取用户点击的是哪一个按钮
+  listBarClick(e){
+    const mes = e.detail
+    let i = mes.index
+    let t = mes.title
+    if(i === 0){
+      wx.navigateTo({
+        url: '/pages/demand/demand',
+      })
+    }else if(i === 1){
+      wx.navigateTo({
+        url: '/pages/reserveitem/createitem/selectitem/selectitem',
+      })      
+    }else if(i === 2){
+      wx.navigateTo({
+        url: '/pages/trainingregister/trainingregister',
+      })      
+    }else if(i === 3){
+      wx.reLaunch({
+        url: '/pages/trainingclass/trainingclass',
+      })      
+    }
+  },
+  // 用户点击了我的项目的更多选项
+  projectClick(){
+    wx.switchTab({
+      url: "/pages/reserveitem/reserveitem"
+    })
+  },
+  // 用户点击我的培训班的更多选项
+  trainingClick(){
+    wx.switchTab({
+      url: "/pages/trainingclass/trainingclass"
+    })
+  }
+})

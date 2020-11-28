@@ -1,0 +1,19 @@
+<!--pages/home/h-compontent/class-list/class-list.wxml-->
+<view class="box">
+  <view class="{{num < 2 ? 'container1' : 'containers'}}">
+    <view class="box-titlt">
+      <text class="box-titlt-mes">{{mes.title}}（{{num}}个）</text>
+      <text
+      wx:if="{{num > 2}}"
+      class="box-titlt-more"
+      bind:tap="classClick">更多 ></text>
+    </view>
+    <view class="box-list" wx:if="{{num > 0}}">
+      <block wx:for="{{mes.synopsis}}" wx:key="index">
+        <classItem mes="{{item}}"/>
+      </block>
+    </view>
+    <view wx:else><no-data/></view>
+  </view>  
+</view>
+

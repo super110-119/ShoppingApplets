@@ -1,0 +1,14 @@
+<!--pages/myClass/index/index.wxml-->
+<view class="box">
+  <view class="title">
+    <text>课程列表</text>
+  </view>
+  <view class="list" wx:if="{{courseList.length > 0}}">
+    <block wx:for="{{courseList}}" wx:key="index">
+      <class-item message="{{item}}"/>
+    </block>
+  </view>
+  <view wx:else>
+    <mp-no-data-img/>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+<!--pages/trainingregister/trainingdetails/trainingdetails.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+  <view class="up_border"></view>
+  <image class="img_css" src="http://file.51eln.com/uploads/wxshake/resource/cmsNews/aadbe3a7c73f4464893592a34e2a36fe.jpg"></image>
+  <view class="product_css" style="margin-top:3vh">
+    <view class="view_size left_Css padding_css" >
+      <view class="view_size left_Css" >
+        <image class="inc_css2" mode="scaleToFill" src="../../../assets/img/list-bar-icon/fa-thumbtack.svg"></image>
+        <view class="font1">培训项目</view>
+      </view>
+      <view class="font1 fontweigth headtext" style="margin-left:4vh;width:400rpx;">{{mes.title}}</view>
+    </view>
+    <view class="view_size left_Css padding_css">
+      <view class="view_size left_Css" >
+        <image class="inc_css2" mode="scaleToFill" src="../../../assets/img/list-bar-icon/fa-clock.svg"></image>
+        <view class="font1">计划时间</view>
+      </view>
+      <view class="font1 font2" style="margin-left:4vh">{{mes.beginTime}}~{{mes.endTime}}</view>
+    </view>
+    <view class="view_size left_Css padding_css">
+      <view class="view_size left_Css" >
+        <image class="inc_css2" mode="scaleToFill" src="../../../assets/img/list-bar-icon/fa-user.svg"></image>
+        <view class="font1">培训讲师</view>
+      </view>
+      <view class="font1 fontweigth" style="margin-left:4vh">{{mes.teacher}}</view>
+    </view>
+    <view class="view_size left_Css padding_css">
+      <view class="view_size left_Css" >
+        <image class="inc_css2" mode="scaleToFill" src="../../../assets/img/list-bar-icon/fa-users.svg"></image>
+        <view class="font1">计划人数</view>
+      </view>
+      <view class="font1" style="margin-left:4vh">{{mes.num}}人</view>
+    </view>
+  </view>
+  <view class="product_css2 left_Css">
+    <view class="font3">课程介绍</view>
+    <view class="font4" style="margin-top:0.5vh">{{mes.teacher}}</view>
+    <view class="font4" style="margin-top:5vh">{{mes.memo}}</view>
+  </view>
+  <view class="btn_css" bindtap="isAffirm">立即报名</view>
+</view>
+<success bind:btnsClick="btnsClick" wx:if="{{isShow}}">
+  <view slot="title1">报名成功</view>
+  <view slot="btn">返回</view>
+</success>
+<view class="get_mask" wx:if="{{isMask}}"></view>

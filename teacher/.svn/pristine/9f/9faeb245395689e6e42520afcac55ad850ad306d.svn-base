@@ -1,0 +1,11 @@
+<!--pages/myClass/index/index.wxml-->
+<view class="box">
+  <view class="title">
+    <text>课程列表</text>
+  </view>
+  <view class="list">
+    <block wx:for="{{courseList}}" wx:key="index">
+      <class-item message="{{item}}"/>
+    </block>
+  </view>
+</view>

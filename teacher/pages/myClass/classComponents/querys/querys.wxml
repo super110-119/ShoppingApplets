@@ -1,0 +1,16 @@
+<!--pages/myClass/classComponents/querys/querys.wxml-->
+<view class="box">
+  <view class="box_img">
+    <!-- <view>{{message.userImg}}</view> -->
+    <image src="{{message.userImg}}" mode="aspectFill"/>
+  </view>
+  <view class="box_name">
+    <view>{{message.userName}}</view>
+  </view>
+  <view class="box_time">
+    <view>{{message.thisTime}}</view>
+  </view>
+  <view class="querys">
+    <view>{{message.querys}}</view>
+  </view>
+</view>

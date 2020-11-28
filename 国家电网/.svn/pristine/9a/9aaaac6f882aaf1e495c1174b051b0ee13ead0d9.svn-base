@@ -1,0 +1,45 @@
+/* pages/trainingschedule/t-commons/datas_item/datas_item.wxss */
+.box{
+  width: 670rpx;
+  height: 86rpx;
+  margin: 30rpx auto;
+  display: flex;
+  align-items: center;
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+.icon image{
+  width: 100%;
+  height: 100%;
+}
+.active{
+  background-color: #00B9A8;
+}
+.not_active{
+  background-color: #FF8C00;
+}
+.titles{
+  margin: 0 20rpx;
+  flex: 1;
+}
+.my_title{
+  font-size: 28rpx;
+  font-weight: 550;
+}
+.my_where{
+  color: #BCBCBC;
+  font-size: 26rpx;
+}
+
+.text{
+  width: 60rpx;
+  text-align: center;
+  margin: 0 60rpx;
+  font-size: 28rpx;
+}
+.is_not{
+  color: #FF8C00;
+}

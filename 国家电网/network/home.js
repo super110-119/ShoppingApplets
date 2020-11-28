@@ -1,0 +1,41 @@
+let {ajax, baseURL, httpHead2, fileHttp, setMustMsg } = require("./index");
+// 获取我的培训班
+async function getMyClass(pageNo, pageSize = 5){
+  return await ajax({
+    url: `${httpHead2}api/elnClassUser.action?m=getMyClassPage`,
+    data: { pageNo, pageSize, ...setMustMsg() }
+  })
+}
+// 获取已结束的培训班
+async function getOutClass(pageNo, pageSize = 4){
+  return await ajax({
+    url: `${httpHead2}api/elnClass.action?m=getFinisedPage`,
+    // url: `http://192.168.1.12:8280/api/elnClass.action?m=getFinisedPage`,
+    data: { pageNo, pageSize, ...setMustMsg() }
+  })
+}
+// 获取首页数据
+async function getHomeMes(pageSize = 2){
+  return await ajax({
+    url: `${httpHead2}api/portalSetting.action?m=getWXMainPageDataChengde`,
+    data: { pageSize, ...setMustMsg() }
+  })
+}
+// 获取我的页面数据
+async function getMyMsg(){
+  return await ajax({
+    // url: `http://192.168.1.12:8280/api/mycenter.action?m=getByChengde`,
+    url: `${httpHead2}api/mycenter.action?m=getByChengde`,
+    data: { ...setMustMsg() }
+  })
+}
+// 用户退出登录
+async function outLogin(){
+  return await ajax({
+    url: `${httpHead2}api/frontUser.action?m=unbindWeixin`,
+    data: { ...setMustMsg() }
+  })
+}
+module.exports = {
+  getMyClass, getHomeMes, fileHttp, getMyMsg, getOutClass, outLogin
+}

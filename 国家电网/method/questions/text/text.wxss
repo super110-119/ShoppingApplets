@@ -1,0 +1,20 @@
+/* method/questions/text/text.wxss */
+.question_box{
+  margin: 30rpx 10rpx;
+}
+.question_title{
+  display: flex;
+  font-weight: 600;
+  font-size: 30rpx;
+}
+.question_title_index{
+  margin: 0 20rpx;
+}
+.question_item{
+  margin: 10rpx 0;
+}
+.textarea_demos{
+  font-size: 26rpx;
+  color: #989898;
+  padding: 10rpx 20rpx;
+}

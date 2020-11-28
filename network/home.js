@@ -6,7 +6,7 @@ export function getMultidata(){
   })
 }
 
-const baseURL = "/api/n3"
+const baseURL = "/api/z8"
 export function getGoodsdata(type, page){
   return ajax({
     url: baseURL + "/home/data",

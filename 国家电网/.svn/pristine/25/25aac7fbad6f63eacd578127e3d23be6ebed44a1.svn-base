@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "only": "./only/only",
+    "more": "./more/more",
+    "text": "./text/text"
+  }
+}

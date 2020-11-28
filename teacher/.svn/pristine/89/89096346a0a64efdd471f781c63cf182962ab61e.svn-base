@@ -1,0 +1,6 @@
+<!--pages/mDetail/mDetail.wxml-->
+<view class="box">
+  <block wx:for="{{detailArr}}" wx:key="index">
+    <details message="{{item}}"/>
+  </block>
+</view>

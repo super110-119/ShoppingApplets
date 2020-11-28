@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "subject": "/common/subject/subject",
+    "success": "/common/success/success",
+    "exam": "/method/exam/exam"
+  },
+  "navigationBarTitleText": "考试"
+}

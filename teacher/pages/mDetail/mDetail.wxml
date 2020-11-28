@@ -1,0 +1,19 @@
+<!--pages/mDetail/mDetail.wxml-->
+<view class="box">
+  <!-- 以下为查询 -->
+  <view class="box_container">
+    <picker mode="date" fields="month" bindchange="valueChange">
+      <view class="box_select">
+        按时间查找
+        <image class="inc_css icon_s" src="../../images/md-arrow_drop_down.svg"></image>
+      </view>
+    </picker>
+    <view class="nowTime">{{thisDate}}</view>
+  </view>
+  <!-- 以下为收益明细 -->
+  <view class="box_detail">
+    <block wx:for="{{detailArr}}" wx:key="index">
+      <details message="{{item}}"/>
+    </block>
+  </view>
+</view>

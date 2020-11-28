@@ -1,0 +1,161 @@
+// pages/reserveitem/details/details.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    Transition: 0,
+    message: {
+      Transitions: [
+        {
+          Transition: 0,
+          thisTime: "2020-7-30 13：12",
+          explain: "请耐心等待"
+        },{
+          Transition: 1,
+          thisTime: "2020-7-30 13：12",
+          explain: "这个项目很好"
+        },{
+          Transition: 2,
+          thisTime: "2020-7-30 13：12",
+          explain: "信息填写不全，请补充完整后重新提交"
+        }
+      ],
+      details: [
+        {
+          title: "项目名称",
+          value: "党校政治理论培训"
+        },{
+          title: "单位名称",
+          value: "国网北京电力"
+        },{
+          title: "项目所属单位",
+          value: "国网北京海淀供电公司"
+        },{
+          title: "项目分类",
+          value: "职工培训教育/经营管路培训/党校政治理论"
+        },{
+          title: "实施范围",
+          value: "省公司(直属单位)级"
+        },{
+          title: "项目必要性",
+          value: "前面填写的内容"
+        },{
+          title: "项目主要内容",
+          value: "前面填写的内容"
+        },{
+          title: "主办部门",
+          value: "前面填写的内容"
+        },{
+          title: "承办单位",
+          value: "前面填写的内容"
+        },{
+          title: "总费用(预算)",
+          value: "10000 元"
+        },{
+          title: "经费来源",
+          value: "按工资总额提取的培训教育经费"
+        },{
+          title: "费用类型",
+          value: "成本性"
+        },{
+          title: "责任人",
+          value: "张三"
+        },{
+          title: "联系人",
+          value: "张三"
+        },{
+          title: "备注",
+          value: "前面填写的内容"
+        },{
+          title: "自评分",
+          value: "89分"
+        }
+      ]
+    },
+    index: 0
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    let Transition = options.Transition
+    let index = options.index
+    this.setData({
+      Transition,
+      index
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+
+  /**
+   * 自定义事件
+   */
+  btnClick(){
+    if(this.data.Transition == 0){
+      wx.showModal({
+        title: "您确定删除吗？",
+        success(res){
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '../delete/delete', 
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
+  }
+})

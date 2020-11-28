@@ -1,0 +1,13 @@
+<!--pages/profile/profile.wxml-->
+<view class="box line_black">
+  <!-- 背景色块 -->
+  <view class="bg"><bg/></view>
+  <!-- 用户信息 -->
+  <view class="user"><user mes="{{userMes}}" load="{{isLoad}}"/></view>
+  <!-- 下列选项 -->
+  <view class="list"><list mes="{{userMes}}" mes1="{{myNums}}"/></view>
+  <!-- 解除绑定 -->
+  <view class="btns" bindtap="outLogin">退出登录</view>
+</view>
+<!-- 遮罩层 -->
+<view class="get_mask" wx:if="{{isMask}}"></view>

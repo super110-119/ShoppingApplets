@@ -1,0 +1,31 @@
+<!--pages/reserveitem/users/consult/consult.wxml-->
+<view class="box line_black">
+  <!-- 上面标题 -->
+  <view class="titles">项目详情</view>
+  <!-- 内容详细介绍 -->
+  <view class="box-container">
+    <block wx:for="{{details}}" wx:key="index">
+      <view class="list">
+        <text class="item-title">
+          {{item.title}}: 
+        </text>
+        <text class="item-mes">
+          {{item.value}}
+        </text>
+      </view>
+    </block>
+  </view>
+  <!-- 两个评分按钮 -->
+  <view class="btns" wx:if="{{checkrole == 1}}">
+    <view class="btn btn-all" bindtap="scoreFrist">开始评测</view>
+  </view>
+  <view class="btns" wx:if="{{checkrole == 0}}">
+    <view class="btn" bindtap="itemPass" data-index="pass">通过</view>
+    <view class="btn" bindtap="itemPass" data-index="refuse" style="margin-left:50%">不通过</view>
+  </view>
+</view>
+<success bind:btnsClick="btnsClick" wx:if="{{isShow}}">
+  <view slot="title1">审核已提交</view>
+  <view slot="btn">返回</view>
+</success>
+<view class="get_mask" wx:if="{{isMask}}"></view>

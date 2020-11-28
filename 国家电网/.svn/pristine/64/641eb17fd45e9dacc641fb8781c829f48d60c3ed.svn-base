@@ -1,0 +1,11 @@
+<!--pages/profile/p-compontent/user/user.wxml-->
+<view class="container">
+  <view class="img">
+    <image src="{{mes.img}}"/>
+  </view>
+  <view class="box">
+    <view class="name">{{mes.name}}</view>
+    <view class="company">{{mes.company}}</view>
+    <view class="user-id">(员工编号：{{mes.userId}})</view>
+  </view>
+</view>

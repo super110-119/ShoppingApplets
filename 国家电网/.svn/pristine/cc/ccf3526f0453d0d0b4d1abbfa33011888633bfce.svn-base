@@ -1,0 +1,5 @@
+<!--pages/profile/p-compontent/bg/bg.wxml-->
+<view class="content">
+  <view class="content1"></view>
+  <view class="content2"></view>
+</view>

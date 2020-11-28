@@ -1,0 +1,26 @@
+/* common/noDataBig/noDataBig.wxss */
+.no_data_container{
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+.container_box{
+  position: absolute;
+  text-align: center;
+  color: rgb(0, 190, 149);
+  font-size: 50rpx;
+  font-family: "楷体";
+  width: 100%;
+  margin:80rpx auto;
+}
+.container_box view{
+  margin: 30rpx auto;
+}
+.box_img{
+  width: 395rpx;
+  height: 248rpx;
+}
+.box_img image{
+  width: 100%;
+  height: 100%;
+}

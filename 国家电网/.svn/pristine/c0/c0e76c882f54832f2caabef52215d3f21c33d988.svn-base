@@ -1,0 +1,24 @@
+<!--pages/reserveitem/users/consult/consult.wxml-->
+<view class="box line_black">
+  <!-- 上面标题 -->
+  <view class="titles">项目详情</view>
+  <!-- 内容详细介绍 -->
+  <view class="box-container">
+    <block wx:for="{{details}}" wx:key="index">
+      <view class="list headtext">
+        <text class="item-title">
+          {{item.title}}: 
+        </text>
+        <text class="item-mes">
+          {{item.value}}
+        </text>
+      </view>
+    </block>
+  </view>
+  <!-- 两个评分按钮 -->
+  <view class="btns">
+    <view class="btn" bindtap="scoreFrist">开始评测</view>
+    <!-- <view class="btn" bindtap="scoreSecond">评分（二类项目）</view> -->
+  </view>
+</view>
+<view class="get_mask" wx:if="{{isMask}}"></view>

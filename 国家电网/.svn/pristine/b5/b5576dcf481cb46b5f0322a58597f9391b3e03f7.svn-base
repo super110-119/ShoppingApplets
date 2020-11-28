@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "bg": "./p-compontent/bg/bg",
+    "user": "./p-compontent/user/user",
+    "list": "./p-compontent/list/list"
+  },
+  "navigationBarTitleText": "我的",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

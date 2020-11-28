@@ -1,0 +1,101 @@
+<!--pages/trainingschedule/trainingschedule.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+  <view>
+      <!-- 背景图以及大标题 -->
+    <view style="width:100%;height:28vh;">
+      <view class="bg_css" style="position:fixed;z-index:2">
+        <image class="bg-image bg_css" mode="center" src="../../assets/img/banner/b1.jpg"></image>
+        <view class="view_size right_Css">
+          <image class="inc_css" mode="scaleToFill" bindtap="downQrcode" src="../../assets/img/list-bar-icon/fa-qrcode.svg"></image>
+          <image class="inc_css" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-download.svg"></image>
+        </view>
+        <view class="view_size left_Css title_css">
+          <view class="font1 font_title" style="font-weight: 600;">党校政治理论培训</view>
+        </view>   
+        <view class="view_size left_Css title_css2">
+          <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-clockw.svg"></image>
+          <view class="font2 font_title">时间：2020年9月10日~ 2020年9月30日</view>
+        </view>    
+        <view class="view_size left_Css title_css2">
+        <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-map-markerw.svg"></image>
+          <view class="font2 font_title">地点：培训教室1001</view>
+        </view>
+      </view>
+    </view>
+    <!-- 标签选择栏 -->
+    <view class="selcetT_css view_size left_Css header">
+      <view class="selectC_css font3"><view class="selectL_css {{btnselect == 0 ? 'childselect fontselect':''}}" bindtap="changeSelect" data-index="0">课表</view></view>
+      <view class="selectC_css font3"><view class="selectL_css {{btnselect == 1 ? 'childselect fontselect':''}}" bindtap="changeSelect" data-index="1">签到</view></view>
+      <view class="selectC_css font3"><view class="selectL_css {{btnselect == 2 ? 'childselect fontselect':''}}" bindtap="changeSelect" data-index="2">考试</view></view>
+      <view class="selectC_css font3"><view class="selectL_css {{btnselect == 3 ? 'childselect fontselect':''}}" bindtap="changeSelect" data-index="3">评估</view></view>
+    </view> 
+  </view>
+
+  <!-- <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas> -->
+
+  <view style="margin-top:8vh;position:relative;z-index:1">
+    <view wx:if="{{btnselect == 0}}">
+      <view class="schedulecss">
+        <view class="view_size between_Css">
+          <view class="font4">2020年7月25日</view>
+          <image class="inc_css2" src="../../assets/img/comment-icon/bottom.svg"></image>
+        </view>
+        <view class="view_size between_Css product2_css" >
+          <image class="img_css2" src="../../assets/img/banner/b1.jpg"></image>
+          <view class="product_css" style="position: relative;">
+            <view class="view_size left_Css font3 fontins" style="text-align:left;line-height:1.2">习近平新时代下的社会主义思想（一）</view>
+            <view class="view_size left_Css font4" style="color:#838383;margin-top:0.5vh">洪祥波</view>
+            <view class="view_size left_Css font2" style="color:#5C5C5C;position:absolute;bottom:0px">
+              <image class="inc_css2" src="../../assets/img/list-bar-icon/antOutline-download.svg"></image>
+              PPT讲义
+            </view>
+          </view>
+        </view>
+        <view class="view_size between_Css product2_css">
+          <image class="img_css2" src="../../assets/img/banner/b1.jpg"></image>
+          <view class="product_css" style="position: relative;">
+            <view class="view_size left_Css font3 fontins" style="text-align:left;line-height:1.2">习近平新时代下的社会主义思想（一）</view>
+            <view class="view_size left_Css font4" style="color:#838383;margin-top:0.5vh">洪祥波</view>
+            <view class="view_size left_Css font2" style="color:#5C5C5C;position:absolute;bottom:0px">
+              <image class="inc_css2" src="../../assets/img/list-bar-icon/antOutline-download.svg"></image>
+              PPT讲义
+            </view>
+          </view>
+        </view>
+        <view class="view_size between_Css">
+          <view class="font4">2020年7月25日</view>
+          <image class="inc_css2" src="../../assets/img/comment-icon/bottom.svg"></image>
+        </view>
+        <view class="view_size between_Css product2_css" >
+          <image class="img_css2" src="../../assets/img/banner/b1.jpg"></image>
+          <view class="product_css" style="position: relative;">
+            <view class="view_size left_Css font3 fontins" style="text-align:left;line-height:1.2">习近平新时代下的社会主义思想（一）</view>
+            <view class="view_size left_Css font4" style="color:#838383;margin-top:0.5vh">洪祥波</view>
+            <view class="view_size left_Css font2" style="color:#5C5C5C;position:absolute;bottom:0px">
+              <image class="inc_css2" src="../../assets/img/list-bar-icon/antOutline-download.svg"></image>
+              PPT讲义
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:elif="{{btnselect == 1}}"><datas/></view>
+    <view wx:elif="{{btnselect == 2}}" class="box2">
+      <block wx:for="{{mes1}}" wx:key="index">
+        <tests mes="{{item}}" bindtap="examClick" data-index="{{index}}"/>
+      </block>
+    </view>
+    <view wx:elif="{{btnselect == 3}}" class="box2">
+      <block wx:for="{{mes2}}" wx:key="index">
+        <tests mes="{{item}}" bindtap="assessClick" data-index="{{index}}"/>
+      </block>
+    </view>
+  </view>
+
+  <!-- 浮动弹窗 -->
+  <view>
+      <mp-dialog title="党校培训班二维码" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+        <canvas class="qrcode" canvas-id="myQrcode"></canvas>
+      </mp-dialog>
+  </view>
+</view>

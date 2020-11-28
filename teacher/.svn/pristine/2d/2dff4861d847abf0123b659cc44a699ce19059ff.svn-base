@@ -1,0 +1,31 @@
+/* pages/mDetail/mDetail.wxss */
+.box_container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 90rpx;
+  width: 100%;
+  z-index: 2;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #aaa;
+  line-height: 90rpx;
+  padding: 0 90rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #3F87EE;
+  background-color: #fff;
+}
+.box_select{
+  display: flex;
+  align-items: center;
+}
+.inc_css {
+  width: 70rpx;
+  height: 40rpx;
+  padding-top: 10rpx;
+}
+.box_detail{
+  margin: 90rpx 0;
+}
+

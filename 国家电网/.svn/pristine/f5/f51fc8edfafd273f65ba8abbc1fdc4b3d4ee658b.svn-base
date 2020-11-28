@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/trainingschedule/trainingschedule",
+    "pages/home/home",
+    "pages/trainingclass/trainingclass",
+    "pages/trainingregister/trainingregister",
+    "pages/common_pages/login/login",
+    "pages/profile/profile",
+    "pages/common_pages/demand/demand",
+    "pages/reserveitem/users/scoreSecond/scoreSecond",
+    "pages/reserveitem/users/scoreFrist/scoreFrist",
+    "pages/reserveitem/reserveitem",
+    "pages/index/index",
+    "pages/reserveitem/createitem/selectitem/selectitem",
+    "pages/reserveitem/createitem/createtraining/createtraining",
+    "pages/reserveitem/createitem/copyitem/copyitem",
+    "pages/reserveitem/details/details",
+    "pages/reserveitem/users/consult/consult",
+    "pages/trainingregister/trainingdetails/trainingdetails",
+	  "pages/common_pages/examination/examination",
+    "pages/reserveitem/delete/delete"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#101010",
+    "selectedColor": "#00BE95",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "./assets/img/icon/home.png",
+        "selectedIconPath": "./assets/img/icon/home_active.png"
+      },
+      {
+        "pagePath": "pages/reserveitem/reserveitem",
+        "text": "储备项目",
+        "iconPath": "./assets/img/icon/storage.png",
+        "selectedIconPath": "./assets/img/icon/storage_active.png"
+      },
+      {
+        "pagePath": "pages/trainingclass/trainingclass",
+        "text": "培训班",
+        "iconPath": "./assets/img/icon/people.png",
+        "selectedIconPath": "./assets/img/icon/people_active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "./assets/img/icon/me.png",
+        "selectedIconPath": "./assets/img/icon/me_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
+}

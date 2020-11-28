@@ -1,0 +1,13 @@
+<!--pages/myClass/classComponents/classItem/classItem.wxml-->
+<view class="box" ontap="warningClick" data-index="{{message.courseId}}">
+  <view class="image">
+    <image src="{{message.coverImg}}" mode="aspectFill"/>
+  </view>
+  <view class="title line_clamp2">{{message.courseTitle}}</view>
+  <view class="time">开始时间：{{isTimes}}</view>
+  <view class="btns">
+    <view class="btn btn1" bindtap="infoClick" data-index="{{message.courseId}}">信息</view>
+    <!-- <view class="btn btn2" bindtap="successClick">笔记</view> -->
+    <!-- <view class="btn btn3" bindtap="warningClick">问答</view> -->
+  </view>
+</view>

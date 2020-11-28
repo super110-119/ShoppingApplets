@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tests": "./t-commons/tests/tests",
+    "datas": "./t-commons/datas/datas"
+  },
+  "navigationBarTitleText": "班级课表"
+}

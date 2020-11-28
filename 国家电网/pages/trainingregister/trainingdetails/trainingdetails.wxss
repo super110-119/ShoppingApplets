@@ -1,0 +1,89 @@
+/* pages/trainingregister/trainingdetails/trainingdetails.wxss */
+.up_border{
+  border-top: 2px #c8c8c8 solid;
+}
+
+.view_size {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.img_css {
+  width: 100%;
+  height: 26vh;
+  border-bottom: 2px solid rgba(187, 187, 187, 1);
+}
+
+.product_css {
+  width: 100%;
+  height: 22vh;
+  border: 1px solid rgba(255, 0, 0, 0);
+}
+
+.product_css2 {
+  border-top: 2px solid rgba(187, 187, 187, 1);
+  height: 39vh;
+  padding: 3% 5%;
+}
+
+.btn_css {
+  width: 100%;
+  height: 9vh;
+  border-radius: 3px;
+  background-color: rgba(0, 190, 149, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  line-height: 9vh;
+  text-align: center;
+  border: 1px solid rgba(255, 0, 0, 0);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.between_Css {
+  justify-content: space-between;
+}
+
+.left_Css {
+  justify-content: flex-start;
+}
+
+.padding_css {
+  padding-left:5%;
+  padding-right:5%;
+  margin-bottom:1vh;
+}
+
+.inc_css2 {
+  width: 20px;
+  height: 13px;
+  margin-right: 1vh;
+}
+
+.font1 {
+  font-size: 14px;
+  color: #333333;
+}
+
+.font2 {
+  font-size: 12px;
+  color: #8A8A8A;
+}
+
+.font3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.font4 {
+  font-size: 14px;
+  color: #838383;
+}
+
+.fontweigth {
+  font-weight: 600;
+}

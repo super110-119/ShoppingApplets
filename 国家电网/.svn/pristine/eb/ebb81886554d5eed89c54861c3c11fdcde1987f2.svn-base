@@ -1,0 +1,7 @@
+<!--common/noData/noData.wxml-->
+<!-- 封装没有数据的时候现实的 -->
+<view class="no_data_container">
+  <view class="no_data_titles">
+    暂无数据
+  </view>
+</view>

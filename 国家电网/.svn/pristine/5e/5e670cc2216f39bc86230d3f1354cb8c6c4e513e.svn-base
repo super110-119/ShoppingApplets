@@ -1,0 +1,77 @@
+<!--pages/trainingclass/trainingclass.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+  <view class="up_border"></view>
+  <view class="view_size searchborder">
+    <image class="inc_css icon_s" src="../../assets/img/list-bar-icon/md-arrow_drop_down.svg"></image>
+    <picker mode="date" value="{{date}}" fields="year" class="fontborder fontborder_s fontborder_s1" bindchange="bindYearChange">
+      <view class="font5 font2color">{{dateyear}}</view>
+    </picker>
+    <image class="inc_css icon_s" src="../../assets/img/list-bar-icon/md-arrow_drop_down.svg"></image>
+    <picker mode="selector" value="{{index}}" range="{{array}}" class="fontborder fontborder_s" bindchange="bindMonthChange">
+      <view class="font5 font2color">{{datemonth}}</view>
+    </picker>
+    <image class="inc_css" src="../../assets/img/list-bar-icon/md-arrow_drop_down.svg"></image>
+    <picker mode="selector" value="{{index2}}" range="{{array2}}" class="fontborder" bindchange="bindDepartmentChange">
+      <view class="font5 font2color">{{department}}</view>
+    </picker>
+    <image class="inc_css" style="width:18%" bindtap="clickSearch" src="../../assets/img/list-bar-icon/antOutline-filter.svg"></image>
+  </view>
+  <view class="pad_view">
+
+  <block wx:for='{{traininglist}}'>
+    <view class="product_css" bindtap="trainingDetails">
+      <view class="view_size between_Css" style="height: 4vh;">
+        <view class="view_size left_Css">
+          <block wx:if='{{item.trainstate == 0}}'>
+            <view class="circle_css circle_color1"></view>
+            <view class="font2">报名中</view>          
+          </block>
+          <block wx:if='{{item.trainstate == 1}}'>
+            <view class="circle_css circle_color2"></view>
+            <view class="font2 font2color">报名截止</view>          
+          </block>
+        </view>
+        <view class="product_css2 view_size {{item.trainre == 0 ? 'product_css3_color':''}}">
+          <view class="font4" wx:if='{{item.trainre == 0}}'>未报名</view>
+          <view class="font4" wx:else>
+
+            <text>已报名</text>
+          </view>
+        </view>
+      </view>
+      <view class="view_size between_Css" style="height: 26vh;">
+        <view class="product_css3">
+          <view style="margin-top:3vh">
+            <view class="font3">{{item.trainmonth}}月</view>
+            <view class="shixian_css" style="margin-top:1vh"></view>
+            <view class="font3" style="margin-top:1vh">{{item.trainyear}}年</view>
+          </view>
+        </view>
+        <view class="product_css4">
+          <view class="view_size left_Css font1" style="margin-left:1vh">{{item.traintitle}}</view>
+          <view class="view_size left_Css" style="margin-top:1vh">
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-user.svg"></image>
+            <text class="font4 font4color">讲师：{{item.trainteacher}}</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-thumbtack.svg"></image>
+            <text class="font4 font4color">举办部门：{{item.trainpartment}}</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-users.svg"></image>
+            <text class="font4 font4color">计划人数：{{item.trainnum}}人</text>
+          </view>
+          <view class="view_size left_Css" >
+            <image class="inc_css2" mode="scaleToFill" src="../../assets/img/list-bar-icon/fa-clock.svg"></image>
+            <text class="font4 font4color">报名截止： {{item.traintime}}</text>
+          </view>
+          <view class="view_size left_Css prosign" >
+            <text class="font4 font5color">{{item.trainrenum}}人</text>
+            <text class="font4 font6color" style="margin-left:1vh">已报名</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  </view>
+</view>

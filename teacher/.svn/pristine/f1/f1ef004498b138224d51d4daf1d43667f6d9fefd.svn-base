@@ -1,0 +1,23 @@
+/* pages/myClass/index/index.wxss */
+.title{
+  height: 90rpx;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #aaa;
+  background-color: #fff; 
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+.title text{
+  position: absolute;
+  z-index: 2;
+  left: 30rpx;
+  bottom: 10rpx;
+  font-weight: 550;
+}
+.list{
+  margin: 120rpx 0;
+  background-color: #fff;
+}

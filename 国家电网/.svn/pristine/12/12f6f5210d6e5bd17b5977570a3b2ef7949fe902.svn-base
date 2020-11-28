@@ -1,0 +1,43 @@
+<!--pages/trainingregister/trainingdetails/trainingdetails.wxml-->
+<view class="page" style="width:100%;overflow-x:hidden;">
+  <view class="up_border"></view>
+  <image class="img_css" src="../../../assets/img/banner/b1.jpg"></image>
+  <view class="product_css" style="margin-top:3vh">
+    <view class="view_size left_Css padding_css" >
+      <view class="view_size left_Css" >
+        <image class="inc_css2" mode="scaleToFill" src="../../../assets/img/list-bar-icon/fa-thumbtack.svg"></image>
+        <view class="font1">培训项目</view>
+      </view>
+      <view class="font1 fontweigth" style="margin-left:4vh">新时代中国特色社会主义思想</view>
+    </view>
+    <view class="view_size left_Css padding_css">
+      <view class="view_size left_Css" >
+        <image class="inc_css2" mode="scaleToFill" src="../../../assets/img/list-bar-icon/fa-clock.svg"></image>
+        <view class="font1">计划时间</view>
+      </view>
+      <view class="font1 font2" style="margin-left:4vh">9月10日  19:00</view>
+    </view>
+    <view class="view_size left_Css padding_css">
+      <view class="view_size left_Css" >
+        <image class="inc_css2" mode="scaleToFill" src="../../../assets/img/list-bar-icon/fa-user.svg"></image>
+        <view class="font1">培训讲师</view>
+      </view>
+      <view class="font1 fontweigth" style="margin-left:4vh">洪向华  中央党校科研部副教授</view>
+    </view>
+    <view class="view_size left_Css padding_css">
+      <view class="view_size left_Css" >
+        <image class="inc_css2" mode="scaleToFill" src="../../../assets/img/list-bar-icon/fa-users.svg"></image>
+        <view class="font1">计划人数</view>
+      </view>
+      <view class="font1" style="margin-left:4vh">30人</view>
+    </view>
+  </view>
+  <view class="product_css2 left_Css">
+    <view class="font3">课程介绍</view>
+    <view class="font4" style="margin-top:0.5vh">洪向华</view>
+    <view class="font4" style="margin-top:0.5vh">中央党校科研部副教授</view>
+    <view class="font4" style="margin-top:0.5vh">硕士生导师</view>
+    <view class="font4" style="margin-top:5vh">课程介绍课程介绍课程介绍课程介绍课程介绍老师介绍老师介绍老师介绍老师介绍老师介绍老师介绍老师介绍老师介绍老师介绍老师介绍老师介绍老师介</view>
+  </view>
+  <view class="btn_css">立即报名</view>
+</view>

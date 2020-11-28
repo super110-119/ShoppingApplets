@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "querys": "../classComponents/querys/querys",
+    "noData": "/component/no_data_img/no_data_img"
+  },
+  "navigationBarTitleText": "课程问答",
+  "navigationBarBackgroundColor": "#3F87EE",
+  "navigationBarTextStyle": "white"
+}

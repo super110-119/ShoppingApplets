@@ -1,0 +1,37 @@
+<!--pages/answer/answer.wxml-->
+<view class="view_pad">
+  <view class="question_css">
+    <view class="view_size between_Css user_msg">
+      <view class="course_user view_size left_Css">
+        <image src="" class="course_user_img"/>
+        <view class="user_text font1_css">用户xx的课程提问</view>
+      </view>
+      <view class="time_text font3_css">今天 03:19</view>
+    </view>
+    <view class="border_line"></view>
+    <view class="title_text day_font">日期</view>
+    <view class="day_font">2020/09/11</view>
+    <view class="title_text day_font">课程提问</view>
+    <view class="day_font">听到的是模拟信号  计算机端：数字信号</view>
+    <view class="font3_css foot_css">所属课程：课程名称</view>
+  </view>
+
+  <view class="answer_css">
+    <view class="view_size between_Css user_msg">
+      <view class="course_user view_size left_Css">
+        <image src="" class="course_user_img"/>
+        <view class="user_text font1_css">讲师XX的回答：</view>
+      </view>
+      <view class="time_text font3_css">今天 03:19</view>
+    </view>
+    <view class="day_font">听到的是模拟信号  计算机端：数字信号听到的是模拟信号  计算机端：数字信号听到的是模拟信号  计算机端：数字信号听到的是模拟信号  计算机端：数字信号</view>
+  </view>
+
+  <!-- 底层输入框 -->
+  <view class="view_input" style="bottom:{{bottom}}px">
+    <view class="view_area">
+      <input placeholder="请输入文字内容" bindfocus="foucus" bindblur="blur" adjust-position="{{false}}"></input>
+      <view class="view_button">发送</view>
+    </view>
+  </view>
+</view>

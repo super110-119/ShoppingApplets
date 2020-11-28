@@ -1,0 +1,38 @@
+/* pages/demand/d-page/particulars/items/items.wxss */
+.box{
+  margin: 0 24rpx;
+  margin-top: 36rpx;
+}
+.title{
+  margin: 16rpx;
+  font-size: 36rpx;
+}
+.inputs::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E5E5;
+}
+.inputs::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E5E5;
+}
+.inputs label{
+  display: block;
+  margin: 16rpx 0;
+}
+.inputs label radio{
+  width: 44rpx;
+  height: 44rpx;
+  margin: 0 16rpx;
+}
+.checkboxs textarea{
+  width: 100%;
+  height: 154rpx;
+  border: 1px solid rgba(187, 187, 187, 1);
+  box-sizing: border-box;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "items": "./d-components/item/item",
+    "no-data-big": "/common/noDataBig/noDataBig"
+  },
+  "navigationBarTitleText": "需求调查"
+}

@@ -1,0 +1,16 @@
+module.exports = {
+  ajax(obj){
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: obj.url,
+        data: obj.data || {},
+        timeout: obj.timeout || 5000,
+        method: obj.method || 'get',
+        header: obj.header || {"content-type": "application/json"},
+        dataType: obj.dataType || "json",
+        success: resolve,
+        fail: reject
+      })
+    })
+  }
+}
